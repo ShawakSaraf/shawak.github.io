@@ -66,13 +66,11 @@ function NavBar()
   return (
     <nav className="nav" role={"navigation"}>
       <div className='top-menu'>
-        <div className='row'>
           <ul>
             <li><a onClick={handleHomeClick}>Home</a></li>
             <li><a onClick={handleProjectsClick}>Projects</a></li>
             <li><a onClick={handleAboutClick}>About</a></li>
           </ul>
-        </div>
       </div>
     </nav>
   );
@@ -85,7 +83,7 @@ function Home()
       <header className="main-logo">
         <p>Shawak</p>
         <ul className="sub-logo">
-          <p>GameDev MachineLearning Creativity</p>
+          <p>GameDev MachineLearning</p>
         </ul>
       </header>
     </div>
@@ -122,6 +120,14 @@ function ImageFade({images, ...props})
 }
 function Project()
 {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   function TPS_Prototype()
   {
     const fadeProps = {
@@ -146,17 +152,17 @@ function Project()
   {
     const fadeProps = {
       images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-      style: { width: '40%', float: 'left', 'margin-right': '20px' },
+      style: { width:  width > 768 ? '40%' : '60%', float: width > 768 ? 'left': 'center', 'margin-right': '20px' },
     }
     return (
       <div>
         <h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
         <ImageFade {...fadeProps}/>
-        <p style={ { paddingTop: '100px' } }>
+        <p style={ { paddingTop: width > 768 ? '100px' : "10px" } }>
           I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
           Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
         </p>
-        <video style={ { width: '40%' } } controls autoPlay muted loop>
+        <video style={ { width: width > 768 ? '40%' : '90%' } } controls autoPlay muted loop>
           <source src={DigitGen} type='video/mp4' />
         </video>
       </div>

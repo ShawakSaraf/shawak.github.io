@@ -7,8 +7,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -823,10 +821,10 @@ pre code {
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
 }
 .container:before, .container:after {
   content: " ";
@@ -1797,7 +1795,6 @@ tbody.collapse.in {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
 }
 .dropdown-menu.pull-right {
   right: 0;
