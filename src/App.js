@@ -105,7 +105,9 @@ function Project({projetsRef})
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  function TPS_Prototype()
+  const isPhone = width < 768;
+
+  function TPSPrototype()
   {
     const fadeProps = {
       images: [ level2, TPS1, TPS2, TPS3 ],
@@ -115,31 +117,32 @@ function Project({projetsRef})
     return (
       <div ref={projetsRef}>
         <h1>Third-Person Shooter<br/>Prototype</h1>
-        <ImageFade {...fadeProps} />
-        <p  style={ { paddingTop: width > 768 ? '20px' : "10px" } }>
-          A simple Third person shooter prototype I made some years ago. My goal was to explore the level design of the last of us.
-        </p>
         <video style={ { width: '90%' } } controls autoPlay muted loop>
           <source src={ProtoVid} type='video/mp4' />
         </video>
+        <p  style={ { paddingTop: !isPhone ? '20px' : "10px" } }>
+          A simple Third person shooter prototype I made some years ago. My goal was to explore the level design of the last of us.
+        </p>
+        <ImageFade {...fadeProps} />
       </div>
     );
   }
   function GANVAE()
   {
-    const fadeProps = {
+    const fadeProps = 
+    {
       images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-      style: { width:  width > 768 ? '40%' : '60%', float: width > 768 ? 'left': 'center', 'margin-right': '20px' },
+      style: { width:  !isPhone ? '40%' : '60%', float: !isPhone ? 'left': 'center', 'marginRight': '20px' },
     }
     return (
       <div>
         <h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
         <ImageFade {...fadeProps}/>
-        <p style={ { paddingTop: width > 768 ? '100px' : "10px" } }>
+        <p style={ { paddingTop: !isPhone ? '100px' : "10px" } }>
           I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
           Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
         </p>
-        <video style={ { width: width > 768 ? '40%' : '90%' } } controls autoPlay muted loop>
+        <video style={ { width: !isPhone ? '40%' : '90%' } } controls autoPlay muted loop>
           <source src={DigitGen} type='video/mp4' />
         </video>
       </div>
@@ -149,7 +152,7 @@ function Project({projetsRef})
   return (
     <div id='Projects'>
       <header>Projects</header>
-        <TPS_Prototype />
+        <TPSPrototype />
         <GANVAE />
     </div>
   );

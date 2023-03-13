@@ -54,7 +54,11 @@
   background-color   : var(--bg-col);
   justify-content    : center;
 }
-
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 .App-logo {
   height        : 40vmin;
   pointer-events: none;
