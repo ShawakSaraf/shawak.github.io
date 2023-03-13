@@ -9,7 +9,7 @@ import TPS3 from './images/TPS_proto/OverShoulder3.png'
 import TPS4 from './images/TPS_proto/OverShoulder4.png'
 import TPS5 from './images/TPS_proto/OverShoulder5.png'
 import TPS6 from './images/TPS_proto/OverShoulder6.png'
-import ProtoVid from './images/TPS_proto/Prototype.mp4'
+import ProtoVid from './images/TPS_proto/Prototype.webm'
 
 
 import Ganvar5 from './images/GANVAE/5x5_GeneratedDigits.png'
@@ -17,7 +17,7 @@ import Ganvar15 from './images/GANVAE/15x15_GeneratedDigits.png'
 import Ganvar30 from './images/GANVAE/30x30_GeneratedDigits.png'
 import Ganvar50 from './images/GANVAE/50x50_GeneratedDigits.png'
 import Ganvar50Inv from './images/GANVAE/50x50_GeneratedDigits_InvertedCol.png'
-import DigitGen from './images/GANVAE/Handwritten_Digit_Generation.mp4'
+import DigitGen from './images/GANVAE/Handwritten_Digit_Generation.webm'
 
 
 import { useState, useEffect } from 'react';
@@ -133,12 +133,12 @@ function Project()
       <div>
         <h1>Third-Person Shooter<br/>Prototype</h1>
         <ImageFade {...fadeProps} />
-        <video style={ { width: '90%' } } controls autoPlay muted loop>
-          <source src={ProtoVid} type='video/mp4' />
-        </video>
         <p>
           A simple Third person shooter prototype I made some years ago. My goal was to explore the level design of the last of us.
         </p>
+        <video style={ { width: '90%' } } controls autoPlay muted loop>
+          <source src={ProtoVid} type='video/mp4' />
+        </video>
       </div>
     );
   }
@@ -146,19 +146,19 @@ function Project()
   {
     const fadeProps = {
       images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-      style: { width: '40%', float: 'center', 'margin-right': '20px' },
+      style: { width: '40%', float: 'left', 'margin-right': '20px' },
     }
     return (
       <div>
         <h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
         <ImageFade {...fadeProps}/>
-        <video style={ { width: '40%' } } controls autoPlay muted loop>
-          <source src={DigitGen} type='video/mp4' />
-        </video>
-        <p>
+        <p style={ { paddingTop: '100px' } }>
           I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
           Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
         </p>
+        <video style={ { width: '40%' } } controls autoPlay muted loop>
+          <source src={DigitGen} type='video/mp4' />
+        </video>
       </div>
     );
   }
