@@ -133,7 +133,7 @@ function Project()
       <div>
         <h1>Third-Person Shooter<br/>Prototype</h1>
         <ImageFade {...fadeProps} />
-        <video style={ { width: '90%' } } controls autoPlay muted>
+        <video style={ { width: '90%' } } controls autoPlay muted loop>
           <source src={ProtoVid} type='video/mp4' />
         </video>
         <p>
@@ -152,7 +152,7 @@ function Project()
       <div>
         <h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
         <ImageFade {...fadeProps}/>
-        <video style={ { width: '40%' } } controls autoPlay muted >
+        <video style={ { width: '40%' } } controls autoPlay muted loop>
           <source src={DigitGen} type='video/mp4' />
         </video>
         <p>
