@@ -100,15 +100,14 @@
   display       : block;
   flex-direction: column;
   align-items   : center;
-      /* justify-content: center; */
-  padding    : 150px 0 20px 0;
-  font-size  : calc(10px + 2vmin);
-  color      : rgb(0, 0, 0);
-  font-family: "Outfit";
-  font-size  : 15em;
-  transition : 0.5s;
-  text-shadow: 0px 0px 0px var(--ascent-col-2);
-  animation  : slide 3s ease-out infinite;
+  padding       : 25vh 0 25vh 0;
+  font-size     : calc(10px + 2vmin);
+  color         : rgb(0, 0, 0);
+  font-family   : "Outfit";
+  font-size     : 15em;
+  transition    : 0.5s;
+  text-shadow   : 0px 0px 0px var(--ascent-col-2);
+  animation     : slide 3s ease-out infinite;
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
@@ -152,6 +151,7 @@
 @media screen and (max-width: 769px) {
   .main-logo {
     font-size: 7em;
+    padding  : 20vh 0 20vh 0;
   }
 }
 
@@ -184,6 +184,7 @@
   padding-bottom: 50px;
 }
 #Projects>header {
+  text-align    : center;
   margin-top    : 0.5em;
   margin-bottom : 1em;
   font-size     : 6em;
@@ -206,8 +207,8 @@
   font-weight: 400;
 }
 
-#Projects img {
-  align-content: center;
+#Projects img{
+  justify-content: center;
   border-radius: 25px;
   width        : 80%;
   margin       : 50px 0 0 0;
@@ -215,12 +216,17 @@
 }
 .float-right { float: right; }
 .float-left { float: left; }
+#Projects video{
+  justify-content: center;
+  border-radius: 25px;
+  margin       : 50px 0 0 0;
+  box-shadow: 0px 0px 35px rgb(46, 46, 46);
 
+}
 @media screen and (max-width: 769px) {
   #Projects>header {
-    margin-top: 0.5em;
-    font-size : 3em;
-        /* font-style: italic; */
+    margin-top    : 0.5em;
+    font-size     : 2.5em;
     letter-spacing: 1em;
     text-transform: uppercase;
   }

@@ -2,13 +2,22 @@ import './css/App.css';
 import './css/style.css';
 import './css/bootstrap.css';
 import Slider from 'react-slick';
-import level2 from './images/level2.png'
-import TPS1 from './images/OverShoulder1.png'
-import TPS2 from './images/OverShoulder2.png'
-import TPS3 from './images/OverShoulder3.png'
-import TPS4 from './images/OverShoulder4.png'
-import TPS5 from './images/OverShoulder5.png'
-import TPS6 from './images/OverShoulder6.png'
+import level2 from './images/TPS_proto/level2.png'
+import TPS1 from './images/TPS_proto/OverShoulder1.png'
+import TPS2 from './images/TPS_proto/OverShoulder2.png'
+import TPS3 from './images/TPS_proto/OverShoulder3.png'
+import TPS4 from './images/TPS_proto/OverShoulder4.png'
+import TPS5 from './images/TPS_proto/OverShoulder5.png'
+import TPS6 from './images/TPS_proto/OverShoulder6.png'
+import ProtoVid from './images/TPS_proto/Prototype.mp4'
+
+
+import Ganvar5 from './images/GANVAE/5x5_GeneratedDigits.png'
+import Ganvar15 from './images/GANVAE/15x15_GeneratedDigits.png'
+import Ganvar30 from './images/GANVAE/30x30_GeneratedDigits.png'
+import Ganvar50 from './images/GANVAE/50x50_GeneratedDigits.png'
+import Ganvar50Inv from './images/GANVAE/50x50_GeneratedDigits_InvertedCol.png'
+import DigitGen from './images/GANVAE/Handwritten_Digit_Generation.mp4'
 
 
 import { useState, useEffect } from 'react';
@@ -83,23 +92,10 @@ function Home()
   );
 }
 
-const ImageSlider = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const nextImage = () => {
-    setCurrentImageIndex(currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
-  };
 
-  return (
-    <div className="slider-container">
-      <img src={images[currentImageIndex]} alt="slider-image" />
-      <img src={images[(currentImageIndex + 1) % images.length]} alt="slider-image" />
-    </div>
-  );
-};
-const images = [ level2, TPS1, TPS2, TPS3 ];
-
-function ImageFade() {
+function ImageFade({images, ...props}) 
+{
   const [index, setIndex]     = useState(0);
   const [opacity, setOpacity] = useState(1);
 
@@ -120,7 +116,7 @@ function ImageFade() {
     <img
       src={images[index]}
       alt=""
-      style={{ opacity, transition: 'opacity 0.5s ease-in-out' }}
+      style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
     />
   );
 }
@@ -128,34 +124,61 @@ function Project()
 {
   function TPS_Prototype()
   {
+    const fadeProps = {
+      images: [ level2, TPS1, TPS2, TPS3 ],
+      style: { width: '60%' },
+    }
+    
     return (
       <div>
         <h1>Third-Person Shooter<br/>Prototype</h1>
-        <ImageFade />
+        <ImageFade {...fadeProps} />
+        <video style={ { width: '90%' } } controls autoPlay muted>
+          <source src={ProtoVid} type='video/mp4' />
+        </video>
         <p>
           A simple Third person shooter prototype I made some years ago. My goal was to explore the level design of the last of us.
         </p>
       </div>
     );
   }
-  function NeuralNetwork()
+  function GANVAE()
   {
+    const fadeProps = {
+      images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
+      style: { width: '40%', float: 'center', 'margin-right': '20px' },
+    }
     return (
       <div>
-        <h1>Generative Adversarial<br />+<br />Variational Autoencoder</h1>
-        <ImageFade />
+        <h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
+        <ImageFade {...fadeProps}/>
+        <video style={ { width: '40%' } } controls autoPlay muted >
+          <source src={DigitGen} type='video/mp4' />
+        </video>
         <p>
-        I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
+          I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
+          Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
         </p>
       </div>
     );
   }
 
+  // function NeuralNetwork()
+  // {
+  //   const fadeProps = {
+  //     images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
+  //     style: { width: '50%', float: 'center', 'margin-right': '20px' },
+  //   }
+  //   return (
+      
+  //   );
+  // }
+
   return (
     <div id='Projects'>
       <header>Projects</header>
         <TPS_Prototype />
-        <NeuralNetwork />
+        <GANVAE />
     </div>
   );
 }
