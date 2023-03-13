@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Outfit);
 :root {
-      /* Light theme */
+        /* Light theme */
   --bg-col            : #C8FFD4;
   --bg-col2           : rgb(253, 237, 218);
   --bg-col3           : rgb(255, 232, 208);
@@ -16,13 +16,13 @@
   --selection-col     : rgb(255, 255, 255);
   --h-style-col       : rgb(20, 20, 20);
   --UI-font-col       : rgb(0, 0, 0);
-  --UI-inactive-col   : #C8FFD4;
+  --UI-inactive-col   : #2b7e65;
   --UI-border-col     : rgba(0, 0, 0, 0.05);
   --gototop-bg-col    : rgba(255, 197, 126, 0.2);
   --theme-icon        : "\ea04";
 }
 .dark-mode {
-      /* Dark theme */
+        /* Dark theme */
   --bg-col            : rgb(30, 32, 65);
   --bg-col2           : rgb(40, 43, 78);
   --bg-col3           : rgb(44, 47, 85);
@@ -84,13 +84,13 @@
   top             : 0;
   width           : 100%;
   height          : 50px;
-      /* border-radius   : 10px; */
+        /* border-radius   : 10px; */
   text-transform: uppercase;
   font-family   : "Outfit";
   font-size     : 1.5em;
-      /* margin: 0 auto; */
+        /* margin: 0 auto; */
   padding-bottom: 100px;
-      /* padding: 34px 0 34px 0; */
+        /* padding: 34px 0 34px 0; */
 } 
 @media screen and (max-width: 769px) {
   #nav-bar {
@@ -139,10 +139,10 @@
   transition     : 0.5s;
   word-spacing   : 2em;
   text-shadow    : 0px 0px rgba(0, 0, 0, 0.7);
-      /* animation   : spacing 3s ease-in-out infinite; */
+        /* animation   : spacing 3s ease-in-out infinite; */
 }
 @keyframes spacing {
-      /* 25% {
+        /* 25% {
     text-shadow: -10px 10px rgba(0, 0, 0, 0.7);
   } */
   90% {
@@ -170,14 +170,14 @@
 }
 
 #Projects {
-  margin-top   : 10em;
-  /* border-top   : 5px solid var(--ascent-col);
+  margin-top: 10em;
+    /* border-top   : 5px solid var(--ascent-col);
   border-bottom: 5px solid var(--ascent-col); */
   border-radius: 50px;
 }
 
 #Projects>div {
-  /* margin        : 5em; */
+    /* margin        : 5em; */
   padding-top   : 50px;
   border-top    : 7px solid var(--ascent-col);
   border-bottom : 7px solid var(--ascent-col);
@@ -189,16 +189,16 @@
   margin-bottom : 1em;
   margin-left   : auto;
   margin-right  : auto;
-  padding: 0;
+  padding       : 0;
   font-size     : 6em;
   font-style    : italic;
   letter-spacing: 1em;
   text-transform: uppercase;
 }
 #Projects h1 {
-  text-align : center;
-  font-weight: 500;
-  font-size  : 3em;
+  text-align    : center;
+  font-weight   : 500;
+  font-size     : 3em;
   text-transform: uppercase;
   letter-spacing: 0.45em;
 }
@@ -211,18 +211,18 @@
 
 #Projects img{
   justify-content: center;
-  border-radius: 25px;
-  width        : 80%;
-  margin       : 50px 0 0 0;
-  box-shadow: 0px 0px 35px rgb(46, 46, 46);
+  border-radius  : 25px;
+  width          : 80%;
+  margin         : 50px 0 0 0;
+  box-shadow     : 0px 0px 35px rgb(46, 46, 46);
 }
 .float-right { float: right; }
 .float-left { float: left; }
 #Projects video{
   justify-content: center;
-  border-radius: 25px;
-  margin       : 50px 0 0 0;
-  box-shadow: 0px 0px 35px rgb(46, 46, 46);
+  border-radius  : 25px;
+  margin         : 50px 0 0 0;
+  box-shadow     : 0px 0px 35px rgb(46, 46, 46);
 
 }
 @media screen and (max-width: 769px) {
@@ -234,7 +234,7 @@
   }
   #Projects h1 {
     letter-spacing: 0.25em;
-    font-size: 1.8em;
+    font-size     : 1.8em;
   }
   #Projects p {
     text-align: center;
@@ -242,8 +242,8 @@
     margin    : 15px;
   }
   #Projects img {
-    width: 95%;
-    margin       : 10px 0 0 0;
+    width : 95%;
+    margin: 10px 0 0 0;
 }
   #Projects>div {
     margin        : 1em;
