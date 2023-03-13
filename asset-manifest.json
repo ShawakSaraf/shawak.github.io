@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.138f8db6.css",
-    "main.js": "/static/js/main.53c3ad52.js",
+    "main.css": "/static/css/main.4a7d85bf.css",
+    "main.js": "/static/js/main.44577e4b.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
     "static/media/Handwritten_Digit_Generation.webm": "/static/media/Handwritten_Digit_Generation.aecc182539c14e47f8fe.webm",
@@ -16,14 +16,14 @@
     "static/media/OverShoulder1.png": "/static/media/OverShoulder1.ee59fa1be99dc4647e3f.png",
     "static/media/30x30_GeneratedDigits.png": "/static/media/30x30_GeneratedDigits.5925f194ce6ef79c5e0e.png",
     "static/media/15x15_GeneratedDigits.png": "/static/media/15x15_GeneratedDigits.1b97d4e37e9e0e8164eb.png",
-    "static/media/bg_opt.svg": "/static/media/bg_opt.724c020830c26cc6b269.svg",
+    "static/media/bg_opt.svg": "/static/media/bg_opt.e426ef7b3d696d7b60f7.svg",
     "index.html": "/index.html",
-    "main.138f8db6.css.map": "/static/css/main.138f8db6.css.map",
-    "main.53c3ad52.js.map": "/static/js/main.53c3ad52.js.map",
+    "main.4a7d85bf.css.map": "/static/css/main.4a7d85bf.css.map",
+    "main.44577e4b.js.map": "/static/js/main.44577e4b.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.138f8db6.css",
-    "static/js/main.53c3ad52.js"
+    "static/css/main.4a7d85bf.css",
+    "static/js/main.44577e4b.js"
   ]
 }
