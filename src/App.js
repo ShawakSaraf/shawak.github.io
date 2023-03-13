@@ -19,50 +19,29 @@ import Ganvar50 from './images/GANVAE/50x50_GeneratedDigits.png'
 import Ganvar50Inv from './images/GANVAE/50x50_GeneratedDigits_InvertedCol.png'
 import DigitGen from './images/GANVAE/Handwritten_Digit_Generation.webm'
 
+import { useState, useEffect, useRef } from 'react';
 
-import { useState, useEffect } from 'react';
-
-function Header({ title }) {
-  return <h1>{title ? title : 'Default title'}</h1>;
-}
-
-function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-  const [likes, setLikes] = useState(0);
-
-  function handleClick() {
-    setLikes(likes + 1);
-  }
-
-  return (
-    <div>
-      <Header title="Develop. Preview. Ship. 🚀" />
-      <ul>
-        {names.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-
-      <button onClick={handleClick}>Like ({likes})</button>
-    </div>
-  );
-}
-
-function NavBar()
+function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 {
   function handleHomeClick(e)
   {
-    console.log( 'Home clicked' );
+    window.scrollTo({
+      top: homeRef.current.offsetTop,
+      behavior: 'smooth',
+    });
   }
   function handleProjectsClick(e)
   {
-    console.log( 'Projects clicked' );
+    window.scrollTo({
+      top: projetsRef.current.offsetTop - window.innerHeight*0.25,
+      behavior: 'smooth',
+    });
   }
   function handleAboutClick(e)
   {
     console.log( 'About clicked' );
   }
-
+  
   return (
     <nav className="nav" role={"navigation"}>
       <div className='top-menu'>
@@ -76,10 +55,10 @@ function NavBar()
   );
 }
 
-function Home()
+function Home({ homeRef })
 {
   return (
-    <div className='Project'>
+    <div className='Project' ref={homeRef}>
       <header className="main-logo">
         <p>Shawak</p>
         <ul className="sub-logo">
@@ -89,8 +68,6 @@ function Home()
     </div>
   );
 }
-
-
 
 function ImageFade({images, ...props}) 
 {
@@ -118,7 +95,7 @@ function ImageFade({images, ...props})
     />
   );
 }
-function Project()
+function Project({projetsRef})
 {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -136,10 +113,10 @@ function Project()
     }
     
     return (
-      <div>
+      <div ref={projetsRef}>
         <h1>Third-Person Shooter<br/>Prototype</h1>
         <ImageFade {...fadeProps} />
-        <p>
+        <p  style={ { paddingTop: width > 768 ? '20px' : "10px" } }>
           A simple Third person shooter prototype I made some years ago. My goal was to explore the level design of the last of us.
         </p>
         <video style={ { width: '90%' } } controls autoPlay muted loop>
@@ -169,17 +146,6 @@ function Project()
     );
   }
 
-  // function NeuralNetwork()
-  // {
-  //   const fadeProps = {
-  //     images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-  //     style: { width: '50%', float: 'center', 'margin-right': '20px' },
-  //   }
-  //   return (
-      
-  //   );
-  // }
-
   return (
     <div id='Projects'>
       <header>Projects</header>
@@ -191,12 +157,16 @@ function Project()
 
 function App() 
 {
+  const homeRef    = useRef(null);
+  const projetsRef = useRef(null);
+  const aboutRef   = useRef(null);
+  const refs = { homeRef, projetsRef, aboutRef };
   return (
     <div className="App">
-      <NavBar />
+      <NavBar {...refs}/>
       <div className='container'>
-        <Home />
-        <Project />
+        <Home homeRef={homeRef}/>
+        <Project projetsRef={projetsRef}/>
       </div>
     </div>
   );

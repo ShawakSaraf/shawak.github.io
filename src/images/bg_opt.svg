@@ -16,16 +16,6 @@
             stroke-dashoffset: -1000;
          }
       }
-      
-      .wd-1 { stroke-width: 1.2; }
-      .wd-2 { stroke-width: 2; }
-      .wd-3 { stroke-width: 3; }
-      @media screen and (max-width: 768px) 
-      {
-         .wd-1 { stroke-width: 2; }
-         .wd-2 { stroke-width: 4; }
-         .wd-3 { stroke-width: 6; }
-      }
    </style>
     <path fill="transparent" d="M0 0h2400v1600H0z" class="dcg-svg-background"/>
     <g transform="scale(2)">

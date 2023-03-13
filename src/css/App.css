@@ -4,6 +4,7 @@
   --bg-col            : #C8FFD4;
   --bg-col2           : rgb(253, 237, 218);
   --bg-col3           : rgb(255, 232, 208);
+  --navbar-col        : #1bdaa0;
   --ascent-col        : #14C38E;
   --ascent-col-2      : #000000ca;
   --hamburger-menu-col: #ffd8a963;
@@ -15,7 +16,7 @@
   --selection-col     : rgb(255, 255, 255);
   --h-style-col       : rgb(20, 20, 20);
   --UI-font-col       : rgb(0, 0, 0);
-  --UI-inactive-col   : rgba(0, 0, 0, 0.3);
+  --UI-inactive-col   : #C8FFD4;
   --UI-border-col     : rgba(0, 0, 0, 0.05);
   --gototop-bg-col    : rgba(255, 197, 126, 0.2);
   --theme-icon        : "\ea04";
