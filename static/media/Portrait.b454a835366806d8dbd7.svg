@@ -17,7 +17,7 @@
       }
       #Support {
          opacity: 0;
-         animation: support-fade 10s ease-out infinite;
+         animation: support-fade 13s ease-out infinite;
       }
       @keyframes support-fade {
          10%{
@@ -29,7 +29,7 @@
       }
       #ArmL {
          opacity: 0;
-         animation: armL-fade 10s ease-out infinite;
+         animation: armL-fade 13s ease-out infinite;
       }
       @keyframes armL-fade {
          10%{
@@ -44,7 +44,7 @@
       }
       #ArmR {
          opacity: 0;
-         animation: armR-fade 10s ease-out infinite;
+         animation: armR-fade 13s ease-out infinite;
       }
       @keyframes armR-fade {
          15%{
@@ -59,7 +59,7 @@
       }
       #Detail1 {
          opacity: 0;
-         animation: Detail1-fade 10s ease-out infinite;
+         animation: Detail1-fade 13s ease-out infinite;
       }
       @keyframes Detail1-fade {
          28%{
@@ -74,7 +74,7 @@
       }
       #Hair {
          opacity: 0;
-         animation: hair-fade 10s ease-out infinite;
+         animation: hair-fade 13s ease-out infinite;
       }
       @keyframes hair-fade {
          25%{
@@ -89,7 +89,7 @@
       }
       #Face {
          opacity: 0;
-         animation: face-fade 10s ease-out infinite;
+         animation: face-fade 13s ease-out infinite;
       }
       @keyframes face-fade {
          27%{
