@@ -1,38 +1,40 @@
+import { useState, useEffect, useRef } from 'react';
+
 export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 {
-  function handleHomeClick(e)
-  {
-      window.scrollTo({
-         top: homeRef.current.offsetTop,
-         behavior: 'smooth',
-      });
-  }
-  function handleProjectsClick(e)
-  {
-      window.scrollTo({
-         top: projetsRef.current.offsetTop - window.innerHeight*0.25,
-         behavior: 'smooth',
-      });
-  }
-  function handleAboutClick(e)
-  {
-   window.scrollTo({
-      top: aboutRef.current.offsetTop - window.innerHeight*0.15,
-      behavior: 'smooth',
-   });
-}
+	function handleHomeClick(e)
+	{
+		window.scrollTo({
+			top: homeRef.current.offsetTop,
+			behavior: 'smooth',
+		});
+	}
+	function handleProjectsClick(e)
+	{
+		window.scrollTo({
+			top: projetsRef.current.offsetTop - window.innerHeight*0.25,
+			behavior: 'smooth',
+		});
+	}
+	function handleAboutClick(e)
+	{
+		window.scrollTo({
+			top: aboutRef.current.offsetTop - window.innerHeight*0.15,
+			behavior: 'smooth',
+		});
+	}
   
-  return (
-    <nav className="nav" role={"navigation"}>
-      <div className='top-menu'>
-          <ul>
-            <li><a onClick={handleHomeClick} href >Home</a></li>
-            <li><a onClick={handleProjectsClick} href >Projects</a></li>
-            <li><a onClick={handleAboutClick} href >About</a></li>
-          </ul>
-      </div>
-    </nav>
-  );
+	return (
+		<nav className="nav" role={"navigation"}>
+			<div className='top-menu'>
+				<ul>
+					<li><a onClick={handleHomeClick} href >Home</a></li>
+					<li><a onClick={handleProjectsClick} href >Projects</a></li>
+					<li><a onClick={handleAboutClick} href >About</a></li>
+				</ul>
+			</div>
+		</nav>
+	);
 }
 
 export function Home({ homeRef })

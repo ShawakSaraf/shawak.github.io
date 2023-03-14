@@ -171,14 +171,19 @@ body {
 @keyframes spacing {
   95% {
     word-spacing: 4em;
-          /* text-indent    : -2em; */
+  /* text-indent    : -2em; */
   }
 }
 @media screen and (max-width: 769px) {
   .main-logo {
     font-size     : 6.2em;
-    padding       : 30vh 0 20vh 0;
+    padding       : 27vh 0 20vh 0;
     letter-spacing: 0em;
+  }
+  .sub-logo {
+    font-size   : large;
+    word-spacing: 2em;
+    text-indent : -2em;
   }
 }
 
