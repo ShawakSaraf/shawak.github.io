@@ -83,15 +83,24 @@ function Project({projetsRef})
 		}
 		return (
 			<div>
-			<h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
-			<ImageFade {...fadeProps}/>
-			<p style={ { paddingTop: !isPhone ? '100px' : "10px" } }>
-				I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
-				Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
-			</p>
-			<video style={ { width: !isPhone ? '40%' : '90%' } } controls autoPlay muted loop>
-				<source src={DigitGen} type='video/mp4' />
-			</video>
+				<h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
+				<ImageFade {...fadeProps}/>
+				<p style={ { paddingTop: !isPhone ? '100px' : "10px" } }>
+					I present to you a very basic Tensorflow and Keras implementation of GAN+VAE generative model inspired by 
+					Hardmaru's incredible blog, "Generating Large Images from Latent Vectors" .
+				</p>
+				<p>
+				In a nutshell, there are 2 models,<br /> The <i>Generator</i> and the <i>Discriminator</i>.
+				</p>
+				<video style={ { width: !isPhone ? '40%' : '90%', float: !isPhone ? 'right': 'center', marginLeft: !isPhone ? '20px' : '0px' } } controls autoPlay muted loop>
+					<source src={DigitGen} type='video/mp4' />
+				</video>
+				<p style={ { paddingTop: !isPhone ? '130px' : "10px", textAlign: !isPhone ? 'left' : 'center' } }>
+					The generator generates an image, the discriminator then takes that generated image with an image from the dataset, and learns to discriminate between them. The job of the generator is to fool the discriminator into thinking that the generated image is from the dataset, and the discriminator's job is to successfully distinguish between them.
+					The intricately choreographed dance between these two models is what helps them learn and become better at their job.
+					<br />Isn't it beautiful?<br />
+					I think it is.
+				</p>
 			</div>
 		);
 	}
