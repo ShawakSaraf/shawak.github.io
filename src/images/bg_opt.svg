@@ -1,20 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600">
     <style type="text/css">
       .curve-path {
-        fill             : none;
-        stroke           : #14C38E;
-        /* paint-order      : fill stroke markers; */
-        stroke-linecap   : round;
-        stroke-linejoin  : round;
-        stroke-miterlimit: 10;
-        stroke-dasharray : 1003;
-        stroke-width: 3.5;
-        animation        : loop 15s ease-in-out infinite;
+         fill             : none;
+         stroke           : rgb(181, 188, 255);
+         paint-order      : fill stroke markers;
+         stroke-linecap   : round;
+         stroke-linejoin  : round;
+         stroke-miterlimit: 10;
+         stroke-dasharray : 1003;
+         animation        : loop 15s ease-in-out infinite;
       }
       @keyframes loop {
          50% {
             stroke-dashoffset: -1000;
          }
+      }
+      
+      .wd-1 { stroke-width: 1.2; }
+      .wd-2 { stroke-width: 2; }
+      .wd-3 { stroke-width: 3; }
+      @media screen and (max-width: 768px) 
+      {
+         .wd-1 { stroke-width: 2; }
+         .wd-2 { stroke-width: 4; }
+         .wd-3 { stroke-width: 6; }
       }
    </style>
     <path fill="transparent" d="M0 0h2400v1600H0z" class="dcg-svg-background"/>

@@ -514,7 +514,7 @@ article:first-child::first-letter {
   box-shadow      : 0 8px 20px rgba(0, 0, 0, 0.226);
   border-radius   : 0 0 50px 50px;
   z-index         : 1;
-  transition: 0.5s;
+  transition      : 0.5s;
 }
 @media screen and (max-width: 768px) {
   .nav .top-menu {

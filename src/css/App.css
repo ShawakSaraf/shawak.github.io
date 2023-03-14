@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Outfit);
 :root {
-  /* Light theme */
+      /* Light theme */
   --bg-col            : #C8FFD4;
-  --bg-col2           : rgb(253, 237, 218);
+  --bg-col2           : #1bdaa127;
   --bg-col3           : rgb(255, 232, 208);
   --navbar-col        : #1bdaa0;
   --ascent-col        : #14C38E;
@@ -22,7 +22,7 @@
   --theme-icon        : "\ea04";
 }
 .dark-mode {
-  /* Dark theme */
+      /* Dark theme */
   --bg-col            : rgb(30, 32, 65);
   --bg-col2           : rgb(40, 43, 78);
   --bg-col3           : rgb(44, 47, 85);
@@ -41,6 +41,11 @@
   --gototop-bg-col    : rgba(126, 141, 255, 0.2);
   --theme-icon        : "\e0a1";
 }
+
+body {
+  transition: 0.5s;
+}
+
 .App {
   align-items        : center;
   align-content      : center;
@@ -56,7 +61,7 @@
 }
 .clearfix::after {
   content: "";
-  clear: both;
+  clear  : both;
   display: table;
 }
 .App-logo {
@@ -88,14 +93,24 @@
   top             : 0;
   width           : 100%;
   height          : 50px;
-  text-transform: uppercase;
-  font-family   : "Outfit";
-  font-size     : 1.5em;
-  padding-bottom: 100px;
-} 
+  text-transform  : uppercase;
+  font-family     : "Outfit";
+  font-size       : 1.5em;
+  padding-bottom  : 100px;
+}
+#Home {
+  background-image   : url(../images/Portrait.svg);
+  transform          : translate3d( 0, 4vw,0 );
+  background-size    : cover;
+  background-position: center center;
+  background-repeat  : no-repeat;
+}
 @media screen and (max-width: 769px) {
   #nav-bar {
     font-size: 10em;
+  }
+  #Home {
+    transform: translate3d( 0, 8vh,0 );
   }
 }
 .main-logo {
@@ -107,6 +122,7 @@
   color         : rgb(0, 0, 0);
   font-family   : "Outfit";
   font-size     : 15em;
+  letter-spacing: 0.1em;
   transition    : 0.5s;
   text-shadow   : 0px 0px 0px var(--ascent-col-2);
   animation     : slide 3s ease-out infinite;
@@ -141,18 +157,19 @@
   word-spacing   : 2em;
   text-indent    : -1em;
   text-shadow    : 0px 0px rgba(0, 0, 0, 0.7);
-  /* animation   : spacing 5s ease-in-out infinite; */
+      /* animation   : spacing 5s ease-in-out infinite; */
 }
 @keyframes spacing {
   95% {
     word-spacing: 4em;
-    /* text-indent    : -2em; */
+        /* text-indent    : -2em; */
   }
 }
 @media screen and (max-width: 769px) {
   .main-logo {
-    font-size: 9em;
-    padding  : 20vh 0 20vh 0;
+    font-size     : 9em;
+    padding       : 20vh 0 20vh 0;
+    letter-spacing: 0em;
   }
 }
 
@@ -170,16 +187,19 @@
 }
 
 #Projects, #About {
-  margin-top: 10em;
+  margin-top   : 10em;
   border-radius: 50px;
 }
 
 #Projects>div, #About>div {
-  padding-top   : 50px;
-  border-top    : 7px solid var(--ascent-col);
-  border-bottom : 7px solid var(--ascent-col);
-  border-radius : 50px;
-  padding-bottom: 50px;
+  padding         : 50px;
+  border-top      : 7px solid var(--ascent-col);
+  border-bottom   : 7px solid var(--ascent-col);
+  border-radius   : 50px;
+  padding-bottom  : 50px;
+  background-color: var(--bg-col2);
+  box-shadow      : 0 0 25px rgba(0, 0, 0, 0.226);
+  margin-bottom   : 5em;
 }
 #Projects>header, #About>header {
   margin-top    : 0.5em;
@@ -191,7 +211,7 @@
   text-transform: uppercase;
   width         : 100%;
   left          : 0;
-  /* transform: translate3d( 50vw ,0,0 ); */
+      /* transform: translate3d( 50vw ,0,0 ); */
 }
 #Projects h1, #About h1 {
   text-align    : center;
@@ -213,7 +233,6 @@
   border-radius  : 25px;
   width          : 80%;
   margin         : 50px 0 0 0;
-  box-shadow     : 0px 0px 35px rgb(46, 46, 46);
 }
 .float-right { float: right; }
 .float-left { float: left; }
@@ -221,10 +240,17 @@
   justify-content: center;
   border-radius  : 25px;
   margin         : 50px 0 0 0;
-  box-shadow     : 0px 0px 35px rgb(46, 46, 46);
 
 }
+#Projects img, video, #About img, video{
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.623);
+}
 @media screen and (max-width: 769px) {
+  
+  #Projects>div, #About>div {
+    margin : 1em;
+    padding: 20px 0 20px 0;
+  }
   #Projects>header, #About>header {
     margin-top    : 0.5em;
     font-size     : 2.5em;
@@ -245,11 +271,6 @@
   #Projects img, #About img {
     width : 95%;
     margin: 10px 0 0 0;
-}
-  #Projects>div, #About>div {
-    margin        : 1em;
-    padding-top   : 10px;
-    padding-bottom: 10px;
   }
 }
 

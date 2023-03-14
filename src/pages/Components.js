@@ -26,9 +26,9 @@ export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
     <nav className="nav" role={"navigation"}>
       <div className='top-menu'>
           <ul>
-            <li><a onClick={handleHomeClick} >Home</a></li>
-            <li><a onClick={handleProjectsClick} >Projects</a></li>
-            <li><a onClick={handleAboutClick} >About</a></li>
+            <li><a onClick={handleHomeClick} href >Home</a></li>
+            <li><a onClick={handleProjectsClick} href >Projects</a></li>
+            <li><a onClick={handleAboutClick} href >About</a></li>
           </ul>
       </div>
     </nav>
@@ -39,7 +39,7 @@ export function Home({ homeRef })
 {
   return (
     <div ref={homeRef}>
-      <header className="main-logo">
+      <header id="Home" className="main-logo">
         <p>Shawak</p>
         <ul className="sub-logo">
           <p>GameDev MachineLearning</p>
