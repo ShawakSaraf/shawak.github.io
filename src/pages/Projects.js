@@ -79,7 +79,7 @@ function Project({projetsRef})
 		const fadeProps = 
 		{
 			images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-			style: { width:  !isPhone ? '40%' : '60%', float: !isPhone ? 'left': 'center', 'marginRight': '20px' },
+			style: { width:  !isPhone ? '40%' : '60%', float: !isPhone ? 'left': 'center', 'marginRight': !isPhone ? '20px' : '0px' },
 		}
 		return (
 			<div>
