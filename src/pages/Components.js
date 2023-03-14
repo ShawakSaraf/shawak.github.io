@@ -55,7 +55,7 @@ export function About({ aboutRef })
       <div id="About" ref={aboutRef}>
          <header>About</header>
          <p>
-            Hey! I'm a human trying to figureout life.
+            Hey! I'm a human trying to figure out life.
          </p>
       </div>
    );

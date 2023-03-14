@@ -1,9 +1,9 @@
-import Projects from './projects.js'
+import Projects from './Projects.js'
 import { NavBar, Home, About } from './Components.js'
 import { useRef } from 'react';
-import './css/App.css';
-import './css/style.css';
-import './css/bootstrap.css';
+import '../css/App.css';
+import '../css/style.css';
+import '../css/bootstrap.css';
 
 function App() 
 {
