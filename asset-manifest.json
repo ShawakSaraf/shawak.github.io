@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.93bd5258.css",
-    "main.js": "/static/js/main.9ec8ea98.js",
+    "main.js": "/static/js/main.2ce9d3ed.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
     "static/media/Handwritten_Digit_Generation.webm": "/static/media/Handwritten_Digit_Generation.aecc182539c14e47f8fe.webm",
     "static/media/Handwritten_digit_classification.mp4": "/static/media/Handwritten_digit_classification.bb66ef08b7bdf447d105.mp4",
-    "static/media/OverShoulder6.png": "/static/media/OverShoulder6.d6a3f3052c6744e4f352.png",
-    "static/media/OverShoulder5.png": "/static/media/OverShoulder5.4d57952b8c876250212f.png",
-    "static/media/level2.png": "/static/media/level2.d5d9c82b4161eb38c0ff.png",
-    "static/media/50x50_GeneratedDigits_InvertedCol.png": "/static/media/50x50_GeneratedDigits_InvertedCol.b2ce491f8ee00c80c944.png",
-    "static/media/50x50_GeneratedDigits.png": "/static/media/50x50_GeneratedDigits.18495c549f5cc3aa6ac8.png",
-    "static/media/OverShoulder2.png": "/static/media/OverShoulder2.c17781ac61b7c3ea1521.png",
-    "static/media/OverShoulder4.png": "/static/media/OverShoulder4.40db6e5d8ef6c7e05bd1.png",
-    "static/media/OverShoulder3.png": "/static/media/OverShoulder3.2be2f2bed965b4f455c9.png",
-    "static/media/OverShoulder1.png": "/static/media/OverShoulder1.ee59fa1be99dc4647e3f.png",
-    "static/media/30x30_GeneratedDigits.png": "/static/media/30x30_GeneratedDigits.5925f194ce6ef79c5e0e.png",
+    "static/media/OverShoulder6-Small.png": "/static/media/OverShoulder6-Small.b697ae3eff54d2e8b7f1.png",
+    "static/media/OverShoulder5-Small.png": "/static/media/OverShoulder5-Small.6dd19223be2944769375.png",
+    "static/media/level2-Small.png": "/static/media/level2-Small.9ad55e2f494dc89838d3.png",
+    "static/media/OverShoulder3-Small.png": "/static/media/OverShoulder3-Small.59924fb2b60bdb833b65.png",
+    "static/media/OverShoulder4-Small.png": "/static/media/OverShoulder4-Small.f949cdb41bc8ce934e1f.png",
+    "static/media/OverShoulder2-Small.png": "/static/media/OverShoulder2-Small.24a55fc3007e6be8f16c.png",
+    "static/media/OverShoulder1-Small.png": "/static/media/OverShoulder1-Small.d851bd42076f4c19c131.png",
+    "static/media/50x50_GeneratedDigits_InvertedCol-Small.png": "/static/media/50x50_GeneratedDigits_InvertedCol-Small.633c4a5fbfbf25088e51.png",
+    "static/media/50x50_GeneratedDigits-Small.png": "/static/media/50x50_GeneratedDigits-Small.16001b78a8badbec604e.png",
     "static/media/NN1.png": "/static/media/NN1.79fca70c81a02027aab3.png",
+    "static/media/30x30_GeneratedDigits-Small.png": "/static/media/30x30_GeneratedDigits-Small.3a22cdacaa962d9df5bc.png",
     "static/media/NN2.png": "/static/media/NN2.3ded6ca21bcd28506b28.png",
     "static/media/NN4.png": "/static/media/NN4.464e197cc09a7cb33db8.png",
     "static/media/NN3.png": "/static/media/NN3.4d9aa2318a2ce74ade7f.png",
@@ -25,11 +25,11 @@
     "static/media/bg_opt.svg": "/static/media/bg_opt.8c350ba8924251b7f1ce.svg",
     "index.html": "/index.html",
     "main.93bd5258.css.map": "/static/css/main.93bd5258.css.map",
-    "main.9ec8ea98.js.map": "/static/js/main.9ec8ea98.js.map",
+    "main.2ce9d3ed.js.map": "/static/js/main.2ce9d3ed.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.93bd5258.css",
-    "static/js/main.9ec8ea98.js"
+    "static/js/main.2ce9d3ed.js"
   ]
 }
