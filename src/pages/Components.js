@@ -43,7 +43,6 @@ export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			console.log( scrollY, lastScrollY );
 
 			if (scrollY > lastScrollY && menuStyle.top === "0") 
 			{
@@ -95,11 +94,30 @@ export function About({ aboutRef })
    return(
       <div id="About" ref={aboutRef}>
          <header>About</header>
-         <p>
-            Hey! I'm a human trying to figure out life.<br />
-				In the real world I'm a self-taught programmer and game developer.<br />
-				I'm also really facsinated by machine learning.
-         </p>
+			<p style={ { textAlign: 'center' } }>
+				Hey! I'm a human trying to figure out life.<br />
+				{/* In the real world I'm a self-taught programmer and game developer.<br />
+				I'm also really facsinated by machine learning. */}
+			</p>
       </div>
    );
+}
+
+
+
+export function Socials()
+{
+	return (
+		<div class="container-wrap">
+			<footer id="footer" role="contentinfo">
+				<div class="col-md-12 text-center">
+					<ul class="social-icons">
+						<li><a href="https://twitter.com/ShawakSaraf" target="_blank"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://www.instagram.com/shawaksaraf/" target="_blank"><i class="icon-instagram"></i></a></li>
+						<li><a href="https://www.github.com/shawaksaraf/" target="_blank"><i class="icon-github"></i></a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	);
 }
