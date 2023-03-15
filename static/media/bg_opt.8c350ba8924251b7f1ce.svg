@@ -10,7 +10,7 @@
          stroke-width     : 2.5;
          stroke-miterlimit: 10;
          stroke-dasharray : 1000;
-         animation        : loop 30s ease-in-out infinite;
+         animation        : loop 70s ease-in-out infinite;
       }
       @keyframes loop {
          50% {
