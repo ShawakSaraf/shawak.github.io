@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.93bd5258.css",
-    "main.js": "/static/js/main.2ce9d3ed.js",
+    "main.css": "/static/css/main.e5faa69b.css",
+    "main.js": "/static/js/main.d50d1d62.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Proc_Anim_behind.webm": "/static/media/Proc_Anim_behind.55bc1a3bdc9c98c38784.webm",
+    "static/media/Proc_Anim_side.webm": "/static/media/Proc_Anim_side.e8bb0fa53100c482dba3.webm",
     "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
     "static/media/Handwritten_Digit_Generation.webm": "/static/media/Handwritten_Digit_Generation.aecc182539c14e47f8fe.webm",
     "static/media/Handwritten_digit_classification.mp4": "/static/media/Handwritten_digit_classification.bb66ef08b7bdf447d105.mp4",
@@ -24,12 +26,12 @@
     "static/media/Portrait.svg": "/static/media/Portrait.7cbb53d6e0ae412da68f.svg",
     "static/media/bg_opt.svg": "/static/media/bg_opt.8c350ba8924251b7f1ce.svg",
     "index.html": "/index.html",
-    "main.93bd5258.css.map": "/static/css/main.93bd5258.css.map",
-    "main.2ce9d3ed.js.map": "/static/js/main.2ce9d3ed.js.map",
+    "main.e5faa69b.css.map": "/static/css/main.e5faa69b.css.map",
+    "main.d50d1d62.js.map": "/static/js/main.d50d1d62.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93bd5258.css",
-    "static/js/main.2ce9d3ed.js"
+    "static/css/main.e5faa69b.css",
+    "static/js/main.d50d1d62.js"
   ]
 }
