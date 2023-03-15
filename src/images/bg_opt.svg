@@ -2,14 +2,15 @@
     <style type="text/css">
       .curve-path {
          fill             : none;
-         stroke           : rgb(20,195,143,0.329);
+         /* stroke           : rgba(240,154,125,0.801); */
+         stroke             : rgba(20,195,143,0.329);
          paint-order      : fill stroke markers;
          stroke-linecap   : round;
          stroke-linejoin  : round;
          stroke-width     : 2.5;
          stroke-miterlimit: 10;
          stroke-dasharray : 1000;
-         animation        : loop 30s ease-in-out infinite;
+         animation        : loop 70s ease-in-out infinite;
       }
       @keyframes loop {
          50% {

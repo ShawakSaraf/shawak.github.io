@@ -515,6 +515,8 @@ article:first-child::first-letter {
   border-radius   : 0 0 50px 50px;
   z-index         : 1;
   transition      : 0.5s;
+  backdrop-filter        : blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 @media screen and (max-width: 768px) {
   .nav .top-menu {
