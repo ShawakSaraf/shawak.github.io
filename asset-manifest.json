@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.40a62de5.css",
-    "main.js": "/static/js/main.eb9dbe29.js",
+    "main.js": "/static/js/main.817050ff.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Proc_Anim_behind.webm": "/static/media/Proc_Anim_behind.55bc1a3bdc9c98c38784.webm",
     "static/media/Proc_Anim_side.webm": "/static/media/Proc_Anim_side.e8bb0fa53100c482dba3.webm",
     "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
     "static/media/Handwritten_Digit_Generation.webm": "/static/media/Handwritten_Digit_Generation.aecc182539c14e47f8fe.webm",
-    "static/media/Handwritten_digit_classification.mp4": "/static/media/Handwritten_digit_classification.bb66ef08b7bdf447d105.mp4",
+    "static/media/Handwritten_digit_classification.webm": "/static/media/Handwritten_digit_classification.c9d790ce333d4c5da5ac.webm",
     "static/media/OverShoulder6-Small.png": "/static/media/OverShoulder6-Small.b697ae3eff54d2e8b7f1.png",
     "static/media/OverShoulder5-Small.png": "/static/media/OverShoulder5-Small.6dd19223be2944769375.png",
     "static/media/level2-Small.png": "/static/media/level2-Small.9ad55e2f494dc89838d3.png",
@@ -29,11 +29,11 @@
     "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.6b92d8ed893d7871cfe4.svg",
     "index.html": "/index.html",
     "main.40a62de5.css.map": "/static/css/main.40a62de5.css.map",
-    "main.eb9dbe29.js.map": "/static/js/main.eb9dbe29.js.map",
+    "main.817050ff.js.map": "/static/js/main.817050ff.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40a62de5.css",
-    "static/js/main.eb9dbe29.js"
+    "static/js/main.817050ff.js"
   ]
 }
