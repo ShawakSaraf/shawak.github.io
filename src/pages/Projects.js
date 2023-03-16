@@ -171,8 +171,10 @@ function Project({projetsRef})
 				</video>
 				<p style={ { textAlign: 'center'} }>
 					Quadruped Procedural Animation made in unity with its IK rigging tool.<br />
+				</p>
+				<p>
 					Simply put, I make an ellipse centered around the last position of the body and project it on the terrain. When the body goes outside that ellipse,
-					I assign a new position to each leg in the direction the body moves.
+					I assign a new position to each leg in the direction the body moves. To positon the leg vertically I do a raycast from the top of the leg to straight down, which gives the data about the geometary it intersects with.
 				</p>
 			</div>
 		);
