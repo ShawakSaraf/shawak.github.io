@@ -95,7 +95,7 @@ body {
 .container {
   max-width     : 980px;
   margin        : auto;
-  padding-bottom: 50vh;
+  padding-bottom: 10vh;
   min-height    : 100vh;
   max-width     : 100%;
 }
@@ -237,6 +237,7 @@ body {
   margin-bottom          : 5em;
   backdrop-filter        : blur(7px);
   -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
 }
 #Projects>header, #About>header {
   margin-top    : 0.5em;
@@ -303,7 +304,7 @@ body {
   
   #Projects>div, #About>div {
     margin : 1em;
-    padding: 20px 0 20px 0;
+    padding: 20px;
   } 
   #Projects>header, #About>header {
     margin-top    : 0.5em;
@@ -319,7 +320,7 @@ body {
   }
   #Projects p, #About p {
     font-size : 1.5em;
-    margin    : 15px 30px;
+    margin    : 15px 5px;
   }
   #Projects img, #About img {
     width : 95%;

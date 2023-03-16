@@ -15,7 +15,7 @@ import Ganvar50Inv from '../images/GANVAE/50x50_GeneratedDigits_InvertedCol-Smal
 import DigitGen from '../images/GANVAE/Handwritten_Digit_Generation.webm'
 
 
-import DigitClass_Vid from '../images/NN/Handwritten_digit_classification.mp4'
+import DigitClass_Vid from '../images/NN/Handwritten_digit_classification.webm'
 import NN1 from '../images/NN/NN1.png'
 import NN2 from '../images/NN/NN2.png'
 import NN3 from '../images/NN/NN3.png'
@@ -102,27 +102,29 @@ function Project({projetsRef})
 		const fadeProps = 
 		{
 			images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
-			style: { width:  !isPhone ? '40%' : '60%', float: !isPhone ? 'left': 'center', 'marginRight': !isPhone ? '20px' : '0px' },
+			style: { width:  !isPhone ? '40%' : '60%', float: !isPhone ? 'right': 'center', marginLeft: !isPhone ? '20px' : '0px', marginTop: !isPhone ? '20px' : '0px' },
 		}
 		return (
 			<div>
 				<h1>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>
-				<ImageFade {...fadeProps}/>
-				<p style={ { paddingTop: !isPhone ? '100px' : "10px" } }>
+				<video style={ { width: !isPhone ? '40%' : '80%', float: !isPhone ? 'left': 'center', 'marginRight': !isPhone ? '20px' : '0px', marginTop: !isPhone ? '30px' : '20px' } } controls autoPlay muted loop>
+					<source src={DigitGen} type='video/mp4' />
+				</video>
+				<p style={ { paddingTop: !isPhone ? '80px' : "10px" } }>
 					A very basic Tensorflow and Keras implementation of GAN+VAE generative model.
 				</p>
 				<p >
-					In a nutshell, there are 2 models,<br /> The <i>Generator</i> and the <i>Discriminator</i>.<br />
-					The generator generates an image, the discriminator then takes that image with an image from the dataset, and learns to discriminate between them.
+					In a nutshell, VAE, thats Variational Autoencoder takes images from the dataset and learns to encode them into a latent vector.<br />
+					Then comes the GAN, generative Adversarial network, which contains two models.<br />
+					The generator and the discriminator.
 				</p>
-				<video style={ { width: !isPhone ? '40%' : '90%', float: !isPhone ? 'right': 'center', marginLeft: !isPhone ? '20px' : '0px', marginTop: !isPhone ? '10px' : '0px' } } controls autoPlay muted loop>
-					<source src={DigitGen} type='video/mp4' />
-				</video>
-				<p style={ { paddingTop: !isPhone ? '8vw' : "10px", textAlign: 'left' } }>
-					The job of the generator is to fool the discriminator into thinking that the generated image is from the dataset, and the discriminator's job is to successfully distinguish between them.
-					The intricately choreographed dance between these two models is what helps them learn and become better at their job.
-					<br />Isn't it beautiful?<br />
-					I think it is.
+				<ImageFade {...fadeProps}/>
+				<p style={ { paddingTop: !isPhone ? '9vw' : "10px" } }>
+					The latent vector outputed by VAE is the input to the generator. The generator then outputs an image, the discriminator then takes that image
+					with an image from the dataset and outputs how close the generated image was to the image from the dataset.
+				</p>
+				<p style={ { paddingBottom: !isPhone ? '50px' : "10px" } }>
+					See the code at my <a href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">github repository</a>.
 				</p>
 			</div>
 		);
@@ -130,11 +132,6 @@ function Project({projetsRef})
 	
 	function NeuralNetwork()
 	{
-		const fadeProps = 
-		{
-			images: [ NN1, NN2, NN3, NN4 ],
-			style: { width:  !isPhone ? '50%' : '90%', float: !isPhone ? 'left': 'center', 'marginRight': !isPhone ? '20px' : '0px', 'marginTop': !isPhone ? '15px' : '0px' },
-		}
 		return (
 			<div>
 				<h1>Neural Network from Scratch</h1>
@@ -142,24 +139,20 @@ function Project({projetsRef})
 					<source src={DigitClass_Vid} type='video/mp4' />
 				</video>
 				<p style={ { textAlign: !isPhone ? 'center': 'left' } }>
-					You know the rite of passage everyone has to go through when they first set foot into the world of programming.
-					The iconic, print("Hello World!").<br />
-					This is that but for the world of Neural Networks.
+					A Neural Network build with only Numpy library for numerical computing in Python without using any modern ML frameworks like Tensorflow and PyTorch.
 				</p>
 				<p >
-					This small project came into existence when I first started doing research about neural networks and what makes them tick.
-					By implementing a neural network using only the Numpy library, I was able to understand the core principles and mathematics of how a neural network works 
-					without the complexities of modern machine learning frameworks like Tensorflow and PyTorch.<br />
-					Numpy is a powerful library for numerical computing in Python, but it does not provide high-level abstractions for building and training neural networks.
-					As a result, I had a lot of fun implementing the core components of neural networks from scratch.
+					By implementing a neural network without ML libraries, I was able to understand the core principles and mathematics of how a neural network works 
+					without the complexities of modern machine learning frameworks.<br />
 				</p>
-				<ImageFade {...fadeProps}/>
-				<p style={ { textAlign: 'left', 'marginTop': !isPhone ? '3em' : '0px', paddingTop: !isPhone ? 'auto': '20px' } }>
-					In a blog, <a href='https://lookingisnotenough.com/UnderstandingNeuralNetworks' target={'_blank'} rel="noreferrer">"Understanding Neural Networks"</a>, I try to build an intuitive understanding of the inner workings of neural networks without getting bogged down into technical details.
+				<img src={NN4} style={{ width: !isPhone ? '35%' : '65%', float: !isPhone ? 'left' : 'center', marginRight : !isPhone ? '20px' : '0px' }} />
+				<p style={ { textAlign: 'left', paddingTop: !isPhone ? '65px': '20px' } }>
+					I've also written a blog, <a href='https://lookingisnotenough.com/UnderstandingNeuralNetworks' target={'_blank'} rel="noreferrer">"Understanding Neural Networks"</a>.<br />
+					And made this model in a <a href='https://colab.research.google.com/drive/1B9Uu9A-O6efN8_oqYGYmU8iiD-JK80dt' target={'_blank'} rel="noreferrer">Jupyter notebook</a> with annotations for the code in google colab.
+					It runs on the google servers so there's no need to install anything.<br />
 				</p>
-				<p style={ { textAlign: 'left', 'marginTop': !isPhone ? '100px' : '0px' } }>
-					I've also made this model in a <a href='https://colab.research.google.com/drive/1B9Uu9A-O6efN8_oqYGYmU8iiD-JK80dt' target={'_blank'} rel="noreferrer">Jupyter notebook</a> with annotations for the code in google colab.
-					It runs on the google servers so there's no need to install anything.<br /> If you want to play with the network or look at the code, check it out.
+				<p>
+					Here's the <a href='https://github.com/ShawakSaraf/Neural-Network-from-Scratch' target={'_blank'} rel="noreferrer">github repository</a>.
 				</p>
 			</div>
 		);
