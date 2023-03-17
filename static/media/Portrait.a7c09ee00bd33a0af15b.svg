@@ -5,8 +5,8 @@
          --init-opac: 0;
       }
       .curve-path {
-         /* fill             : rgba(240,154,125,0.801); */
-         fill             : rgba(20,195,143,0.55);
+         fill             : rgba(0,0,0,0.568);
+         /* fill             : rgba(20,195,143,0.55); */
          paint-order      : fill stroke markers;
          stroke-miterlimit: 10;
          stroke-dasharray : 1003;
