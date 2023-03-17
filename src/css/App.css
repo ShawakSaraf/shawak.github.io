@@ -4,7 +4,7 @@
 :root {
   /* Light theme */
   --bg-col            : #000000;
-  --bg-col2           : #8E98F5;
+  --bg-col2           : #7178bb;
   --bg-col3           : rgb(255, 232, 208);
   --ascent-col        : rgb(108, 118, 224);
   --hamburger-menu-col: #ffd8a963;
@@ -140,21 +140,21 @@ body {
 @media screen and (max-width: 769px) {
 }
 .main-logo {
-  display       : block;
-  flex-direction: column;
-  padding            : 100px 3em;
-  align-items   : center;
-  font-size     : calc(10px + 2vmin);
-  font-family   : "Montserrat Alternates";
-  font-size     : 14em;
-  font-weight   : 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-indent   : -0.1em;
-  transition    : 0.5s;
-  text-shadow   : 0px 0px 0px var(--ascent-col-2);
-  animation     : slide 3s ease-out infinite;
-  background-color: #a5aeae;
+  display         : block;
+  flex-direction  : column;
+  padding         : 100px 3em;
+  align-items     : center;
+  font-size       : calc(10px + 2vmin);
+  font-family     : "Montserrat Alternates";
+  font-size       : 14em;
+  font-weight     : 500;
+  text-transform  : uppercase;
+  letter-spacing  : 0.1em;
+  text-indent     : -0.1em;
+  transition      : 0.5s;
+  text-shadow     : 0px 0px 0px var(--ascent-col-2);
+  animation       : slide 3s ease-out infinite;
+  background-color: var(--bg-col2);
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
@@ -224,7 +224,7 @@ body {
   #Home {
     padding: auto 10em;
     margin : 70px 10px;
-    background-image   : url(../images/Portrait.svg);
+    /* background-image   : url(../images/Portrait.svg); */
   }
   .main-logo {
     font-size     : 3.5em;
