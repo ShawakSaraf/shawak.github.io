@@ -2,7 +2,7 @@
     <style type="text/css">
       .curve-path {
          fill             : none;
-         /* stroke           : rgba(240,154,125,0.801); */
+         /* stroke           : rgba(40, 43, 78, 0.5); */
          stroke             : rgba(20,195,143,0.329);
          paint-order      : fill stroke markers;
          stroke-linecap   : round;

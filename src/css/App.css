@@ -1,16 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Outfit:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=El+Messiri:300,400,600,700);
 
 :root {
   /* Light theme */
-  --bg-col            : #ffcbad;
-  --bg-col2           : #f5ad95;
+  --bg-col            : #000000;
+  --bg-col2           : #8E98F5;
   --bg-col3           : rgb(255, 232, 208);
-  --ascent-col        : #D3756B;
-  --navbar-col        : #D3756B;
+  --ascent-col        : rgb(108, 118, 224);
   --hamburger-menu-col: #ffd8a963;
   --shadow-alpha      : rgba(0, 0, 0, 0.45);
   --shadow-alpha-2    : rgba(0, 0, 0, 0.55);
@@ -19,13 +15,13 @@
   --font-weight       : 500;
   --selection-col     : rgb(255, 255, 255);
   --h-style-col       : rgb(20, 20, 20);
-  --UI-font-col       : rgb(0, 0, 0);
-  --UI-inactive-col   : rgba(0, 0, 0, 0.3);
+  --UI-font-col       : rgb(255, 255, 255);
+  --UI-inactive-col   : rgba(193, 197, 255, 0.774);
   --UI-border-col     : rgba(0, 0, 0, 0.05);
   --gototop-bg-col    : rgba(255, 197, 126, 0.2);
 
 
-  --bg-col            : #C8FFD4;
+  /* --bg-col            : #C8FFD4;
   --bg-col2           : #77ffd627;
   --bg-col3           : rgb(255, 232, 208);
   --ascent-col        : #14C38E;
@@ -41,7 +37,7 @@
   --UI-font-col       : rgb(0, 0, 0);
   --UI-inactive-col   : #2b7e65;
   --UI-border-col     : rgba(0, 0, 0, 0.05);
-  --gototop-bg-col    : rgba(255, 197, 126, 0.2);
+  --gototop-bg-col    : rgba(255, 197, 126, 0.2); */
 }
 .dark-mode {
   /* Dark theme */
@@ -74,12 +70,14 @@ body {
   align-self         : center;
   text-align         : center;
   margin             : 0 auto;
-  background-image   : url("../images/bg_opt.svg");
+  /* background-image   : url("../images/bg_opt.svg"); */
   background-size    : cover;
   background-position: center center;
   background-repeat  : no-repeat;
   background-color   : var(--bg-col);
   justify-content    : center;
+  color: white;
+  /* background-attachment: fixed; */
 }
 
 .clearfix::after {
@@ -93,11 +91,13 @@ body {
 }
 
 .container {
-  max-width     : 980px;
+  /* max-width     : 980px; */
   margin        : auto;
   padding-bottom: 10vh;
   min-height    : 100vh;
-  max-width     : 100%;
+  min-width     : 100%;
+  /* backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(7px); */
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -122,29 +122,29 @@ body {
   padding-bottom  : 100px;
 }
 #Home {
-  background-image   : url(../images/Portrait.svg);
-  /* overflow           : visible; */
-  transform          : translate3d( 0, 4vw,0 );
+  background-image   : url(../images/Portrait.svg), url(../images/blurry-gradient-haikei.svg);
   background-size    : contain;
-  background-position: center center;
+  background-position: right center, left center;
   background-repeat  : no-repeat;
+  color              : white;
+  border-radius      : 15px;
+  margin             : 125px 100px;
+  text-align         : justify;
+}
+#Home>p
+{
+  background-position: left center;
+  background-repeat  : no-repeat;
+
 }
 @media screen and (max-width: 769px) {
-  #nav-bar {
-    font-size: 10em;
-  }
-  #Home {
-    transform: translate3d( 0, 8vh,0 );
-    background-size    : cover;
-  }
 }
 .main-logo {
   display       : block;
   flex-direction: column;
+  padding            : 100px 3em;
   align-items   : center;
-  padding       : 25vh 0 25vh 0;
   font-size     : calc(10px + 2vmin);
-  color         : rgb(0, 0, 0);
   font-family   : "Montserrat Alternates";
   font-size     : 14em;
   font-weight   : 500;
@@ -154,6 +154,7 @@ body {
   transition    : 0.5s;
   text-shadow   : 0px 0px 0px var(--ascent-col-2);
   animation     : slide 3s ease-out infinite;
+  background-color: #a5aeae;
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
@@ -179,7 +180,6 @@ body {
   align-items    : center;
   justify-content: center;
   font-size      : calc(10px + 2vmin);
-  color          : rgb(0, 0, 0);
   font-family    : "Poppins";
   font-size      : 0.2em;
   transition     : 0.5s;
@@ -195,15 +195,45 @@ body {
   /* text-indent    : -2em; */
   }
 }
-@media screen and (max-width: 769px) {
+
+@media screen and (max-width: 1920px) {
   .main-logo {
-    font-size     : 6.2em;
+    font-size     : 10em;
+  }
+}
+@media screen and (max-width: 1580px) {
+  .main-logo {
+    font-size: 10em;
+    padding  : 100px 1em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .main-logo {
+    font-size: 8em;
+    padding  : 100px 1em;
+  }
+  #Home {
+    margin: 125px 20px;
+    padding  : 100px 0.5em;
+  }
+}
+@media screen and (max-width: 769px) {
+  #nav-bar {
+    font-size: 10em;
+  }
+  #Home {
+    padding: auto 10em;
+    margin : 70px 10px;
+    background-image   : url(../images/Portrait.svg);
+  }
+  .main-logo {
+    font-size     : 3.5em;
     padding       : 27vh 0 20vh 0;
     letter-spacing: 0em;
   }
   .sub-logo {
     font-size   : large;
-    word-spacing: 2em;
+    word-spacing: 0.5em;
     text-indent : -2em;
   }
 }
@@ -224,24 +254,23 @@ body {
 #Projects, #About {
   margin-top   : 10em;
   border-radius: 50px;
+  margin       : auto;
 }
 
 #Projects>div {
   padding                : 50px;
-  border-top             : 7px solid var(--ascent-col);
-  border-bottom          : 7px solid var(--ascent-col);
-  border-radius          : 50px;
+  border-radius          : 25px;
   padding-bottom         : 50px;
-  background-color       : var(--bg-col2);
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin-bottom          : 5em;
-  backdrop-filter        : blur(7px);
+  margin                 : 5em 20em;
+  backdrop-filter        : blur(70px);
   -webkit-backdrop-filter: blur(7px);
-  overflow: hidden;
+  overflow               : hidden;
+  text-align             : center;
+  /* max-width              : 1180px; */
 }
 #Projects>header, #About>header {
   margin-top    : 0.5em;
-  margin-bottom : 1em;
   font-size     : 6em;
   font-style    : italic;
   letter-spacing: 1em;
@@ -253,17 +282,35 @@ body {
 #Projects h1, #About h1 {
   text-align    : center;
   font-weight   : 500;
-  font-size     : 3em;
+  font-size     : 7em;
+  padding       : 2em 0 5em 0em;
   text-transform: uppercase;
   letter-spacing: 0.45em;
   text-indent   : 0.45em;
 }
 #Projects p, #About p {
   text-align : left;
-  font-size  : 2em;
-  margin     : 20px 20px;
+  font-size  : 2.5em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
+}
+#About p {
+  margin-top: 1em;
+}
+@media screen and (max-width: 2000px) {
+  #Projects p, #About p {
+    font-size  : 2em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #Projects p, #About p {
+    font-size  : 1.7em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Projects p, #About p {
+    font-size  : 1.5em;
+  }
 }
 
 #Projects a {
@@ -279,32 +326,27 @@ body {
 .float-left { float: left; }
 
 #Projects img, video, #About img, video{
-  justify-content: center;
   width          : 80%;
   box-shadow     : 0px 0px 35px rgba(0, 0, 0, 0.623);
   border-radius  : 25px;
-  margin         : 30px 0 30px 0;
+  margin         : 0 0 30px 0;
   /* border        : 5px solid var(--ascent-col); */
 }
 #About {
   padding                : 50px;
-  /* border-top             : 7px solid var(--ascent-col); */
-  /* border-bottom          : 7px solid var(--ascent-col); */
-  border-radius          : 50px;
+  border-radius          : 10px;
   padding-bottom         : 50px;
-  background-color       : var(--bg-col2);
+  background-color       : var(--ascent-col);
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin-bottom          : 5em;
-  margin-left            : 10em;
-  margin-right           : 10em;
+  margin: 0 425px;
   backdrop-filter        : blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
 @media screen and (max-width: 769px) {
   
   #Projects>div, #About>div {
-    margin : 1em;
-    padding: 20px;
+    margin : 4em 1em;
+    padding: 10px;
   } 
   #Projects>header, #About>header {
     margin-top    : 0.5em;
@@ -335,32 +377,6 @@ body {
     margin-right: 1em;
     padding     : 10px;
   }
-}
-
-.slider-container {
-  position: relative;
-  width   : 50%;
-  height  : 50%;
-}
-
-.slider-container img {
-  position  : absolute;
-  top       : 0;
-  left      : 0;
-  opacity   : 1;
-  transition: opacity 1s ease-in-out;
-}
-
-.slider-container img:last-child {
-  opacity: 0;
-}
-
-.slider-container img:last-child.fade-in {
-  opacity: 1;
-}
-
-.slider-container img:first-child.fade-out {
-  opacity: 0;
 }
 
 .icon-instagram

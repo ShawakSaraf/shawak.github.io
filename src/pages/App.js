@@ -1,5 +1,4 @@
-import Projects from './Projects.js'
-import { NavBar, Home, About, Socials } from './Components.js'
+import { NavBar, Home, Project, About, Socials } from './Components.js'
 import { useRef } from 'react';
 import '../css/App.css';
 import '../css/style.css';
@@ -17,7 +16,7 @@ function App()
       <NavBar {...refs}/>
       <div className='container'>
         <Home homeRef={homeRef}/>
-        <Projects projetsRef={projetsRef}/>
+        <Project projetsRef={projetsRef}/>
         <About aboutRef={aboutRef}/>
         {/* <Socials /> */}
       </div>

@@ -510,7 +510,7 @@ article:first-child::first-letter {
   padding         : 20px 0 30px 0;
   width           : 400px;
   left            : -200px;
-  background-color: var(--navbar-col);
+  background-color: var(--ascent-col);
   box-shadow      : 0 8px 20px rgba(0, 0, 0, 0.226);
   border-radius   : 0 0 50px 50px;
   z-index         : 1;

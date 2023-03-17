@@ -1,25 +1,30 @@
 import { useState, useEffect, useRef } from 'react';
 
+import ProceduralAnimation from './Proc_Anim';
+import TPSPrototype from './TPS_proto';
+import GANVAE from './GANVAE';
+import NeuralNetwork from './NeuralNetwork';
+
 export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 {
 	function handleHomeClick(e)
 	{
 		window.scrollTo({
-			top: homeRef.current.offsetTop,
+			top: 0,
 			behavior: 'smooth',
 		});
 	}
 	function handleProjectsClick(e)
 	{
 		window.scrollTo({
-			top: projetsRef.current.offsetTop - window.innerHeight*0.25,
+			top: projetsRef.current.offsetTop - window.innerHeight*0.1,
 			behavior: 'smooth',
 		});
 	}
 	function handleAboutClick(e)
 	{
 		window.scrollTo({
-			top: aboutRef.current.offsetTop - window.innerHeight*0.15,
+			top: aboutRef.current.offsetTop - window.innerHeight*0.1,
 			behavior: 'smooth',
 		});
 	}
@@ -80,13 +85,68 @@ export function Home({ homeRef })
   return (
     <div ref={homeRef}>
       <header id="Home" className="main-logo">
-        <p>Shawak</p>
+        <p>Shawak •—</p>
         <ul className="sub-logo">
-          <p>GameDev MachineLearning</p>
+          <p>GameDev • MachineLearning</p>
         </ul>
       </header>
     </div>
   );
+}
+
+function ImageFade({images, ...props})
+{
+	const [index, setIndex]     = useState(0);
+	const [opacity, setOpacity] = useState(1);
+
+	useEffect(() => {
+		const interval = setInterval(() => 
+		{
+			setOpacity(0);
+			setTimeout(() => 
+			{
+				setIndex((index + 1) % images.length);
+			}, 500);
+			setTimeout(() => {
+				setOpacity(1);
+			}, 1000);
+		}, 5000);
+		
+		return () => clearInterval(interval);
+	}, [index]);
+	 
+	
+	return (
+		<img
+		src={images[index]}
+		alt=""
+		style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
+		/>
+	);
+}
+
+export function Project({projetsRef})
+{
+	const [width, setWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => setWidth(window.innerWidth);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	const isPhone = width < 768;
+
+	const props = { isPhone, width, ImageFade }
+	return (
+		<div id='Projects' ref={projetsRef}>
+			<header style={{ marginBottom: '1em' }}>Projects</header>
+			<TPSPrototype {...props}/>
+			<GANVAE {...props}/>
+			<ProceduralAnimation {...props}/>
+			<NeuralNetwork {...props}/>
+		</div>
+	);
 }
 
 export function About({ aboutRef })
@@ -102,8 +162,6 @@ export function About({ aboutRef })
       </div>
    );
 }
-
-
 
 export function Socials()
 {
