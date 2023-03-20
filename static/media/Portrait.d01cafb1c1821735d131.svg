@@ -10,7 +10,7 @@
          paint-order      : fill stroke markers;
          stroke-miterlimit: 10;
          stroke-dasharray : 1003;
-         filter           : blur(0.8px);
+         filter           : blur(1.5px);
          /* stroke           : rgba(20,195,143,0.329); */
          /* stroke-linecap   : round; */
          /* stroke-linejoin  : round; */
