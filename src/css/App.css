@@ -109,15 +109,17 @@ body {
   'opsz' 48;
 }
 
-.expantion-arrow {
-  position     : absolute ;
+.expansion-arrow {
+  position     : absolute;
   right        : 0;
   top          : 0;
-  transform    : translate3d( -10px, 10px, 0 );
+  transform    : translate3d( -15px, 15px, 0 );
   border-radius: 50%;
+  transition   : 0.5s ease-out;
 }
-.expantion-arrow.active {
-
+.expansion-arrow.active {
+  transform: rotate(180deg) scale(0.8) translate3d( 15px, -15px, 0 );
+  transition: 0.25s ease-out;
 }
 
 #nav-bar {
@@ -289,7 +291,7 @@ body {
   /* max-width              : 1180px; */
 }
 #Projects>header, #About>header {
-  margin-top    : 0.5em;
+  margin-top    : 0;
   font-size     : 6em;
   font-style    : italic;
   letter-spacing: 1em;

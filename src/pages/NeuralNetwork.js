@@ -17,7 +17,7 @@ function NeuralNetwork({isPhone, width})
 	var divStyle = {
 		backgroundColor: '#dfb921',
 		color: 'black',
-		maxHeight: isClicked ? '1180px' : '21vw',
+		maxHeight: isClicked ? '1180px' : !isPhone ? '21vw' : '78vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
@@ -53,21 +53,15 @@ function NeuralNetwork({isPhone, width})
 
 	if( isPhone )
 	{
-		divStyle = {
-			backgroundColor: '#dfb921',
-			color: 'black',
-			// width: '100px',
-			maxHeight: isClicked ? '1180px' : '320px',
-			transition: isClicked ? '0.25s' : '0.5s',
-		};
 		vidStyle = {
 			width: '100%',
 			borderRadius: '5px',
 		}
 		h1Style = {
-			fontSize  : isClicked ? '1.7em' : '1.8em',
-			padding   : isClicked ? '1em 0 1em 0' : '1.5em 0 4em 0',
-			transition: isClicked ? '0.25s' : '0.5s',
+			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
+			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
+			transition   : isClicked ? '0.25s'      : '0.5s',
+			letterSpacing: '0.2em',
 		};
 		p1Style = {
 			paddingLeft: '0',

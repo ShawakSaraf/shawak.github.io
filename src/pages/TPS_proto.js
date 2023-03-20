@@ -23,18 +23,27 @@ function TPSPrototype({isPhone, width, ImageFade})
 		},
 	}
 
-	const [isClicked, setIsClicked] = useState(false);
+	const [isClicked, setIsClicked]     = useState(false);
+	const [dropOpacity, setDropOpacity] = useState('0');
 	
-	const expand = () => {
+	function expand() {
 		setIsClicked( isClicked ? false : true);
-		console.log( 'TPS clicked', isClicked );
 	};
 	
+	const mouseEnter = ()=>
+	{
+		setDropOpacity('1');
+	}
+	const mouseLeave = ()=>
+	{
+		setDropOpacity('0');
+	}
+
 	var divStyle = {
 		backgroundColor: '#9a82c2',
 		// padding : '1vw',
 		// width: '100px',
-		maxHeight: isClicked ? '1180px' : '27vw',
+		maxHeight : isClicked ? '1180px': !isPhone ? '27vw': '87vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
@@ -54,22 +63,19 @@ function TPSPrototype({isPhone, width, ImageFade})
 
 	var vidStyle = { 
 		width      : !isPhone ? '50%': '100%',
-		float      : 'left',
+		float      : !isPhone ? 'left' : 'center',
 		paddinRight: '3em',
 		marginRight : '0em',
 	};
+
+	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d' };
 	if( isPhone )
 	{
-		divStyle = {
-			backgroundColor: '#9a82c2',
-			maxHeight      : isClicked ? '1180px': '340px',
-			transition     : isClicked ? '0.25s' : '0.5s',
-		};
 		h1Style = {
-			fontSize  : isClicked ? '1.8em' : '2em',
-			padding   : isClicked ? '12em 0 1em 0' : '11em 0 4em 0',
+			fontSize  : isClicked ? '4.5vw' : '5.2vw',
+			padding   : isClicked ? '2vw 0 5vw 0' : '4vw 0 25vw 0',
 			transition: isClicked ? '0.25s' : '0.5s',
-         letterSpacing : '0.1em',
+         letterSpacing : '0.2em',
       };
 		p1Style = {
 			paddingLeft: '0'
@@ -79,8 +85,10 @@ function TPSPrototype({isPhone, width, ImageFade})
 		};
 	}
 	return (
-		<div style={divStyle} onClick= {expand}>
-			<dropDown />			
+		<div style={divStyle} onClick={expand} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+			{/* <span className={`material-symbols-rounded expansion-arrow ${isClicked ? 'active' : ''}`} style={ !isPhone ? dropDownStyle : null}>
+				arrow_downward
+			</span> */}
 			<video style={ vidStyle } controls autoPlay muted loop>
 				<source src={ProtoVid} type='video/mp4' />
 			</video>

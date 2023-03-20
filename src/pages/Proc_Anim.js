@@ -15,7 +15,7 @@ function ProceduralAnimation({isPhone, width})
 		backgroundColor: '#b7bcff',
 		color: 'black',
 		// width: '100px',
-		maxHeight: isClicked ? '1180px' : '24.5vw',
+		maxHeight: isClicked ? '1180px' : !isPhone ? '24.5vw' : '83vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
@@ -46,13 +46,6 @@ function ProceduralAnimation({isPhone, width})
 
 	if( isPhone )
 	{
-		divStyle = {
-			backgroundColor: '#b7bcff',
-			color: 'black',
-			// width: '100px',
-			maxHeight: isClicked ? '1180px' : '320px',
-			transition: isClicked ? '0.25s' : '0.5s',
-		};
       vid1Style = {
          width: '90%',
       }
@@ -60,9 +53,9 @@ function ProceduralAnimation({isPhone, width})
          width: '90%',
       }
 		h1Style = {
-			fontSize  : isClicked ? '1.7em' : '1.8em',
+			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
+			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
          letterSpacing: '0.2em',
-         padding   : isClicked ? '1em 0 1em 0' : '1.1em 0 4em 0',
 			transition: isClicked ? '0.25s' : '0.5s',
 		};
 		p1Style = {

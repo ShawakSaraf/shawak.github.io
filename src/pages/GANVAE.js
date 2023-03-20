@@ -25,14 +25,14 @@ function GANVAE({isPhone, width, ImageFade})
 	var divStyle = {
 		backgroundColor: 'grey',
 		// width: '100px',
-		maxHeight: isClicked ? '1180px' : '30.5vw',
+		maxHeight: isClicked ? '1180px' : !isPhone ? '31vw' : '120vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
 		fontSize     : isClicked ? '1.7vw' : '2vw',
-		letterSpacing: '0.3em',
-		padding      : isClicked ? '0em 0 1.5em 0': '7vw 0 12vw 0',
+		padding      : isClicked ? '0em 0 1.5em 0': '7.8vw 0 12vw 0',
 		transition   : isClicked ? '0.25s': '0.5s',
+		letterSpacing: '0.3em',
 	};	 
 	var p1Style = {
 		paddingLeft: '30vw'
@@ -45,17 +45,11 @@ function GANVAE({isPhone, width, ImageFade})
 
 	if( isPhone )
 	{
-		divStyle = {
-			backgroundColor: 'grey',
-			// width: '100px',
-			maxHeight: isClicked ? '1180px' : '480px',
-			transition: isClicked ? '0.25s' : '0.5s',
-		};
 		h1Style = {
-			fontSize  : isClicked ? '1.7em' : '1.8em',
-         letterSpacing: '0.17em',
-         padding   : isClicked ? '1em 0 1em 0' : '1.5em 0 4em 0',
-			transition: isClicked ? '0.25s' : '0.5s',
+			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
+			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
+			letterSpacing: '0.1em',
+			transition   : isClicked ? '0.25s'      : '0.5s',
 		};
 		p1Style = {
 			paddingLeft: '0'
