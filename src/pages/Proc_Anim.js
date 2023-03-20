@@ -14,15 +14,14 @@ function ProceduralAnimation({isPhone, width})
 	var divStyle = {
 		backgroundColor: '#b7bcff',
 		color: 'black',
-		// width: '100px',
 		maxHeight: isClicked ? '1180px' : !isPhone ? '24.5vw' : '83vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
-		fontSize     : isClicked ? '1.7vw' : '2vw',
+		fontSize     : isClicked ? '1.7vw'      : '2vw',
 		letterSpacing: '0.3em',
 		padding      : isClicked ? '0em 0 1em 0': '7.3vw 0 10vw 0',
-		transition   : isClicked ? '0.25s': '0.5s',
+		transition   : isClicked ? '0.25s'      : '0.5s',
 	};	 
 	var p1Style = {
 		paddingLeft: '40vw'
@@ -53,8 +52,8 @@ function ProceduralAnimation({isPhone, width})
          width: '90%',
       }
 		h1Style = {
-			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
-			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
+			fontSize     : isClicked ? '4.5vw'      : '4.9vw',
+			padding      : isClicked ? '2vw 0 5vw 0': '6vw 0 25vw 0',
          letterSpacing: '0.2em',
 			transition: isClicked ? '0.25s' : '0.5s',
 		};

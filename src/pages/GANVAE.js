@@ -46,7 +46,7 @@ function GANVAE({isPhone, width, ImageFade})
 	if( isPhone )
 	{
 		h1Style = {
-			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
+			fontSize     : isClicked ? '4.5vw'      : '5vw',
 			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
 			letterSpacing: '0.1em',
 			transition   : isClicked ? '0.25s'      : '0.5s',

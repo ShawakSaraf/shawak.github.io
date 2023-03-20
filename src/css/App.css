@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Mulish:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700);
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+
 
 
 :root {
@@ -121,27 +125,10 @@ body {
   transform: rotate(180deg) scale(0.8) translate3d( 15px, -15px, 0 );
   transition: 0.25s ease-out;
 }
-
-#nav-bar {
-  display         : block;
-  align-items     : center;
-  justify-content : center;
-  background-color: var(--ascent-col);
-  position        : fixed;
-  overflow        : hidden;
-  z-index         : 6;
-  top             : 0;
-  width           : 100%;
-  height          : 50px;
-  text-transform  : uppercase;
-  font-family     : "Outfit";
-  font-size       : 1.5em;
-  padding-bottom  : 100px;
-}
 #Home {
-  background-image   : url(../images/Portrait.svg), url(../images/blurry-gradient-haikei.svg);
+  background-image   : /* url(../images/Portrait.svg), */ url(../images/blurry-gradient-haikei.svg);
   background-size    : contain;
-  background-position: right center, left center;
+  background-position: /* right center, */ 35%;
   background-repeat  : no-repeat;
   color              : white;
   border-radius      : 15px;
@@ -158,10 +145,7 @@ body {
 }
 .main-logo {
   display         : block;
-  flex-direction  : column;
   padding         : 100px 3em;
-  align-items     : center;
-  font-size       : calc(10px + 2vmin);
   font-family     : "Montserrat Alternates";
   font-size       : 14em;
   font-weight     : 500;
@@ -169,9 +153,8 @@ body {
   letter-spacing  : 0.1em;
   text-indent     : -0.1em;
   transition      : 0.5s;
-  text-shadow     : 0px 0px 0px var(--ascent-col-2);
-  animation       : slide 3s ease-out infinite;
-  background-color: var(--bg-col2);
+  /* animation       : slide 3s ease-out infinite; */
+  background-color: black;
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
@@ -184,19 +167,13 @@ body {
   }
   70% {
     text-shadow: -0.07em 0.03em 2px var(--ascent-col-2);
-    
   }
   75% {
     text-shadow: 0px 0px 0px var(--ascent-col-2);
-    
   }
 }
 .sub-logo {
   display        : block;
-  flex-direction : column;
-  align-items    : center;
-  justify-content: center;
-  font-size      : calc(10px + 2vmin);
   font-family    : "Poppins";
   font-size      : 0.2em;
   transition     : 0.5s;
@@ -215,7 +192,7 @@ body {
 
 @media screen and (max-width: 1920px) {
   .main-logo {
-    font-size     : 10em;
+    font-size: 12em;
   }
 }
 @media screen and (max-width: 1580px) {
@@ -235,17 +212,13 @@ body {
   }
 }
 @media screen and (max-width: 769px) {
-  #nav-bar {
-    font-size: 10em;
-  }
   #Home {
     padding: auto 10em;
     margin : 70px 10px;
     /* background-image   : url(../images/Portrait.svg); */
   }
   .main-logo {
-    font-size     : 3.5em;
-    padding       : 27vh 0 20vh 0;
+    font-size     : 4.5em;
     letter-spacing: 0em;
   }
   .sub-logo {
@@ -268,7 +241,7 @@ body {
   }
 }
 
-#Projects, #About {
+#Project, #About {
   position: relative;
   display        : flex;
   flex-direction : column;
@@ -278,7 +251,7 @@ body {
   margin         : auto;
 }
 
-#Projects>div {
+#Project>div {
   padding                : 2vw;
   border-radius          : 25px;
   padding-bottom         : 50px;
@@ -290,25 +263,27 @@ body {
   text-align             : center;
   /* max-width              : 1180px; */
 }
-#Projects>header, #About>header {
+#Project>header, #About>header {
   margin-top    : 0;
   font-size     : 6em;
-  font-style    : italic;
+  font-family: 'Mulish';
+  font-weight: 300;
   letter-spacing: 1em;
   text-indent   : 1em;
   text-transform: uppercase;
   width         : 100%;
-  left          : 0;
+  
 }
-#Projects h1, #About h1 {
+#Project h1, #About h1 {
   text-align    : center;
   font-weight   : 500;
   font-size     : 7em;
   text-transform: uppercase;
   letter-spacing: 0.45em;
   text-indent   : 0.45em;
+  font-family   : 'Josefin Sans';
 }
-#Projects p, #About p {
+#Project p, #About p {
   text-align : left;
   font-size  : 2.5em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -318,26 +293,26 @@ body {
   margin-top: 1em;
 }
 @media screen and (max-width: 2000px) {
-  #Projects p, #About p {
+  #Project p, #About p {
     font-size  : 2em;
   }
 }
 @media screen and (max-width: 1280px) {
-  #Projects p, #About p {
+  #Project p, #About p {
     font-size  : 1.7em;
   }
 }
 @media screen and (max-width: 768px) {
-  #Projects p, #About p {
+  #Project p, #About p {
     font-size  : 1.5em;
   }
 }
 
-#Projects a {
+#Project a {
   text-decoration: none;
   color: var(--ascent-col);
 }
-#Projects a:hover {
+#Project a:hover {
   text-decoration: none;
   color: var(--UI-font-col);
 }
@@ -345,7 +320,7 @@ body {
 .float-right { float: right; }
 .float-left { float: left; }
 
-#Projects img, video, #About img, video{
+#Project img, video, #About img, video{
   width          : 80%;
   box-shadow     : 0px 0px 35px rgba(0, 0, 0, 0.623);
   border-radius  : 25px;
@@ -370,26 +345,26 @@ body {
 }
 @media screen and (max-width: 769px) {
   
-  #Projects>div, #About>div {
-    margin : 4em 1em;
+  #Project>div, #About>div {
+    margin : 2.2em 1em;
     padding: 10px;
   } 
-  #Projects>header, #About>header {
+  #Project>header, #About>header {
     margin-top    : 0.5em;
     font-size     : 2.5em;
     letter-spacing: 1em;
     text-indent   : 1em;
     text-transform: uppercase;
   }
-  #Projects p, #About p {
+  #Project p, #About p {
     font-size : 1.5em;
     margin    : 15px 5px;
   }
-  #Projects img, #About img {
+  #Project img, #About img {
     width : 95%;
     margin: 10px 0 0 0;
   }
-  #Projects img, video, #About img, video{
+  #Project img, video, #About img, video{
     margin: 10px 0 0 0;
   }
 

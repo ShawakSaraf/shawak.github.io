@@ -46,7 +46,7 @@ function NeuralNetwork({isPhone, width})
 	}
 	var imgStyle = {
 		width: !isPhone ? '35%': '60%',
-		float: 'right',
+		float: !isPhone ? 'right': 'center',
 		margin: '2vw 0 0 1.5vw',
 	}
 	const aStyle = { color: '#413400', }
@@ -58,7 +58,7 @@ function NeuralNetwork({isPhone, width})
 			borderRadius: '5px',
 		}
 		h1Style = {
-			fontSize     : isClicked ? '4.5vw'      : '5.2vw',
+			fontSize     : isClicked ? '4.5vw'      : '5vw',
 			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
 			transition   : isClicked ? '0.25s'      : '0.5s',
 			letterSpacing: '0.2em',

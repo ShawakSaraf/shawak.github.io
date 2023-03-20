@@ -5,6 +5,37 @@ import TPSPrototype from './TPS_proto';
 import GANVAE from './GANVAE';
 import NeuralNetwork from './NeuralNetwork';
 
+function ImageFade({images, ...props})
+{
+	const [index, setIndex]     = useState(0);
+	const [opacity, setOpacity] = useState(1);
+
+	useEffect(() => {
+		const interval = setInterval(() => 
+		{
+			setOpacity(0);
+			setTimeout(() => 
+			{
+				setIndex((index + 1) % images.length);
+			}, 500);
+			setTimeout(() => {
+				setOpacity(1);
+			}, 1000);
+		}, 5000);
+		
+		return () => clearInterval(interval);
+	}, [index]);
+	 
+	
+	return (
+		<img
+		src={images[index]}
+		alt=""
+		style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
+		/>
+	);
+}
+
 export function dropDown()
 {
 	return (
@@ -24,7 +55,7 @@ function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 			behavior: 'smooth',
 		});
 	}
-	function handleProjectsClick(e)
+	function handleProjectClick(e)
 	{
 		window.scrollTo({
 			top: projetsRef.current.offsetTop - window.innerHeight*0.1,
@@ -81,7 +112,7 @@ function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 			<div className='top-menu'>
 				<ul>
 					<li><a onClick={handleHomeClick} href >Home</a></li>
-					<li><a onClick={handleProjectsClick} href >Projects</a></li>
+					<li><a onClick={handleProjectClick} href >Project</a></li>
 					<li><a onClick={handleAboutClick} href >About</a></li>
 				</ul>
 			</div>
@@ -103,37 +134,6 @@ function Home({ homeRef })
   );
 }
 
-function ImageFade({images, ...props})
-{
-	const [index, setIndex]     = useState(0);
-	const [opacity, setOpacity] = useState(1);
-
-	useEffect(() => {
-		const interval = setInterval(() => 
-		{
-			setOpacity(0);
-			setTimeout(() => 
-			{
-				setIndex((index + 1) % images.length);
-			}, 500);
-			setTimeout(() => {
-				setOpacity(1);
-			}, 1000);
-		}, 5000);
-		
-		return () => clearInterval(interval);
-	}, [index]);
-	 
-	
-	return (
-		<img
-		src={images[index]}
-		alt=""
-		style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
-		/>
-	);
-}
-
 function Project({projetsRef})
 {
 	const [width, setWidth] = useState(window.innerWidth);
@@ -148,8 +148,8 @@ function Project({projetsRef})
 
 	const props = { isPhone, width, ImageFade };
 	return (
-		<div id='Projects' ref={projetsRef}>
-			<header style={{ marginBottom: '1em' }}>Projects</header>
+		<div id='Project' ref={projetsRef}>
+			<header style={{ marginBottom: '0em' }}>Project</header>
 			<TPSPrototype {...props}/>
 			<GANVAE {...props}/>
 			<ProceduralAnimation {...props}/>

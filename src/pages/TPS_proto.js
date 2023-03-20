@@ -72,8 +72,8 @@ function TPSPrototype({isPhone, width, ImageFade})
 	if( isPhone )
 	{
 		h1Style = {
-			fontSize  : isClicked ? '4.5vw' : '5.2vw',
-			padding   : isClicked ? '2vw 0 5vw 0' : '4vw 0 25vw 0',
+			fontSize  : isClicked ? '4.5vw' : '5vw',
+			padding   : isClicked ? '2vw 0 5vw 0' : '5vw 0 25vw 0',
 			transition: isClicked ? '0.25s' : '0.5s',
          letterSpacing : '0.2em',
       };
