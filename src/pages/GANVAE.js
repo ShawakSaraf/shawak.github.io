@@ -29,9 +29,9 @@ function GANVAE({isPhone, width, ImageFade})
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
-		fontSize     : isClicked ? '5em' : '2vw',
+		fontSize     : isClicked ? '1.7vw' : '2vw',
 		letterSpacing: '0.3em',
-		padding      : isClicked ? '0em 0 1.5em 0': '8vw 0 12vw 0',
+		padding      : isClicked ? '0em 0 1.5em 0': '7vw 0 12vw 0',
 		transition   : isClicked ? '0.25s': '0.5s',
 	};	 
 	var p1Style = {
@@ -42,20 +42,6 @@ function GANVAE({isPhone, width, ImageFade})
 		padding: '2vw  0 2vw 30vw',
 		textAlign: 'left',
 	}
-
-   if( width <= 2000 )
-   {
-      var h1Style = {
-         fontSize     : isClicked ? '1.7vw' : '2vw',
-         letterSpacing: '0.3em',
-         padding      : isClicked ? '0em 0 1em 0': '7vw 0 12vw 0',
-         transition   : isClicked ? '0.25s': '0.5s',
-      };	 
-      p2Style = {
-         padding: '1vw 0 2vw 0vw',
-         textAlign: 'left',
-      }
-   }
 
 	if( isPhone )
 	{

@@ -1,11 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import ProceduralAnimation from './Proc_Anim';
 import TPSPrototype from './TPS_proto';
 import GANVAE from './GANVAE';
 import NeuralNetwork from './NeuralNetwork';
 
-export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
+export function dropDown()
+{
+	return (
+		<span className="material-symbols-rounded expantion-arrow">
+			arrow_downward
+		</span>
+	);
+}
+
+
+function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 {
 	function handleHomeClick(e)
 	{
@@ -29,7 +39,6 @@ export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 		});
 	}
 
-	const menuRef = useRef(null);
 	const [ lastScrollY, setLastScrolY ] = useState(window.scrollY)
 	const [menuStyle, setMenuStyle] = useState({
 		position       : "fixed",
@@ -80,7 +89,7 @@ export function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 	);
 }
 
-export function Home({ homeRef })
+function Home({ homeRef })
 {
   return (
     <div ref={homeRef}>
@@ -125,7 +134,7 @@ function ImageFade({images, ...props})
 	);
 }
 
-export function Project({projetsRef})
+function Project({projetsRef})
 {
 	const [width, setWidth] = useState(window.innerWidth);
 
@@ -137,7 +146,7 @@ export function Project({projetsRef})
 
 	const isPhone = width < 768;
 
-	const props = { isPhone, width, ImageFade }
+	const props = { isPhone, width, ImageFade };
 	return (
 		<div id='Projects' ref={projetsRef}>
 			<header style={{ marginBottom: '1em' }}>Projects</header>
@@ -149,7 +158,7 @@ export function Project({projetsRef})
 	);
 }
 
-export function About({ aboutRef })
+function About({ aboutRef })
 {
    return(
       <div id="About" ref={aboutRef}>
@@ -163,19 +172,21 @@ export function About({ aboutRef })
    );
 }
 
-export function Socials()
+function Socials()
 {
 	return (
 		<div class="container-wrap">
 			<footer id="footer" role="contentinfo">
 				<div class="col-md-12 text-center">
 					<ul class="social-icons">
-						<li><a href="https://twitter.com/ShawakSaraf" target="_blank"><i class="icon-twitter"></i></a></li>
-						<li><a href="https://www.instagram.com/shawaksaraf/" target="_blank"><i class="icon-instagram"></i></a></li>
-						<li><a href="https://www.github.com/shawaksaraf/" target="_blank"><i class="icon-github"></i></a></li>
+						<li><a href="https://twitter.com/ShawakSaraf" target="_blank" rel="noreferrer"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://www.instagram.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-instagram"></i></a></li>
+						<li><a href="https://www.github.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-github"></i></a></li>
 					</ul>
 				</div>
 			</footer>
 		</div>
 	);
 }
+
+export {NavBar, Home, Project, About, Socials};

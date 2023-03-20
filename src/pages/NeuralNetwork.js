@@ -21,17 +21,17 @@ function NeuralNetwork({isPhone, width})
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
-		fontSize     : isClicked ? '5em' : '2vw',
+		fontSize     : isClicked ? '1.7vw' : '2vw',
 		letterSpacing: '0.3em',
 		padding      : isClicked ? '0em 0 1em 0': '5.3vw 0 10vw 0',
 		transition   : isClicked ? '0.25s': '0.5s',
 	};	 
 	var p1Style = {
-		paddingLeft: '38vw'
+		paddingLeft: '40vw'
 	};	 
 
 	var p2Style = {
-		padding: '10vw 0 0vw 0vw',
+		paddingTop: '10vw',
 		textAlign: 'left',
 	}
 	var p3Style = {
@@ -40,30 +40,16 @@ function NeuralNetwork({isPhone, width})
 	}
 
 	var vidStyle = {
-		width: '45%',
-		float: 'left',
+		width       : '45%',
+		float       : 'left',
 		borderRadius: '5px',
 	}
 	var imgStyle = {
-		width: '35%',
+		width: !isPhone ? '35%': '60%',
 		float: 'right',
-		marginTop: '2vw',
+		margin: '2vw 0 0 1.5vw',
 	}
 	const aStyle = { color: '#413400', }
-
-   if( width <= 2000 )
-   {
-		h1Style = {
-			fontSize     : isClicked ? '1.7vw' : '2vw',
-			letterSpacing: '0.3em',
-			padding      : isClicked ? '0em 0 1em 0': '5.3vw 0 10vw 0',
-			transition   : isClicked ? '0.25s': '0.5s',
-		};	 
-      p2Style = {
-         padding: '1vw 0 2vw 0vw',
-         textAlign: 'left',
-      }
-   }
 
 	if( isPhone )
 	{
@@ -90,21 +76,17 @@ function NeuralNetwork({isPhone, width})
 		p2Style = {
 			padding: '0',
 		};
-		imgStyle = {
-			width: '60%',
-			marginTop: '2vw',
-		}
 	}
 	return (
 		<div style={divStyle} onClick={expand}>
 			<video style={vidStyle} controls autoPlay muted loop>
 				<source src={DigitClass_Vid} type='video/mp4' />
 			</video>
-			<h1 style={h1Style}>Neural Network from Scratch</h1>
+			<h1 style={h1Style}>Neural Network from<br />Scratch</h1>
 			<p style={p1Style}>
 				A Neural Network build with only Numpy library for numerical computing in Python without using any modern ML frameworks like Tensorflow and PyTorch.
 			</p>
-			<img src={NN4} style={imgStyle} />
+			<img src={NN4} style={imgStyle} alt='A figure showing how to calculate the activation of a neuron in a neural network.'/>
 			<p style={p2Style}>
 				By implementing a neural network without ML libraries, I was able to understand the core principles and mathematics of how a neural network works 
 				without the complexities of modern machine learning frameworks.<br />

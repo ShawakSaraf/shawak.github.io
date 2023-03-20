@@ -8,11 +8,19 @@ import TPS5 from '../images/TPS_proto/OverShoulder5-Small.png'
 import TPS6 from '../images/TPS_proto/OverShoulder6-Small.png'
 import ProtoVid from '../images/TPS_proto/Prototype.webm'
 
+import dropDown from './Components';
+
 function TPSPrototype({isPhone, width, ImageFade})
 {
 	const fadeProps = {
 		images: [ level2, TPS1, TPS2, TPS3 ],
-		style: { width: !isPhone ? '45%' : '75%' , float: !isPhone ? 'right' : 'none', marginTop: !isPhone ? '6em': '0em' },
+		style: { 
+			width     : !isPhone ? '45%'  : '75%',
+			float     : !isPhone ? 'right': 'none',
+			marginTop : !isPhone ? '6em'  : '0em',
+			marginLeft: !isPhone ? '1.5em'  : '0em',
+
+		},
 	}
 
 	const [isClicked, setIsClicked] = useState(false);
@@ -24,51 +32,38 @@ function TPSPrototype({isPhone, width, ImageFade})
 	
 	var divStyle = {
 		backgroundColor: '#9a82c2',
+		// padding : '1vw',
 		// width: '100px',
-		maxHeight: isClicked ? '1180px' : '680px',
+		maxHeight: isClicked ? '1180px' : '27vw',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = {
-		fontSize  : isClicked ? '2vw' : '2.7vw',
-		padding   : isClicked ? '0em 0 1em 0' : '12vh 0 15vw 0',
+		fontSize  : isClicked ? '2vw' : '2.2vw',
+		padding   : isClicked ? '0em 0 1em 0' : '8vw 0 15vw 0',
 		transition: isClicked ? '0.25s' : '0.5s',
-		letterSpacing : '0.3em',
+		letterSpacing : '0.2em',
 	};	 
 	var p1Style = {
-		paddingLeft: '42vw'
+		paddingLeft: '44vw'
 	};	 
 
 	var p2Style = {
 		padding: '13vw 0 0 0',
 		textAlign: 'left',
 	};
-	if ( width <= 2000 )
-	{
-		divStyle = {
-			backgroundColor: '#9a82c2',
-			maxHeight: isClicked ? '1180px' : '25vw',
-			transition: isClicked ? '0.25s' : '0.5s',
-		};
-		h1Style = {
-			fontSize  : isClicked ? '1.7vw' : '2vw',
-			padding   : isClicked ? '0em 0 1em 0' : '2em 0 4em 0',
-			transition: isClicked ? '0.25s' : '0.5s',
-		};
-      p1Style = {
-         paddingLeft: '32vw'
-      };	
-      p2Style = {
-         padding: '10vw 0 0 0',
-         textAlign: 'left',
-      };
-	}
+
+	var vidStyle = { 
+		width      : !isPhone ? '50%': '100%',
+		float      : 'left',
+		paddinRight: '3em',
+		marginRight : '0em',
+	};
 	if( isPhone )
 	{
 		divStyle = {
 			backgroundColor: '#9a82c2',
-			// width: '100px',
-			maxHeight: isClicked ? '1180px' : '340px',
-			transition: isClicked ? '0.25s' : '0.5s',
+			maxHeight      : isClicked ? '1180px': '340px',
+			transition     : isClicked ? '0.25s' : '0.5s',
 		};
 		h1Style = {
 			fontSize  : isClicked ? '1.8em' : '2em',
@@ -78,15 +73,15 @@ function TPSPrototype({isPhone, width, ImageFade})
       };
 		p1Style = {
 			paddingLeft: '0'
-		};	 
+		};
 		p2Style = {
 			padding: '0',
 		};
 	}
 	return (
 		<div style={divStyle} onClick= {expand}>
-			{/* <div onClick= {HandleClick}> </div> */}
-			<video style={ { width:  !isPhone ? '50%' : '100%', float: 'left', paddinRight: '3em' } } controls autoPlay muted loop>
+			<dropDown />			
+			<video style={ vidStyle } controls autoPlay muted loop>
 				<source src={ProtoVid} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Third-Person Shooter<br/>Prototype</h1>

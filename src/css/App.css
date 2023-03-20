@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+
 
 :root {
   /* Light theme */
@@ -80,11 +82,6 @@ body {
   /* background-attachment: fixed; */
 }
 
-.clearfix::after {
-  content: "";
-  clear  : both;
-  display: table;
-}
 .App-logo {
   height        : 40vmin;
   pointer-events: none;
@@ -103,6 +100,24 @@ body {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 100,
+  'opsz' 48;
+}
+
+.expantion-arrow {
+  position     : absolute ;
+  right        : 0;
+  top          : 0;
+  transform    : translate3d( -10px, 10px, 0 );
+  border-radius: 50%;
+}
+.expantion-arrow.active {
+
 }
 
 #nav-bar {
@@ -128,7 +143,7 @@ body {
   background-repeat  : no-repeat;
   color              : white;
   border-radius      : 15px;
-  margin             : 125px 100px;
+  margin             : 125px 4vw;
   text-align         : justify;
 }
 #Home>p
@@ -252,17 +267,21 @@ body {
 }
 
 #Projects, #About {
-  margin-top   : 10em;
-  border-radius: 50px;
-  margin       : auto;
+  position: relative;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  margin-top     : 10em;
+  border-radius  : 50px;
+  margin         : auto;
 }
 
 #Projects>div {
-  padding                : 50px;
+  padding                : 2vw;
   border-radius          : 25px;
   padding-bottom         : 50px;
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin                 : 5em 20em;
+  margin                 : 2vw 7vw;
   backdrop-filter        : blur(70px);
   -webkit-backdrop-filter: blur(7px);
   overflow               : hidden;
@@ -283,7 +302,6 @@ body {
   text-align    : center;
   font-weight   : 500;
   font-size     : 7em;
-  padding       : 2em 0 5em 0em;
   text-transform: uppercase;
   letter-spacing: 0.45em;
   text-indent   : 0.45em;
@@ -329,7 +347,7 @@ body {
   width          : 80%;
   box-shadow     : 0px 0px 35px rgba(0, 0, 0, 0.623);
   border-radius  : 25px;
-  margin         : 0 0 30px 0;
+  /* margin         : 0 0 30px 0; */
   /* border        : 5px solid var(--ascent-col); */
 }
 #About {
@@ -341,6 +359,12 @@ body {
   margin: 0 425px;
   backdrop-filter        : blur(7px);
   -webkit-backdrop-filter: blur(7px);
+}
+
+@media screen and (max-width: 1500px) {
+  #About {
+    margin: 5em 10em;
+  }
 }
 @media screen and (max-width: 769px) {
   
@@ -354,11 +378,6 @@ body {
     letter-spacing: 1em;
     text-indent   : 1em;
     text-transform: uppercase;
-  }
-  #Projects h1, #About h1 {
-    letter-spacing: 0.25em;
-    text-indent   : 0.25em;
-    font-size     : 1.8em;
   }
   #Projects p, #About p {
     font-size : 1.5em;
