@@ -45,29 +45,10 @@
   --UI-border-col     : rgba(0, 0, 0, 0.05);
   --gototop-bg-col    : rgba(255, 197, 126, 0.2); */
 }
-.dark-mode {
-  /* Dark theme */
-  --bg-col            : rgb(30, 32, 65);
-  --bg-col2           : rgb(40, 43, 78);
-  --bg-col3           : rgb(44, 47, 85);
-  --ascent-col        : rgb(183, 188, 255);
-  --hamburger-menu-col: rgba(61, 64, 126, 0.705);
-  --shadow-alpha      : rgba(0, 0, 0, 0.55);
-  --shadow-alpha-2    : rgba(0, 0, 0, 0.75);
-  --font-col          : rgb(255, 255, 255);
-  --font-col2         : rgb(242, 243, 255);
-  --font-weight       : 400;
-  --selection-col     : rgb(0, 0, 0);
-  --h-style-col       : rgb(255, 255, 255);
-  --UI-font-col       : rgb(255, 255, 255);
-  --UI-inactive-col   : rgba(161, 169, 255, 0.5);
-  --UI-border-col     : rgba(255, 255, 255, 0.05);
-  --gototop-bg-col    : rgba(126, 141, 255, 0.2);
-  --theme-icon        : "\e0a1";
-}
 
 body {
   transition: 0.5s;
+  /* font-size: 0.5em; */
 }
 
 .App {
@@ -76,7 +57,7 @@ body {
   align-self         : center;
   text-align         : center;
   margin             : 0 auto;
-  /* background-image   : url("../images/bg_opt.svg"); */
+  /* background-image   : url("../media/bg_opt.svg"); */
   background-size    : cover;
   background-position: center center;
   background-repeat  : no-repeat;
@@ -126,9 +107,9 @@ body {
   transition: 0.25s ease-out;
 }
 #Home {
-  background-image   : /* url(../images/Portrait.svg), */ url(../images/blurry-gradient-haikei.svg);
+  background-image   :  url(../media/blurry_gradient.svg);
   background-size    : contain;
-  background-position: /* right center, */ 35%;
+  background-position: 35%;
   background-repeat  : no-repeat;
   color              : white;
   border-radius      : 15px;
@@ -158,6 +139,10 @@ body {
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
+}
+.main-logo>p::selection {
+  color     : var(--selection-col);
+  background: var(--ascent-col);
 }
 
 @keyframes slide 
@@ -215,10 +200,10 @@ body {
   #Home {
     padding: auto 10em;
     margin : 70px 10px;
-    /* background-image   : url(../images/Portrait.svg); */
+    /* background-image   : url(../media/Portrait.svg); */
   }
   .main-logo {
-    font-size     : 4.5em;
+    font-size     : 4.2em;
     letter-spacing: 0em;
   }
   .sub-logo {
@@ -254,7 +239,6 @@ body {
 #Project>div {
   padding                : 2vw;
   border-radius          : 25px;
-  padding-bottom         : 50px;
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
   margin                 : 2vw 7vw;
   backdrop-filter        : blur(70px);
@@ -266,8 +250,8 @@ body {
 #Project>header, #About>header {
   margin-top    : 0;
   font-size     : 6em;
-  font-family: 'Mulish';
-  font-weight: 300;
+  font-family   : 'Mulish';
+  font-weight   : 300;
   letter-spacing: 1em;
   text-indent   : 1em;
   text-transform: uppercase;
@@ -300,6 +284,9 @@ body {
 @media screen and (max-width: 1280px) {
   #Project p, #About p {
     font-size  : 1.7em;
+  }
+  #Project>header, #About>header {
+    font-size: 4em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -375,15 +362,20 @@ body {
   }
 }
 
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
 .icon-instagram
 {
-  content: url(../images/instagram-svgrepo-com.svg);
+  content: url(../media/instagram-svgrepo-com.svg);
   fill: var(--ascent-col);
   scale: 0.05;
 }
 .icon-twitter
 {
-  content: url(../images/twitter-svgrepo-com.svg);
+  content: url(../media/twitter-svgrepo-com.svg);
   fill: var(--ascent-col);
   scale: 0.05;
 }

@@ -1,19 +1,26 @@
-import { useState } from 'react';
-import level2 from '../images/TPS_proto/level2-Small.png'
-import TPS1 from '../images/TPS_proto/OverShoulder1-Small.png'
-import TPS2 from '../images/TPS_proto/OverShoulder2-Small.png'
-import TPS3 from '../images/TPS_proto/OverShoulder3-Small.png'
-import TPS4 from '../images/TPS_proto/OverShoulder4-Small.png'
-import TPS5 from '../images/TPS_proto/OverShoulder5-Small.png'
-import TPS6 from '../images/TPS_proto/OverShoulder6-Small.png'
-import ProtoVid from '../images/TPS_proto/Prototype.webm'
+import { useState, useRef, useEffect } from 'react';
+import level2 from '../media/TPS_proto/level2-Small.png'
+import TPS1 from '../media/TPS_proto/OverShoulder1-Small.png'
+import TPS2 from '../media/TPS_proto/OverShoulder2-Small.png'
+import TPS3 from '../media/TPS_proto/OverShoulder3-Small.png'
+import TPS4 from '../media/TPS_proto/OverShoulder4-Small.png'
+import TPS5 from '../media/TPS_proto/OverShoulder5-Small.png'
+import TPS6 from '../media/TPS_proto/OverShoulder6-Small.png'
+import ProtoVid from '../media/TPS_proto/Prototype.webm'
 
-import dropDown from './Components';
+// import DropDown from './Components';
+import { MainVid } from './Components';
 
 function TPSPrototype({isPhone, width, ImageFade})
 {
+	const [isClicked, setIsClicked]     = useState(false);
+	const [dropOpacity, setDropOpacity] = useState('0');
+	const [isMouseOver, setIsMouseOver]     = useState(false);
+	const vidRef = useRef(null);
+
 	const fadeProps = {
 		images: [ level2, TPS1, TPS2, TPS3 ],
+		isMouseOver: isMouseOver,
 		style: { 
 			width     : !isPhone ? '45%'  : '75%',
 			float     : !isPhone ? 'right': 'none',
@@ -23,8 +30,12 @@ function TPSPrototype({isPhone, width, ImageFade})
 		},
 	}
 
-	const [isClicked, setIsClicked]     = useState(false);
-	const [dropOpacity, setDropOpacity] = useState('0');
+	useEffect( ()=> {
+		if ( isMouseOver )
+			vidRef.current.play();
+		else
+			vidRef.current.pause();
+	},[isMouseOver, isClicked] );
 	
 	function expand() {
 		setIsClicked( isClicked ? false : true);
@@ -33,10 +44,13 @@ function TPSPrototype({isPhone, width, ImageFade})
 	const mouseEnter = ()=>
 	{
 		setDropOpacity('1');
+		setIsMouseOver(true);
+
 	}
 	const mouseLeave = ()=>
 	{
 		setDropOpacity('0');
+		setIsMouseOver(false);
 	}
 
 	var divStyle = {
@@ -68,7 +82,7 @@ function TPSPrototype({isPhone, width, ImageFade})
 		marginRight : '0em',
 	};
 
-	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d' };
+	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d', display: !isPhone ? 'block' : 'none' };
 	if( isPhone )
 	{
 		h1Style = {
@@ -84,12 +98,15 @@ function TPSPrototype({isPhone, width, ImageFade})
 			padding: '0',
 		};
 	}
+	
+	// const poster = level2;
+	// const mainVidProps = { ProtoVid, vidStyle, isClicked, isMouseOver, level2 }
 	return (
 		<div style={divStyle} onClick={expand} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-			{/* <span className={`material-symbols-rounded expansion-arrow ${isClicked ? 'active' : ''}`} style={ !isPhone ? dropDownStyle : null}>
+			{/* <span className={`material-symbols-rounded expansion-arrow ${isClicked ? 'active' : ''}`} style={ dropDownStyle}>
 				arrow_downward
 			</span> */}
-			<video style={ vidStyle } controls autoPlay muted loop>
+			<video style={ vidStyle } poster={level2} ref={vidRef} muted loop>
 				<source src={ProtoVid} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Third-Person Shooter<br/>Prototype</h1>

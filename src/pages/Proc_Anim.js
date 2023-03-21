@@ -1,16 +1,40 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-import Proc_anim_behind from '../images/Proc_Anim/Proc_Anim_behind.webm'
-import Proc_anim_side from '../images/Proc_Anim/Proc_Anim_side.webm'
+import Proc_anim_behind from '../media/Proc_Anim/Proc_Anim_behind.webm'
+import Proc_anim_side from '../media/Proc_Anim/Proc_Anim_side.webm'
 
 function ProceduralAnimation({isPhone, width})
 {
-	const [isClicked, setIsClicked] = useState(false);
+	const [isClicked, setIsClicked]     = useState(false);
+	const [isMouseOver, setIsMouseOver] = useState(false);
+
+	const vidRef1 = useRef(null);
+	const vidRef2 = useRef(null);
+
+	useEffect( ()=> {
+		if ( isMouseOver )
+		{
+			vidRef1.current.play();
+			vidRef2.current.play();
+		}
+		else
+		{
+			vidRef1.current.pause();
+			vidRef2.current.pause();
+		}
+	},[isMouseOver, isClicked] );
 
 	const expand = () => {
 		setIsClicked( isClicked ? false : true);
-		console.log( 'TPS clicked', isClicked );
 	};
+	
+	const mouseEnter = ()=> {
+		setIsMouseOver(true);
+
+	}
+	const mouseLeave = ()=> {
+		setIsMouseOver(false);
+	}
 	var divStyle = {
 		backgroundColor: '#b7bcff',
 		color: 'black',
@@ -66,15 +90,15 @@ function ProceduralAnimation({isPhone, width})
 		};
 	}
 	return (
-		<div style={divStyle} onClick={expand}>
-			<video style={ vid1Style } controls autoPlay muted loop>
+		<div style={divStyle} onClick={expand}  onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+			<video style={ vid1Style } ref={vidRef1} autoPlay muted loop>
 				<source src={Proc_anim_behind} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Quadruped Procedural<br /> Animation</h1>
 			<p style={ p1Style }>
 				Quadruped Procedural Animation made in unity with its IK rigging tool.<br />
 			</p>
-			<video style={ vid2Style } controls autoPlay muted loop>
+			<video style={ vid2Style } ref={vidRef2} muted loop>
 				<source src={Proc_anim_side} type='video/mp4' />
 			</video>
 			<p style={p2Style}>

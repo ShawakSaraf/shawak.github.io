@@ -1,19 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-import DigitClass_Vid from '../images/NN/Handwritten_digit_classification.webm'
-import NN1 from '../images/NN/NN1.png'
-import NN2 from '../images/NN/NN2.png'
-import NN3 from '../images/NN/NN3.png'
-import NN4 from '../images/NN/NN4.png'
+import DigitClass_Vid from '../media/NN/Handwritten_digit_classification.webm'
+import NN1 from '../media/NN/NN1.png'
+import NN2 from '../media/NN/NN2.png'
+import NN3 from '../media/NN/NN3.png'
+import NN4 from '../media/NN/NN4.png'
 
 function NeuralNetwork({isPhone, width})
 {
-	const [isClicked, setIsClicked] = useState(false);
+	const [isClicked, setIsClicked]     = useState(false);
+	const [isMouseOver, setIsMouseOver] = useState(false);
+
+	const vidRef = useRef(null);
+
+	useEffect( ()=> {
+		if ( isMouseOver )
+			vidRef.current.play();
+		else
+			vidRef.current.pause();
+	},[isMouseOver, isClicked] );
 
 	const expand = () => {
 		setIsClicked( isClicked ? false : true);
-		console.log( 'TPS clicked', isClicked );
 	};
+	
+	const mouseEnter = ()=> {
+		setIsMouseOver(true);
+
+	}
+	const mouseLeave = ()=> {
+		setIsMouseOver(false);
+	}
+
 	var divStyle = {
 		backgroundColor: '#dfb921',
 		color: 'black',
@@ -72,8 +90,8 @@ function NeuralNetwork({isPhone, width})
 		};
 	}
 	return (
-		<div style={divStyle} onClick={expand}>
-			<video style={vidStyle} controls autoPlay muted loop>
+		<div style={divStyle} onClick={expand}  onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+			<video style={vidStyle} ref={vidRef} autoPlay muted loop>
 				<source src={DigitClass_Vid} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Neural Network from<br />Scratch</h1>

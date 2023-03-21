@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import ProceduralAnimation from './Proc_Anim';
 import TPSPrototype from './TPS_proto';
 import GANVAE from './GANVAE';
 import NeuralNetwork from './NeuralNetwork';
 
-function ImageFade({images, ...props})
+function ImageFade({images, isMouseOver, ...props})
 {
 	const [index, setIndex]     = useState(0);
 	const [opacity, setOpacity] = useState(1);
@@ -13,6 +13,8 @@ function ImageFade({images, ...props})
 	useEffect(() => {
 		const interval = setInterval(() => 
 		{
+			if ( !isMouseOver )
+				return;
 			setOpacity(0);
 			setTimeout(() => 
 			{
@@ -24,7 +26,7 @@ function ImageFade({images, ...props})
 		}, 5000);
 		
 		return () => clearInterval(interval);
-	}, [index]);
+	}, [index, isMouseOver]);
 	 
 	
 	return (
@@ -36,12 +38,30 @@ function ImageFade({images, ...props})
 	);
 }
 
-export function dropDown()
+export function DropDown()
 {
 	return (
 		<span className="material-symbols-rounded expantion-arrow">
 			arrow_downward
 		</span>
+	);
+}
+
+export function MainVid({video, isClicked, isPlaying, vidStyle, poster })
+{
+	
+	const vidRef = useRef(null);
+	useEffect( ()=> {
+		if ( isPlaying || isClicked )
+			vidRef.current.play();
+		else
+			vidRef.current.pause();
+	},[isPlaying, isClicked] );
+
+	return (
+		<video style={ vidStyle } poster={poster} ref={vidRef} muted loop>
+			<source src={video} type='video/mp4' />
+		</video>
 	);
 }
 
@@ -112,7 +132,7 @@ function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 			<div className='top-menu'>
 				<ul>
 					<li><a onClick={handleHomeClick} href >Home</a></li>
-					<li><a onClick={handleProjectClick} href >Project</a></li>
+					<li><a onClick={handleProjectClick} href >Projects</a></li>
 					<li><a onClick={handleAboutClick} href >About</a></li>
 				</ul>
 			</div>
@@ -149,7 +169,7 @@ function Project({projetsRef})
 	const props = { isPhone, width, ImageFade };
 	return (
 		<div id='Project' ref={projetsRef}>
-			<header style={{ marginBottom: '0em' }}>Project</header>
+			<header style={{ marginBottom: '0em' }}>Projects</header>
 			<TPSPrototype {...props}/>
 			<GANVAE {...props}/>
 			<ProceduralAnimation {...props}/>
@@ -175,18 +195,53 @@ function About({ aboutRef })
 function Socials()
 {
 	return (
-		<div class="container-wrap">
-			<footer id="footer" role="contentinfo">
-				<div class="col-md-12 text-center">
-					<ul class="social-icons">
-						<li><a href="https://twitter.com/ShawakSaraf" target="_blank" rel="noreferrer"><i class="icon-twitter"></i></a></li>
-						<li><a href="https://www.instagram.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-instagram"></i></a></li>
-						<li><a href="https://www.github.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-github"></i></a></li>
-					</ul>
-				</div>
-			</footer>
-		</div>
+		<ul class="socials">
+			<li><a href="https://twitter.com/ShawakSaraf" target="_blank" rel="noreferrer"><i class="icon-twitter"></i></a></li>
+			<li><a href="https://www.instagram.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-instagram"></i></a></li>
+			<li><a href="https://www.github.com/shawaksaraf/" target="_blank" rel="noreferrer"><i class="icon-github"></i></a></li>
+		</ul>
 	);
 }
 
-export {NavBar, Home, Project, About, Socials};
+function InfiniteScrollPage() {
+	const pageRef = useRef(null);
+ 
+	const handleScroll = () => {
+	  const pageHeight = pageRef.current.offsetHeight;
+	  const windowHeight = window.innerHeight;
+	  const scrollPosition = window.scrollY;
+ 
+	  if (scrollPosition >= pageHeight - windowHeight) {
+		 pageRef.current.insertBefore(
+			<div className='container' ref={pageRef}>
+        <Home homeRef={homeRef}/>
+        <Project projetsRef={projetsRef}/>
+        <About aboutRef={aboutRef}/>
+        {/* <Socials /> */}
+      </div>,
+			pageRef.current.firstChild
+		 );
+	  }
+	};
+ 
+	useEffect(() => {
+	  window.addEventListener('scroll', handleScroll);
+ 
+	  return () => {
+		 window.removeEventListener('scroll', handleScroll);
+	  };
+	}, []);
+	const homeRef    = useRef(null);
+	const projetsRef = useRef(null);
+	const aboutRef   = useRef(null);
+	return (
+      <div className='container' ref={pageRef}>
+        <Home homeRef={homeRef}/>
+        <Project projetsRef={projetsRef}/>
+        <About aboutRef={aboutRef}/>
+        {/* <Socials /> */}
+      </div>
+	);
+ }
+
+export {NavBar, Home, Project, About, Socials, InfiniteScrollPage};

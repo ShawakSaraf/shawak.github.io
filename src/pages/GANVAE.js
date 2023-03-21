@@ -1,26 +1,48 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-import Ganvar5 from '../images/GANVAE/5x5_GeneratedDigits.png'
-import Ganvar15 from '../images/GANVAE/15x15_GeneratedDigits.png'
-import Ganvar30 from '../images/GANVAE/30x30_GeneratedDigits-Small.png'
-import Ganvar50 from '../images/GANVAE/50x50_GeneratedDigits-Small.png'
-import Ganvar50Inv from '../images/GANVAE/50x50_GeneratedDigits_InvertedCol-Small.png'
-import DigitGen from '../images/GANVAE/Handwritten_Digit_Generation.webm'
+import Ganvar5 from '../media/GANVAE/5x5_GeneratedDigits.png'
+import Ganvar15 from '../media/GANVAE/15x15_GeneratedDigits.png'
+import Ganvar30 from '../media/GANVAE/30x30_GeneratedDigits-Small.png'
+import Ganvar50 from '../media/GANVAE/50x50_GeneratedDigits-Small.png'
+import Ganvar50Inv from '../media/GANVAE/50x50_GeneratedDigits_InvertedCol-Small.png'
+import DigitGen from '../media/GANVAE/Handwritten_Digit_Generation.webm'
+import thumbnail from '../media/GANVAE/thumbnail.webp'
 
 
 function GANVAE({isPhone, width, ImageFade})
 {
+	const [isClicked, setIsClicked]     = useState(false);
+	const [isMouseOver, setIsMouseOver] = useState(false);
+	
+	const vidRef = useRef(null);
 	const fadeProps = 
 	{
 		images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
+		isMouseOver: isMouseOver,
 		style: { width:  !isPhone ? '25%' : '60%', float: !isPhone ? 'right': 'center', marginLeft: !isPhone ? '20px' : '0px', marginTop: !isPhone ? '20px' : '0px' },
 	}
-	const [isClicked, setIsClicked] = useState(false);
+	
+	useEffect( ()=> 
+	{
+		if ( isMouseOver )
+			vidRef.current.play();
+		else
+			vidRef.current.pause();
+	},[isMouseOver, isClicked] );
 
 	const expand = () => {
 		setIsClicked( isClicked ? false : true);
-		console.log( 'TPS clicked', isClicked );
 	};
+	
+	const mouseEnter = ()=>
+	{
+		setIsMouseOver(true);
+
+	}
+	const mouseLeave = ()=>
+	{
+		setIsMouseOver(false);
+	}
 
 	var divStyle = {
 		backgroundColor: 'grey',
@@ -43,6 +65,8 @@ function GANVAE({isPhone, width, ImageFade})
 		textAlign: 'left',
 	}
 
+	var vidStyle = { width: !isPhone ? '33%' : '80%', float: !isPhone ? 'left': 'center' };
+
 	if( isPhone )
 	{
 		h1Style = {
@@ -60,8 +84,8 @@ function GANVAE({isPhone, width, ImageFade})
 	}
 
 	return (
-		<div style={divStyle}  onClick= {expand}>
-			<video style={ { width: !isPhone ? '33%' : '80%', float: !isPhone ? 'left': 'center' } } controls autoPlay muted loop>
+		<div style={divStyle}  onClick={expand} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+			<video style={vidStyle} poster={thumbnail} ref={vidRef} autoPlay muted loop>
 				<source src={DigitGen} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Generative Adversarial<br />Network<br />+<br />Variational Autoencoder</h1>

@@ -3,8 +3,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Oxygen:300,400);
 
-
-
 .theme-toggle:after {
   font-family: 'icomoon';
   content    : var(--theme-icon);
@@ -501,6 +499,53 @@ article:first-child::first-letter {
   #blog_thumbnail {
     padding: 4em 1em;
   }
+}
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.nav:before, .nav:after {
+  content: " ";
+  display: table;
+}
+.nav:after {
+  clear: both;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav > li > a {
+  position: absolute;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+}
+.nav > li.disabled > a {
+  color: #777777;
+}
+.nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
+  color: #777777;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #eeeeee;
+  border-color: #337ab7;
+}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.nav > li > a > img {
+  max-width: none;
 }
 
 .nav .top-menu {
@@ -1165,7 +1210,7 @@ article:first-child::first-letter {
 }
 
 .social-icons li a i {
-  font-size : 20px;
+  font-size : 0px;
   transition: 0.25s;
 }
 
