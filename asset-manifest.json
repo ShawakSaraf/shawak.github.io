@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b9b564f.css",
+    "main.css": "/static/css/main.e69c9321.css",
     "main.js": "/static/js/main.6678592c.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
@@ -24,16 +24,16 @@
     "static/media/NN3.png": "/static/media/NN3.4d9aa2318a2ce74ade7f.png",
     "static/media/15x15_GeneratedDigits.png": "/static/media/15x15_GeneratedDigits.1b97d4e37e9e0e8164eb.png",
     "static/media/thumbnail.webp": "/static/media/thumbnail.dea19f3f15c08ae3743d.webp",
-    "static/media/twitter-svgrepo-com.svg": "/static/media/twitter-svgrepo-com.a958cb7e36d202f3ec10.svg",
-    "static/media/blurry-gradient-haikei.svg": "/static/media/blurry-gradient-haikei.8b9299112b5e971de2ea.svg",
-    "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.6b92d8ed893d7871cfe4.svg",
+    "static/media/twitter-svgrepo-com.svg": "/static/media/twitter-svgrepo-com.f7a10892e5d4774eaa14.svg",
+    "static/media/blurry_gradient.svg": "/static/media/blurry_gradient.8b9299112b5e971de2ea.svg",
+    "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.ae478ac947c3c4b8110d.svg",
     "index.html": "/index.html",
-    "main.3b9b564f.css.map": "/static/css/main.3b9b564f.css.map",
+    "main.e69c9321.css.map": "/static/css/main.e69c9321.css.map",
     "main.6678592c.js.map": "/static/js/main.6678592c.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b9b564f.css",
+    "static/css/main.e69c9321.css",
     "static/js/main.6678592c.js"
   ]
 }
