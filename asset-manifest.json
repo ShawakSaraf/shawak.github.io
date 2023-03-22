@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e69c9321.css",
-    "main.js": "/static/js/main.6678592c.js",
+    "main.css": "/static/css/main.ee128aee.css",
+    "main.js": "/static/js/main.4afd963b.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/Prototype.webm": "/static/media/Prototype.81b103b464184eaf6fe9.webm",
+    "static/media/Prototype.webm": "/static/media/Prototype.e55372d61b77edd215e3.webm",
     "static/media/Proc_Anim_behind.webm": "/static/media/Proc_Anim_behind.dba52d16893858068c23.webm",
     "static/media/Proc_Anim_side.webm": "/static/media/Proc_Anim_side.ac30bddcc241d31a6539.webm",
     "static/media/Handwritten_Digit_Generation.webm": "/static/media/Handwritten_Digit_Generation.64240b0a33ffd1f18e31.webm",
     "static/media/Handwritten_digit_classification.webm": "/static/media/Handwritten_digit_classification.c9d790ce333d4c5da5ac.webm",
     "static/media/OverShoulder6-Small.png": "/static/media/OverShoulder6-Small.b697ae3eff54d2e8b7f1.png",
-    "static/media/OverShoulder5-Small.png": "/static/media/OverShoulder5-Small.6dd19223be2944769375.png",
-    "static/media/level2-Small.png": "/static/media/level2-Small.9ad55e2f494dc89838d3.png",
+    "static/media/LevelView-Small.png": "/static/media/LevelView-Small.9ad55e2f494dc89838d3.png",
+    "static/media/Run4-Small.png": "/static/media/Run4-Small.e9e69fbc5963d10bcbe4.png",
     "static/media/OverShoulder3-Small.png": "/static/media/OverShoulder3-Small.59924fb2b60bdb833b65.png",
     "static/media/OverShoulder4-Small.png": "/static/media/OverShoulder4-Small.f949cdb41bc8ce934e1f.png",
     "static/media/OverShoulder2-Small.png": "/static/media/OverShoulder2-Small.24a55fc3007e6be8f16c.png",
+    "static/media/Run1-Small.png": "/static/media/Run1-Small.1c49de8e35ce91818d11.png",
     "static/media/OverShoulder1-Small.png": "/static/media/OverShoulder1-Small.d851bd42076f4c19c131.png",
     "static/media/50x50_GeneratedDigits_InvertedCol-Small.png": "/static/media/50x50_GeneratedDigits_InvertedCol-Small.633c4a5fbfbf25088e51.png",
     "static/media/50x50_GeneratedDigits-Small.png": "/static/media/50x50_GeneratedDigits-Small.16001b78a8badbec604e.png",
@@ -28,12 +29,12 @@
     "static/media/blurry_gradient.svg": "/static/media/blurry_gradient.8b9299112b5e971de2ea.svg",
     "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.ae478ac947c3c4b8110d.svg",
     "index.html": "/index.html",
-    "main.e69c9321.css.map": "/static/css/main.e69c9321.css.map",
-    "main.6678592c.js.map": "/static/js/main.6678592c.js.map",
+    "main.ee128aee.css.map": "/static/css/main.ee128aee.css.map",
+    "main.4afd963b.js.map": "/static/js/main.4afd963b.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e69c9321.css",
-    "static/js/main.6678592c.js"
+    "static/css/main.ee128aee.css",
+    "static/js/main.4afd963b.js"
   ]
 }
