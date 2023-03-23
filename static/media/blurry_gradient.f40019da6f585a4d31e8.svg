@@ -7,19 +7,17 @@
         }
         .circle-1 {
             opacity         : 1;
-            transform-origin: 380px 255px;
+            transform-origin: 400px 225px;
             animation       : anim-1 var(--anim_t) infinite;
-            transform       : rotate(0deg);
         }
         .circle-2 {
             opacity         : 1;
-            transform-origin: 380px 255px;
+            transform-origin: 400px 225px;
             animation       : anim-2 var(--anim_t) infinite;
-            transform       : rotate(0deg);
         }
         @keyframes anim-1 {
             50% {
-                /* transform-origin: 200px 255px; */
+                transform-origin: 280px 155px;
                 transform: rotate(180deg);
             }
             100% {
@@ -28,7 +26,7 @@
         }
         @keyframes anim-2 {
             50% {
-                /* transform-origin: 460px 255px; */
+                transform-origin: 500px 295px;
                 transform: rotate(180deg);
             }
             100% {
@@ -45,11 +43,11 @@
         </filter>
     </defs>
     <g filter="url(#a)">
-        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
-        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
+        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="150" ry="150"/>
+        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="150" ry="150"/>
     </g>
     <g filter="url(#b)">
-        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
-        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
+        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="150" ry="150"/>
+        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="150" ry="150"/>
     </g>
 </svg>
