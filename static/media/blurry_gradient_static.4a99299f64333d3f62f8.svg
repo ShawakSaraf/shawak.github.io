@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <style>
+        :root {
+            --col1  : #8e98f5;
+            --col2  : #f1345d;
+            --anim_t: 10s;
+        }
+        .circle-1 {
+            opacity         : 1;
+            transform-origin: 400px 225px;
+            transform       : rotate(70deg) translateX( 60px );
+        }
+        .circle-2 {
+            opacity         : 1;
+            transform-origin: 400px 225px;
+            transform       : rotate(0deg) translateY( -40px );
+        }
+    </style>
+    <defs>
+        <filter id="a" width="400%" height="400%" x="-100%" y="-100%" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+            <feGaussianBlur width="100%" height="100%" x="0%" y="0%" in="SourceGraphic" result="blur" stdDeviation="40"/>
+        </filter>
+        <filter id="b" width="400%" height="400%" x="-100%" y="-100%" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+            <feGaussianBlur width="100%" height="100%" x="0%" y="0%" in="SourceGraphic" result="blur" stdDeviation="80"/>
+        </filter>
+    </defs>
+    <g filter="url(#a)">
+        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
+        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
+    </g>
+    <g filter="url(#b)">
+        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
+        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
+    </g>
+</svg>

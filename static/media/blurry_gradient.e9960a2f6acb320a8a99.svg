@@ -1,25 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
     <style>
         :root {
-            --col1: #8e98f5;
-            --col2: #f1345d;
-            --cx1: 402.348;
-            --cy1: 268.195;
-            --cx2: 300.849;
-            --cy2: 255.544;
+            --col1  : #8e98f5;
+            --col2  : #f1345d;
             --anim_t: 10s;
         }
         .circle-1 {
-            opacity: 1;
+            opacity         : 1;
             transform-origin: 380px 255px;
-            animation: anim-1 var(--anim_t) infinite;
-            transform: rotate(0deg);
+            animation       : anim-1 var(--anim_t) infinite;
+            transform       : rotate(0deg);
         }
-        .circle-1-blur {
-            opacity: 1;
+        .circle-2 {
+            opacity         : 1;
             transform-origin: 380px 255px;
-            animation: anim-1 var(--anim_t) infinite;
-            transform: rotate(0deg);
+            animation       : anim-2 var(--anim_t) infinite;
+            transform       : rotate(0deg);
         }
         @keyframes anim-1 {
             50% {
@@ -29,18 +25,6 @@
             100% {
                 transform: rotate(360deg);
             }
-        }
-        .circle-2 {
-            opacity: 1;
-            transform-origin: 380px 255px;
-            animation: anim-2 var(--anim_t) infinite;
-            transform: rotate(0deg);
-        }
-        .circle-2-blur {
-            opacity: 1;
-            transform-origin: 380px 255px;
-            animation: anim-2 ease-in var(--anim_t) infinite;
-            transform: rotate(0deg);
         }
         @keyframes anim-2 {
             50% {
@@ -65,7 +49,7 @@
         <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
     </g>
     <g filter="url(#b)">
-        <ellipse class="circle-1-blur" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
-        <ellipse  class="circle-2-blur" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
+        <ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="110" ry="110"/>
+        <ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="110" ry="110"/>
     </g>
 </svg>
