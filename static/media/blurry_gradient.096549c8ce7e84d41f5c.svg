@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
     <style>
         :root {
-            --col1  : #8e98f5;
+            --col1  : #aeb6ff;
             --col2  : #f1345d;
             --anim_t: 10s;
         }
@@ -34,6 +34,19 @@
             }
         }
     </style>
+    <script type="text/javascript">
+        <![CDATA[
+            const ellipses = document.querySelectorAll('.circle-1, .circle-2');
+            ellipses.forEach(ellipse => {
+                const dx = Math.random() * 800;
+                const dy = Math.random() * 450;
+                console.log( dx, dy )
+
+                ellipse.setAttribute('cx', dx);
+                ellipse.setAttribute('cy', dy);
+            });
+        ]]>
+    </script>
     <defs>
         <filter id="a" width="400%" height="400%" x="-100%" y="-100%" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
             <feGaussianBlur width="100%" height="100%" x="0%" y="0%" in="SourceGraphic" result="blur" stdDeviation="40"/>
