@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
     <style>
         :root {
-            --col1  : #8e98f5;
+            --col1  : #a6afff;
             --col2  : #f1345d;
             --anim_t: 10s;
         }
