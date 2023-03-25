@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
 import DigitClass_Vid from '../media/NN/Handwritten_digit_classification.webm'
-import NN1 from '../media/NN/NN1.png'
-import NN2 from '../media/NN/NN2.png'
-import NN3 from '../media/NN/NN3.png'
 import NN4 from '../media/NN/NN4.png'
 
 function NeuralNetwork({isPhone, width})
@@ -43,9 +40,11 @@ function NeuralNetwork({isPhone, width})
 		letterSpacing: '0.3em',
 		padding      : isClicked ? '0em 0 1em 0': '5.3vw 0 10vw 0',
 		transition   : isClicked ? '0.25s': '0.5s',
+		color        : isClicked ? '#413400' : 'black',
+
 	};	 
 	var p1Style = {
-		paddingLeft: '40vw'
+		paddingRight: '40vw'
 	};	 
 
 	var p2Style = {
@@ -59,13 +58,13 @@ function NeuralNetwork({isPhone, width})
 
 	var vidStyle = {
 		width       : '45%',
-		float       : 'left',
+		float       : 'right',
 		borderRadius: '5px',
 	}
 	var imgStyle = {
-		width: !isPhone ? '35%': '60%',
-		float: !isPhone ? 'right': 'center',
-		margin: '2vw 0 0 1.5vw',
+		width : !isPhone ? '35%' : '60%',
+		float : !isPhone ? 'left': 'center',
+		margin: '2vw 2vw 0 0',
 	}
 	const aStyle = { color: '#413400', }
 

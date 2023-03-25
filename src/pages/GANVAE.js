@@ -19,8 +19,12 @@ function GANVAE({isPhone, width, ImageFade})
 	{
 		images: [ Ganvar5, Ganvar15, Ganvar30, Ganvar50, Ganvar50Inv ],
 		isMouseOver: isMouseOver,
-		style: { width:  !isPhone ? '25%' : '60%', float: !isPhone ? 'right': 'center', marginLeft: !isPhone ? '20px' : '0px', marginTop: !isPhone ? '20px' : '0px' },
-	}
+		style: { 
+			width      : !isPhone ? '25%' : '60%',
+			float      : !isPhone ? 'left': 'center',
+			marginRight: !isPhone ? '40px': '0px',
+			marginTop  : !isPhone ? '30px': '0px' },
+		}
 	
 	useEffect( ()=> 
 	{
@@ -28,7 +32,7 @@ function GANVAE({isPhone, width, ImageFade})
 			vidRef.current.play();
 		else
 			vidRef.current.pause();
-	},[isMouseOver, isClicked] );
+	}, [isMouseOver, isClicked] );
 
 	const expand = () => {
 		setIsClicked( isClicked ? false : true);
@@ -55,17 +59,19 @@ function GANVAE({isPhone, width, ImageFade})
 		padding      : isClicked ? '0em 0 1.5em 0': '7.8vw 0 12vw 0',
 		transition   : isClicked ? '0.25s': '0.5s',
 		letterSpacing: '0.3em',
+		color        : isClicked ? '#dfdfdf' : 'white',
 	};	 
 	var p1Style = {
-		paddingLeft: '30vw'
+		paddingRight: '30vw',
+		paddingLeft: '1vw'
 	};	 
 
 	var p2Style = {
-		padding: '2vw  0 2vw 30vw',
+		padding: width >= 1500 ? '2vw  30vw 2vw 0vw' : '2vw  0 2vw 0vw',
 		textAlign: 'left',
 	}
 
-	var vidStyle = { width: !isPhone ? '33%' : '80%', float: !isPhone ? 'left': 'center' };
+	var vidStyle = { width: !isPhone ? '33%' : '80%', float: !isPhone ? 'right': 'center' };
 
 	if( isPhone )
 	{
@@ -74,6 +80,7 @@ function GANVAE({isPhone, width, ImageFade})
 			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
 			letterSpacing: '0.1em',
 			transition   : isClicked ? '0.25s'      : '0.5s',
+			color        : isClicked ? '#dfdfdf' : 'white',
 		};
 		p1Style = {
 			paddingLeft: '0'
@@ -103,7 +110,7 @@ function GANVAE({isPhone, width, ImageFade})
 				with an image from the dataset and outputs how close the generated image was to the image from the dataset.
 			</p>
 			<p style={ p2Style }>
-				See the code at my <a style={ {color: 'black'} } href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository.</a>
+				See the code at my <a style={ {color: '#dfdfdf'} } href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository.</a>
 			</p>
 		</div>
 	);

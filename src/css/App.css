@@ -5,8 +5,6 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700);
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
 
-
-
 :root {
   /* Light theme */
   --bg-col            : #000000;
@@ -48,6 +46,7 @@
 
 body {
   transition: 0.5s;
+  background-color: var(--bg-col);
   /* font-size: 0.5em; */
 }
 
@@ -57,7 +56,6 @@ body {
   align-self         : center;
   text-align         : center;
   margin             : 0 auto;
-  /* background-image   : url("../media/bg_opt.svg"); */
   background-size    : cover;
   background-position: center center;
   background-repeat  : no-repeat;
@@ -107,14 +105,20 @@ body {
   transition: 0.25s ease-out;
 }
 #Home {
-  background-image   :  url(../media/blurry_gradient.svg);
-  background-size    : contain;
-  background-position: 35%;
+  display            : flex;
+  flex-direction     : row;
+  align-items        : center;
+  /* background-image   : url(../media/blurry_gradient.svg); */
+  background-color   : #000000;
+  background-position: center;
+  background-size    : cover;
   background-repeat  : no-repeat;
   color              : white;
   border-radius      : 15px;
-  margin             : 125px 4vw;
   text-align         : justify;
+  height             : 97.6vh;
+  padding-bottom     : 10vw;
+  margin             : 1.15vh;
 }
 #Home>p
 {
@@ -125,8 +129,7 @@ body {
 @media screen and (max-width: 769px) {
 }
 .main-logo {
-  display         : block;
-  padding         : 100px 3em;
+  padding         : 0 3em;
   font-family     : "Montserrat Alternates";
   font-size       : 14em;
   font-weight     : 500;
@@ -134,8 +137,9 @@ body {
   letter-spacing  : 0.1em;
   text-indent     : -0.1em;
   transition      : 0.5s;
+  background-color: transparent;
+  z-index: 10;
   /* animation       : slide 3s ease-out infinite; */
-  background-color: black;
 }
 .main-logo>p:first-child::first-letter {
   font-size: 1.5em;
@@ -160,10 +164,10 @@ body {
 .sub-logo {
   display        : block;
   font-family    : "Poppins";
-  font-size      : 0.2em;
+  font-size      : 0.17em;
   transition     : 0.5s;
   word-spacing   : 1em;
-  text-indent    : -1em;
+  text-indent    : 0em;
   text-transform: capitalize;
   text-shadow    : 0px 0px rgba(0, 0, 0, 0.7);
   /* animation   : spacing 5s ease-in-out infinite; */
@@ -183,33 +187,29 @@ body {
 @media screen and (max-width: 1580px) {
   .main-logo {
     font-size: 10em;
-    padding  : 100px 1em;
   }
 }
 @media screen and (max-width: 1280px) {
   .main-logo {
-    font-size: 8em;
-    padding  : 100px 1em;
-  }
-  #Home {
-    margin: 125px 20px;
-    padding  : 100px 0.5em;
+    /* font-size: 8em; */
+    padding  : 0 1em;
   }
 }
 @media screen and (max-width: 769px) {
   #Home {
-    padding: auto 10em;
-    margin : 70px 10px;
-    /* background-image   : url(../media/Portrait.svg); */
+    padding: 0 0 5em 0;
+    margin: 0.8vh;
+    height: 98.2vh;
+    background-position: 40%;
   }
   .main-logo {
-    font-size     : 4.2em;
+    font-size     : 6em;
     letter-spacing: 0em;
+    padding: 0 0 0 0.4em;
   }
   .sub-logo {
-    font-size   : large;
+    font-size   : 0.25em;
     word-spacing: 0.5em;
-    text-indent : -2em;
   }
 }
 
@@ -239,13 +239,8 @@ body {
 #Project>div {
   padding                : 2vw;
   border-radius          : 25px;
-  box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
   margin                 : 2vw 7vw;
-  backdrop-filter        : blur(70px);
-  -webkit-backdrop-filter: blur(7px);
   overflow               : hidden;
-  text-align             : center;
-  /* max-width              : 1180px; */
 }
 #Project>header, #About>header {
   margin-top    : 0;
@@ -318,9 +313,13 @@ body {
   padding                : 50px;
   border-radius          : 10px;
   padding-bottom         : 50px;
+  /* background-image       : url(../media/Portrait.svg); */
   background-color       : var(--ascent-col);
+  background-position    : center;
+  background-repeat      : no-repeat;
+  background-size        : contain;
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin: 0 425px;
+  margin                 : 0 425px;
   backdrop-filter        : blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -331,7 +330,6 @@ body {
   }
 }
 @media screen and (max-width: 769px) {
-  
   #Project>div, #About>div {
     margin : 2.2em 1em;
     padding: 10px;

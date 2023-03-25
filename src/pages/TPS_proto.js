@@ -1,44 +1,51 @@
 import { useState, useRef, useEffect } from 'react';
-import level2 from '../media/TPS_proto/level2-Small.png'
-import TPS1 from '../media/TPS_proto/OverShoulder1-Small.png'
-import TPS2 from '../media/TPS_proto/OverShoulder2-Small.png'
-import TPS3 from '../media/TPS_proto/OverShoulder3-Small.png'
-import TPS4 from '../media/TPS_proto/OverShoulder4-Small.png'
-import TPS5 from '../media/TPS_proto/OverShoulder5-Small.png'
-import TPS6 from '../media/TPS_proto/OverShoulder6-Small.png'
+import level2 from '../media/TPS_proto/LevelView.png'
+import TPS1 from '../media/TPS_proto/OverShoulder1.png'
+import TPS2 from '../media/TPS_proto/OverShoulder2.png'
+import TPS3 from '../media/TPS_proto/OverShoulder3.png'
+import TPS4 from '../media/TPS_proto/OverShoulder4.png'
+import TPS6 from '../media/TPS_proto/OverShoulder6.png'
 import ProtoVid from '../media/TPS_proto/Prototype.webm'
-
-// import DropDown from './Components';
-import { MainVid } from './Components';
+import FirstProtoVid from '../media/TPS_proto/First_Prototype.webm'
+import run1 from '../media/TPS_proto/Run1.png'
+import run4 from '../media/TPS_proto/Run4.png'
 
 function TPSPrototype({isPhone, width, ImageFade})
 {
 	const [isClicked, setIsClicked]     = useState(false);
 	const [dropOpacity, setDropOpacity] = useState('0');
-	const [isMouseOver, setIsMouseOver]     = useState(false);
-	const vidRef = useRef(null);
+	const [isMouseOver, setIsMouseOver] = useState(false);
+
+	const vidRef  = useRef(null);
+	const vidRef2 = useRef(null);
 
 	const fadeProps = {
-		images: [ level2, TPS1, TPS2, TPS3 ],
+		images: [ level2, TPS1, TPS2, run1, run4, TPS3, TPS4, TPS6 ],
 		isMouseOver: isMouseOver,
 		style: { 
-			width     : !isPhone ? '45%'  : '75%',
-			float     : !isPhone ? 'right': 'none',
-			marginTop : !isPhone ? '6em'  : '0em',
-			marginLeft: !isPhone ? '1.5em'  : '0em',
-
+			width      : !isPhone ? '45%'  : '75%',
+			float      : !isPhone ? 'left' : 'none',
+			marginTop  : !isPhone ? '6em'  : '2vw',
+			marginRight: !isPhone ? '1.5em': '0em',
 		},
 	}
 
 	useEffect( ()=> {
 		if ( isMouseOver )
+		{
 			vidRef.current.play();
+			vidRef2.current.play();
+		}
 		else
+		{
 			vidRef.current.pause();
+			vidRef2.current.pause();
+		}
 	},[isMouseOver, isClicked] );
 	
 	function expand() {
 		setIsClicked( isClicked ? false : true);
+		
 	};
 	
 	const mouseEnter = ()=>
@@ -57,47 +64,49 @@ function TPSPrototype({isPhone, width, ImageFade})
 		backgroundColor: '#9a82c2',
 		// padding : '1vw',
 		// width: '100px',
-		maxHeight : isClicked ? '1180px': !isPhone ? '27vw': '87vw',
+		maxHeight : isClicked ? '1440px': !isPhone ? '27vw': '87vw',
+		// transform: isClicked ? 'scale(1.13)' : 'scale(1)',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
-	var h1Style = {
-		fontSize  : isClicked ? '2vw' : '2.2vw',
-		padding   : isClicked ? '0em 0 1em 0' : '8vw 0 15vw 0',
-		transition: isClicked ? '0.25s' : '0.5s',
-		letterSpacing : '0.2em',
+	var h1Style = !isPhone ? {
+		fontSize     : isClicked ? '2vw'        : '2.2vw',
+		padding      : isClicked ? '0em 0 1em 0': '8vw 0 15vw 0',
+		transition   : isClicked ? '0.25s'      : '0.5s',
+		letterSpacing: '0.2em',
+		color        : isClicked ? '#e6d7ff' : 'white',
+	} : {
+		fontSize     : isClicked ? '4.5vw'      : '5vw',
+		padding      : isClicked ? '2vw 0 5vw 0': '5vw 0 25vw 0',
+		transition   : isClicked ? '0.25s'      : '0.5s',
+		letterSpacing: '0.2em',
+		color        : isClicked ? '#e6d7ff' : 'white',
 	};	 
 	var p1Style = {
-		paddingLeft: '44vw'
-	};	 
+		paddingLeft: !isPhone ? '44vw': '0'
+	};	
 
 	var p2Style = {
-		padding: '13vw 0 0 0',
-		textAlign: 'left',
-	};
+		// paddingRight: !isPhone ? '39vw': '0',
+		paddingTop  : !isPhone ? width >= 1500 ? '13vw' : '7vw' : '0',
+	};	 
 
+	var p3Style = {
+		paddingTop: !isPhone ? '13vw' : '0',
+		textAlign: 'left',
+	}; 
 	var vidStyle = { 
-		width      : !isPhone ? '50%': '100%',
-		float      : !isPhone ? 'left' : 'center',
+		width      : !isPhone ? '50%' : '100%',
+		float      : !isPhone ? 'left': 'center',
 		paddinRight: '3em',
-		marginRight : '0em',
+		marginRight: '0em',
+	};
+	var vid2Style = { 
+		width : !isPhone ? width >= 1500 ? '35%': '45%' : '100%',
+		float : !isPhone ? 'right' : 'center',
+		margin: !isPhone ? width >= 1500 ? '5vw 0 0 1vw' : '2vw 0 0 1vw' : '2vw 0 0 0',
 	};
 
 	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d', display: !isPhone ? 'block' : 'none' };
-	if( isPhone )
-	{
-		h1Style = {
-			fontSize  : isClicked ? '4.5vw' : '5vw',
-			padding   : isClicked ? '2vw 0 5vw 0' : '5vw 0 25vw 0',
-			transition: isClicked ? '0.25s' : '0.5s',
-         letterSpacing : '0.2em',
-      };
-		p1Style = {
-			paddingLeft: '0'
-		};
-		p2Style = {
-			padding: '0',
-		};
-	}
 	
 	// const poster = level2;
 	// const mainVidProps = { ProtoVid, vidStyle, isClicked, isMouseOver, level2 }
@@ -117,8 +126,15 @@ function TPSPrototype({isPhone, width, ImageFade})
 				I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
 				and my goal with this rough prototype was to study its level design.<br />
 			</p>
-			<ImageFade {...fadeProps} />
+			<video style={ vid2Style } ref={vidRef2} muted loop>
+				<source src={FirstProtoVid} type='video/mp4' />
+			</video>
 			<p style={ p2Style }>
+				This small project germinated when I was learning the basics of game development and made this prototype 
+				with a gun hovering in front of the camera shooting a capsule with red oblate sphere as eyes.<br />
+			</p>
+			<ImageFade {...fadeProps} />
+			<p style={ p3Style }>
 				I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
 			</p>
 		</div>

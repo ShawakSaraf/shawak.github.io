@@ -501,58 +501,11 @@ article:first-child::first-letter {
   }
 }
 
-.nav {
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-.nav:before, .nav:after {
-  content: " ";
-  display: table;
-}
-.nav:after {
-  clear: both;
-}
-.nav > li {
-  position: relative;
-  display: block;
-}
-.nav > li > a {
-  position: absolute;
-  display: block;
-  padding: 10px 15px;
-}
-.nav > li > a:hover, .nav > li > a:focus {
-  text-decoration: none;
-}
-.nav > li.disabled > a {
-  color: #777777;
-}
-.nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
-  color: #777777;
-  text-decoration: none;
-  background-color: transparent;
-  cursor: not-allowed;
-}
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #eeeeee;
-  border-color: #337ab7;
-}
-.nav .nav-divider {
-  height: 1px;
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-}
-.nav > li > a > img {
-  max-width: none;
-}
-
 .nav .top-menu {
   position        : fixed;
   top             : 0;
   transform       : translateX(50vw);
-  padding         : 20px 0;
+  padding         : 18px 0 22px 0;
   width           : 400px;
   left            : -200px;
   background-color: var(--ascent-col);
@@ -563,10 +516,10 @@ article:first-child::first-letter {
 }
 @media screen and (max-width: 768px) {
   .nav .top-menu {
-    padding: 15px 0;
-    width           : 300px;
-    left            : -150px;
-    border-radius   :  0 0 40px 40px;
+    padding      : 12px 0 15px 0;
+    width        : 300px;
+    left         : -150px;
+    border-radius: 0 0 40px 40px;
   }
 }
 
@@ -583,7 +536,7 @@ article:first-child::first-letter {
 
 .nav .logo:hover {
   /* transition    : 0.25s; */
-  letter-spacing: 2px;
+  letter-spacing: px;
 }
 
 .nav .logo a span {
@@ -624,7 +577,7 @@ article:first-child::first-letter {
 .nav ul li a {
   position          : relative;
   font-size         : 1.8em;
-  padding           : 30px 12px;
+  padding           : 0px 12px;
   color             : var(--UI-inactive-col);
   -webkit-transition: 0.5s;
   -o-transition     : 0.5s;
@@ -640,7 +593,7 @@ article:first-child::first-letter {
 }
 @media screen and (max-width: 768px) {
   .nav ul li a {
-    font-size         : 1.5em;
+    font-size: 1.2em;
   }
 }
 
@@ -1210,7 +1163,7 @@ article:first-child::first-letter {
 }
 
 .social-icons li a i {
-  font-size : 0px;
+  font-size : 20px;
   transition: 0.25s;
 }
 

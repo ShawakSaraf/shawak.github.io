@@ -1,4 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import noise from 'noisejs';
+// import { Canvas, useFrame, extend, useThree, shadowMap, colorManagement } from '@react-three/fiber';
+// import * as THREE from 'three';
+// import { ShaderPark } from 'shader-park-core';
 
 import ProceduralAnimation from './Proc_Anim';
 import TPSPrototype from './TPS_proto';
@@ -15,6 +19,7 @@ function ImageFade({images, isMouseOver, ...props})
 		{
 			if ( !isMouseOver )
 				return;
+
 			setOpacity(0);
 			setTimeout(() => 
 			{
@@ -23,11 +28,10 @@ function ImageFade({images, isMouseOver, ...props})
 			setTimeout(() => {
 				setOpacity(1);
 			}, 1000);
-		}, 5000);
+		}, 4000);
 		
 		return () => clearInterval(interval);
 	}, [index, isMouseOver]);
-	 
 	
 	return (
 		<img
@@ -38,6 +42,38 @@ function ImageFade({images, isMouseOver, ...props})
 	);
 }
 
+// function Sphere()
+// {
+// 	const mesh = useRef();
+// 	let time = 0;
+
+// 	const sphereGeometry = new THREE.SphereGeometry( 3, 1, 1 );
+// 	const update = () => 
+// 	{
+// 	const PI = 3.141592;
+// 	time += performance.now() * 0.001;
+// 	// console.log( 'delta: ', time );
+
+// 	mesh.current.rotation.x = window.innerHeight*PI;
+// 	mesh.current.rotation.y = window.innerWidth*PI;
+
+// 	mesh.current.geometry.normalsNeedUpdate  = true;
+// 	mesh.current.geometry.verticesNeedUpdate = true;
+// 	mesh.current.geometry.computeVertexNormals();
+// 	};
+
+// 	useEffect( () => { 
+// 	update();
+// 	console.log( 'updating' );
+// 	})
+
+// 	return (
+// 	<mesh ref={mesh}>
+// 		<primitive object={sphereGeometry} attach={'geometry'} />
+// 		<meshNormalMaterial />
+// 	</mesh>
+// 	);
+// }
 export function DropDown()
 {
 	return (
@@ -49,7 +85,6 @@ export function DropDown()
 
 export function MainVid({video, isClicked, isPlaying, vidStyle, poster })
 {
-	
 	const vidRef = useRef(null);
 	useEffect( ()=> {
 		if ( isPlaying || isClicked )
@@ -91,45 +126,22 @@ function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 	}
 
 	const [ lastScrollY, setLastScrolY ] = useState(window.scrollY)
-	const [menuStyle, setMenuStyle] = useState({
-		position       : "fixed",
-		top            : "0",
-		transform      : "translateX(50vw)",
-		padding        : "20px 0 30px 0",
-		width          : "400px",
-		left           : "-200px",
-		backgroundColor: "var(--navbar-col)",
-		boxShadow      : "0 8px 20px rgba(0, 0, 0, 0.226)",
-		borderRadius   : "0 0 50px 50px",
-		zIndex         : "1",
-		transition     : "0.5s",
-	});
 
+	var style = { transform: 'translate3d( 50vw, -100px, 0 )' };
 	useEffect(() => {
 		const handleScroll = () => {
-			const scrollY = window.scrollY;
-
-			if (scrollY > lastScrollY && menuStyle.top === "0") 
-			{
-				// slide up out of the screen
-				setMenuStyle((prevStyle) => ({ ...prevStyle, top: "-100px" }));
-			}
-			else if (scrollY === lastScrollY && menuStyle.top === "-100px") 
-			{
-				// slide down into the screen
-				setMenuStyle((prevStyle) => ({ ...prevStyle, top: "0" }));
-			}
 			setLastScrolY( window.scrollY );
 		};
-
 		window.addEventListener("scroll", handleScroll);
 
 		return () => window.removeEventListener("scroll", handleScroll);
-	}, [menuStyle]);
-  
+	}, []);
+	if ( projetsRef.current != null && lastScrollY >= projetsRef.current.offsetTop-300)
+		style = { transform: 'translate3d( 50vw, 0vw, 0 )' };
+
 	return (
 		<nav className="nav" role={"navigation"}>
-			<div className='top-menu'>
+			<div className='top-menu' style={style}>
 				<ul>
 					<li><a onClick={handleHomeClick} href >Home</a></li>
 					<li><a onClick={handleProjectClick} href >Projects</a></li>
@@ -140,36 +152,116 @@ function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 	);
 }
 
-function Home({ homeRef })
+function Home({ homeRef, width })
 {
-  return (
-    <div ref={homeRef}>
-      <header id="Home" className="main-logo">
-        <p>Shawak •—</p>
-        <ul className="sub-logo">
-          <p>GameDev • MachineLearning</p>
-        </ul>
-      </header>
-    </div>
+	const radius = width>768 ? 160 : 140;
+	const svgCode = width>768 ? `
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+		<style>
+			:root {
+				--col1  : #a6afff;
+				--col2  : #f1345d;
+				--anim_t: 20s;
+			}
+			.circle-1, .circle-2  {
+				transform-origin: 400px 225px;
+				filter: blur(40px);
+			}
+			.circle-1  {
+				animation: anim-1 var(--anim_t) ease-in-out infinite;
+				transform: translateZ(0.0001px);
+			}
+			.circle-2 {
+				animation: anim-2 var(--anim_t) ease-in-out infinite;
+				transform: translateZ(0.0002px);
+			}
+			@keyframes anim-1 {
+				25% {
+					transform-origin: 280px 155px;
+					transform: rotate(180deg);
+				}
+				50% {
+					transform: rotate(0deg);
+				}
+				75% {
+					transform-origin: 550px 155px;
+					transform: rotate(180deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes anim-2 {
+				25% {
+					transform-origin: 500px 295px;
+					transform: rotate(-180deg);
+				}
+				500% {
+					transform: rotate(0deg);
+				}
+				75% {
+					transform-origin: 200px 295px;
+					transform: rotate(180deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+		<g >
+			<ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="${radius}" ry="${radius}"/>
+			<ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="${radius}" ry="${radius}"/>
+		</g>
+	</svg>
+	` : `
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+		<style>
+			:root {
+				--col1  : #a6afff;
+				--col2  : #f1345d;
+				--anim_t: 10s;
+			}
+			.circle-1, .circle-2 {
+				transform-origin: 400px 225px;
+				filter: blur(40px);
+			}
+			.circle-1 {
+				transform : rotate(70deg) translateX( 100px );
+			}
+			.circle-2 {
+				transform : rotate(0deg) translate3d(-10px, -80px,0 );
+			}
+		</style>
+		<g >
+			<ellipse class="circle-1" cx="402.348" cy="230" fill="var(--col1)" rx="${radius}" ry="${radius}"/>
+			<ellipse  class="circle-2" cx="300.849" cy="225" fill="var(--col2)" rx="${radius}" ry="${radius}"/>
+		</g>
+	</svg>`;
+	
+  	const divStyle = {
+		backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent(svgCode)}")`,
+	};
+
+  	return (
+	<div ref={homeRef}>
+		<header id="Home" style={divStyle}>
+			<div className="main-logo">
+				<p>Shawak</p>
+				<p className="sub-logo">GameDev • MachineLearning</p>
+			</div>
+		</header>
+	</div>
   );
 }
 
-function Project({projetsRef})
+function Project({projetsRef, width})
 {
-	const [width, setWidth] = useState(window.innerWidth);
-
-	useEffect(() => {
-		const handleResize = () => setWidth(window.innerWidth);
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-
 	const isPhone = width < 768;
 
 	const props = { isPhone, width, ImageFade };
 	return (
 		<div id='Project' ref={projetsRef}>
-			<header style={{ marginBottom: '0em' }}>Projects</header>
+			{/* <header style={{ marginBottom: '0em' }}>Projects</header> */}
 			<TPSPrototype {...props}/>
 			<GANVAE {...props}/>
 			<ProceduralAnimation {...props}/>
@@ -185,8 +277,8 @@ function About({ aboutRef })
          <header>About</header>
 			<p style={ { textAlign: 'center' } }>
 				Hey! I'm a human trying to figure out life.<br />
-				{/* In the real world I'm a self-taught programmer and game developer.<br />
-				I'm also really facsinated by machine learning. */}
+				In the real world I'm a self-taught programmer and game developer.<br />
+				I'm also really facsinated by machine learning.
 			</p>
       </div>
    );
@@ -203,45 +295,31 @@ function Socials()
 	);
 }
 
-function InfiniteScrollPage() {
-	const pageRef = useRef(null);
- 
-	const handleScroll = () => {
-	  const pageHeight = pageRef.current.offsetHeight;
-	  const windowHeight = window.innerHeight;
-	  const scrollPosition = window.scrollY;
- 
-	  if (scrollPosition >= pageHeight - windowHeight) {
-		 pageRef.current.insertBefore(
-			<div className='container' ref={pageRef}>
-        <Home homeRef={homeRef}/>
-        <Project projetsRef={projetsRef}/>
-        <About aboutRef={aboutRef}/>
-        {/* <Socials /> */}
-      </div>,
-			pageRef.current.firstChild
-		 );
-	  }
-	};
- 
-	useEffect(() => {
-	  window.addEventListener('scroll', handleScroll);
- 
-	  return () => {
-		 window.removeEventListener('scroll', handleScroll);
-	  };
-	}, []);
+function Content() 
+{
 	const homeRef    = useRef(null);
 	const projetsRef = useRef(null);
 	const aboutRef   = useRef(null);
-	return (
-      <div className='container' ref={pageRef}>
-        <Home homeRef={homeRef}/>
-        <Project projetsRef={projetsRef}/>
-        <About aboutRef={aboutRef}/>
-        {/* <Socials /> */}
-      </div>
-	);
- }
+	// const homeEndRef = useRef(null);
+	
+	const [width, setWidth] = useState(window.innerWidth);
 
-export {NavBar, Home, Project, About, Socials, InfiniteScrollPage};
+	useEffect(() => {
+		const handleResize = () => setWidth(window.innerWidth);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	return(
+		<div className='container'>
+			<Home homeRef={homeRef} width={width}/>
+			<Project projetsRef={projetsRef}  width={width}/>
+			<About aboutRef={aboutRef}/>
+			{/* <Home homeRef={homeEndRef}/> */}
+			{/* <Project />
+			<About /> */}
+		</div>
+	);
+}
+
+export {NavBar, Home, Project, About, Socials, Content};
