@@ -30,7 +30,7 @@ function NeuralNetwork({isPhone, width})
 	}
 
 	var divStyle = {
-		backgroundColor: '#dfb921',
+		backgroundColor: '#ffe225',
 		color: 'black',
 		maxHeight: isClicked ? '1180px' : !isPhone ? '21vw' : '78vw',
 		transition: isClicked ? '0.25s' : '0.5s',
@@ -48,7 +48,7 @@ function NeuralNetwork({isPhone, width})
 	};	 
 
 	var p2Style = {
-		paddingTop: '10vw',
+		paddingTop: !isPhone ? width >= 1500 ? '10vw' : '5vw' : '0',
 		textAlign: 'left',
 	}
 	var p3Style = {
@@ -64,9 +64,9 @@ function NeuralNetwork({isPhone, width})
 	var imgStyle = {
 		width : !isPhone ? '35%' : '60%',
 		float : !isPhone ? 'left': 'center',
-		margin: '2vw 2vw 0 0',
+		margin: '2vw 2vw 3vw 0',
 	}
-	const aStyle = { color: '#413400', }
+	const aStyle = { color: 'white', backgroundColor: '#655a0e' }
 
 	if( isPhone )
 	{
@@ -83,9 +83,6 @@ function NeuralNetwork({isPhone, width})
 		p1Style = {
 			paddingLeft: '0',
          textAlign: 'center',
-		};	 
-		p2Style = {
-			padding: '0',
 		};
 	}
 	return (
@@ -103,12 +100,12 @@ function NeuralNetwork({isPhone, width})
 				without the complexities of modern machine learning frameworks.<br />
 			</p>
 			<p style={p3Style}>
-				I've also written a blog, <a style={aStyle} href='https://lookingisnotenough.com/UnderstandingNeuralNetworks' target={'_blank'} rel="noreferrer">"Understanding Neural Networks"</a>.<br />
-				And made this model in a <a style={aStyle} href='https://colab.research.google.com/drive/1B9Uu9A-O6efN8_oqYGYmU8iiD-JK80dt' target={'_blank'} rel="noreferrer">Jupyter notebook</a> with annotations for the code in google colab.
+				I've also written a blog, <a style={{color: '#413400'}} href='https://lookingisnotenough.com/UnderstandingNeuralNetworks' target={'_blank'} rel="noreferrer">"Understanding Neural Networks"</a>.<br />
+				And made this model in a <a style={{color: '#413400'}} href='https://colab.research.google.com/drive/1B9Uu9A-O6efN8_oqYGYmU8iiD-JK80dt' target={'_blank'} rel="noreferrer">Jupyter notebook</a> with annotations for the code in google colab.
 				It runs on the google servers so there's no need to install anything.<br />
 			</p>
 			<p>
-				Here's the <a style={aStyle} href='https://github.com/ShawakSaraf/Neural-Network-from-Scratch' target={'_blank'} rel="noreferrer">Github Repository.</a>
+				Here's the <a style={aStyle} className='ImpLink' href='https://github.com/ShawakSaraf/Neural-Network-from-Scratch' target={'_blank'} rel="noreferrer">Github Repository</a>
 			</p>
 		</div>
 	);

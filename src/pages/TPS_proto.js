@@ -62,9 +62,27 @@ function TPSPrototype({isPhone, width, ImageFade})
 
 	var divStyle = {
 		backgroundColor: '#9a82c2',
-		// padding : '1vw',
-		// width: '100px',
 		maxHeight : isClicked ? '1440px': !isPhone ? '27vw': '87vw',
+		transition: isClicked ? '0.25s' : '0.5s',
+	};
+	var parentDivStyle = {
+		backgroundColor: '#9a82c2',
+		maxHeight : !isPhone ? '27vw': '87vw',
+		// transform: isClicked ? 'scale(1.13)' : 'scale(1)',
+		transition: isClicked ? '0.25s'  : '0.5s',
+		overflow  : isClicked ? 'visible': 'hidden',
+		display   : "flex",
+		flexDirection: 'row',
+	};
+	var childDivStyle = {
+		backgroundColor: '#9a82c2',
+		// transform: 'translateZ(0.0001px)',
+		position    : 'absolute',
+		transform   : isClicked ? 'translate3d(-5vw, 0vh, 0) scale(1)': 'scale(0)',
+		opacity : isClicked ? '1': '0',
+		overflow    : 'visible',
+		borderRadius: '25px',
+		padding     : '3vw',
 		// transform: isClicked ? 'scale(1.13)' : 'scale(1)',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
@@ -74,6 +92,7 @@ function TPSPrototype({isPhone, width, ImageFade})
 		transition   : isClicked ? '0.25s'      : '0.5s',
 		letterSpacing: '0.2em',
 		color        : isClicked ? '#e6d7ff' : 'white',
+		margin : '0',
 	} : {
 		fontSize     : isClicked ? '4.5vw'      : '5vw',
 		padding      : isClicked ? '2vw 0 5vw 0': '5vw 0 25vw 0',
@@ -86,8 +105,10 @@ function TPSPrototype({isPhone, width, ImageFade})
 	};	
 
 	var p2Style = {
-		// paddingRight: !isPhone ? '39vw': '0',
-		paddingTop  : !isPhone ? width >= 1500 ? '13vw' : '7vw' : '0',
+		paddingLeft: !isPhone ? width >= 1500 ? '7vw': '2vw': '0',
+		paddingTop  : !isPhone ? width >= 1500 ? '14vw' : '7vw' : '0',
+		textAlign : 'left',
+		width : !isPhone ? '55%' : '100%',
 	};	 
 
 	var p3Style = {
@@ -103,7 +124,7 @@ function TPSPrototype({isPhone, width, ImageFade})
 	var vid2Style = { 
 		width : !isPhone ? width >= 1500 ? '35%': '45%' : '100%',
 		float : !isPhone ? 'right' : 'center',
-		margin: !isPhone ? width >= 1500 ? '5vw 0 0 1vw' : '2vw 0 0 1vw' : '2vw 0 0 0',
+		margin: !isPhone ? width >= 1500 ? '5vw 5vw 0 1vw' : '2vw 2vw 0 1vw' : '2vw 0 0 0',
 	};
 
 	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d', display: !isPhone ? 'block' : 'none' };
@@ -119,24 +140,26 @@ function TPSPrototype({isPhone, width, ImageFade})
 				<source src={ProtoVid} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Third-Person Shooter<br/>Prototype</h1>
-			<p style={ p1Style }>
-				A simple Third-Person Shooter prototype I made some years ago in Unity.<br />
-			</p>
-			<p style={ p1Style }>
-				I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
-				and my goal with this rough prototype was to study its level design.<br />
-			</p>
-			<video style={ vid2Style } ref={vidRef2} muted loop>
-				<source src={FirstProtoVid} type='video/mp4' />
-			</video>
-			<p style={ p2Style }>
-				This small project germinated when I was learning the basics of game development and made this prototype 
-				with a gun hovering in front of the camera shooting a capsule with red oblate sphere as eyes.<br />
-			</p>
-			<ImageFade {...fadeProps} />
-			<p style={ p3Style }>
-				I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
-			</p>
+				<p style={ p1Style }>
+					A simple Third-Person Shooter prototype I made some years ago in Unity.<br />
+				</p>
+				<p style={ p1Style }>
+					I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
+					and my goal with this rough prototype was to study its level design.<br />
+				</p>
+			{/* <div style={childDivStyle}> */}
+				<video style={ vid2Style } ref={vidRef2} muted loop>
+					<source src={FirstProtoVid} type='video/mp4' />
+				</video>
+				<p style={ p2Style }>
+					This small project germinated when I was learning the basics of game development and made this prototype 
+					with a gun hovering in front of the camera shooting a capsule with red oblate sphere as eyes.<br />
+				</p>
+				<ImageFade {...fadeProps} />
+				<p style={ p3Style }>
+					I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
+				</p>
+			{/* </div> */}
 		</div>
 	);
 }

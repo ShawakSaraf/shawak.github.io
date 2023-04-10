@@ -1,4 +1,4 @@
-import { NavBar, Home, Project, About, Socials, Content } from './Components.js'
+import { NavBar, Content } from './Components.js'
 import { useRef } from 'react';
 import '../css/App.css';
 import '../css/style.css';

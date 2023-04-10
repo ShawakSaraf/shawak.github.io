@@ -1,47 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Mulish:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Mulish:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700);
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
 
 :root {
-  /* Light theme */
   --bg-col            : #000000;
   --bg-col2           : #7178bb;
   --bg-col3           : rgb(255, 232, 208);
   --ascent-col        : rgb(108, 118, 224);
-  --hamburger-menu-col: #ffd8a963;
-  --shadow-alpha      : rgba(0, 0, 0, 0.45);
-  --shadow-alpha-2    : rgba(0, 0, 0, 0.55);
   --font-col          : rgb(46, 46, 46);
   --font-col2         : rgb(61, 61, 61);
   --font-weight       : 500;
   --selection-col     : rgb(255, 255, 255);
-  --h-style-col       : rgb(20, 20, 20);
   --UI-font-col       : rgb(255, 255, 255);
   --UI-inactive-col   : rgba(193, 197, 255, 0.774);
   --UI-border-col     : rgba(0, 0, 0, 0.05);
   --gototop-bg-col    : rgba(255, 197, 126, 0.2);
-
-
-  /* --bg-col            : #C8FFD4;
-  --bg-col2           : #77ffd627;
-  --bg-col3           : rgb(255, 232, 208);
-  --ascent-col        : #14C38E;
-  --navbar-col        : #1bdaa1;
-  --ascent-col-2      : #000000ca;
-  --shadow-alpha      : rgba(0, 0, 0, 0.45);
-  --shadow-alpha-2    : rgba(0, 0, 0, 0.55);
-  --font-col          : rgb(46, 46, 46);
-  --font-col2         : rgb(61, 61, 61);
-  --font-weight       : 500;
-  --selection-col     : rgb(255, 255, 255);
-  --h-style-col       : rgb(20, 20, 20);
-  --UI-font-col       : rgb(0, 0, 0);
-  --UI-inactive-col   : #2b7e65;
-  --UI-border-col     : rgba(0, 0, 0, 0.05);
-  --gototop-bg-col    : rgba(255, 197, 126, 0.2); */
 }
 
 body {
@@ -61,7 +37,7 @@ body {
   background-repeat  : no-repeat;
   background-color   : var(--bg-col);
   justify-content    : center;
-  color: white;
+  color              : white;
   /* background-attachment: fixed; */
 }
 
@@ -71,11 +47,17 @@ body {
 }
 
 .container {
-  /* max-width     : 980px; */
-  margin        : auto;
-  padding-bottom: 10vh;
-  min-height    : 100vh;
-  min-width     : 100%;
+  /* display        : flex; */
+  /* flex-direction : row; */
+  overflow-y     : scroll;
+  scroll-behavior: smooth;
+  margin         : auto;
+  padding-bottom : 10vh;
+  min-height     : 100vh;
+  min-width      : 100%;
+  width          : 100%;
+  height         : 200px;
+  transform: translate3d( 00px, 0,0 );
   /* backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(7px); */
 }
@@ -105,10 +87,10 @@ body {
   transition: 0.25s ease-out;
 }
 #Home {
+  flex               : 0 0 auto;
   display            : flex;
   flex-direction     : row;
   align-items        : center;
-  /* background-image   : url(../media/blurry_gradient.svg); */
   background-color   : #000000;
   background-position: center;
   background-size    : cover;
@@ -162,14 +144,14 @@ body {
   }
 }
 .sub-logo {
-  display        : block;
-  font-family    : "Poppins";
-  font-size      : 0.17em;
-  transition     : 0.5s;
-  word-spacing   : 1em;
-  text-indent    : 0em;
+  display       : block;
+  font-family   : "Poppins";
+  font-size     : 0.17em;
+  transition    : 0.5s;
+  word-spacing  : 1em;
+  text-indent   : 0em;
   text-transform: capitalize;
-  text-shadow    : 0px 0px rgba(0, 0, 0, 0.7);
+  text-shadow   : 0px 0px rgba(0, 0, 0, 0.7);
   /* animation   : spacing 5s ease-in-out infinite; */
 }
 @keyframes spacing {
@@ -226,10 +208,11 @@ body {
   }
 }
 
-#Project, #About {
-  position: relative;
-  display        : flex;
-  flex-direction : column;
+#Project {
+  position      : relative;
+  display       : flex;
+  flex-direction: column;
+  /* flex-direction : row; */
   justify-content: space-between;
   margin-top     : 10em;
   border-radius  : 50px;
@@ -237,10 +220,10 @@ body {
 }
 
 #Project>div {
-  padding                : 2vw;
-  border-radius          : 25px;
-  margin                 : 2vw 7vw;
-  overflow               : hidden;
+  padding      : 2vw;
+  border-radius: 25px;
+  margin       : 2vw 7vw;
+  overflow     : hidden;
 }
 #Project>header, #About>header {
   margin-top    : 0;
@@ -262,22 +245,37 @@ body {
   text-indent   : 0.45em;
   font-family   : 'Josefin Sans';
 }
-#Project p, #About p {
+#Project p {
   text-align : left;
-  font-size  : 2.5em;
+  font-size  : 2.7em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
 }
-#About p {
+
+#About p{
+  font-size: 3em;
+  font-weight: 500;
+  font-family: 'Raleway';
   margin-top: 1em;
+  text-align: left;
+  /* word-spacing: 0.15em; */
 }
+
 @media screen and (max-width: 2000px) {
-  #Project p, #About p {
+  #Project p {
     font-size  : 2em;
+  }
+  #About p{
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 1580px) {
+  #About p{
+    font-size: 1.9em;
   }
 }
 @media screen and (max-width: 1280px) {
-  #Project p, #About p {
+  #Project p {
     font-size  : 1.7em;
   }
   #Project>header, #About>header {
@@ -285,18 +283,24 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  #Project p, #About p {
+  #Project p {
     font-size  : 1.5em;
+  }
+  #About p{
+    font-size: 1.8em;
   }
 }
 
-#Project a {
+#Project .ImpLink {
   text-decoration: none;
-  color: var(--ascent-col);
+  border-radius  : 15px;
+  padding        : 5px 10px;
 }
-#Project a:hover {
-  text-decoration: none;
-  color: var(--UI-font-col);
+#Project .ImpLink:hover {
+  color        : var(--UI-font-col);
+  border-radius: 3px;
+  transition   : 0.2s;
+  
 }
 
 .float-right { float: right; }
@@ -306,22 +310,27 @@ body {
   width          : 80%;
   box-shadow     : 0px 0px 35px rgba(0, 0, 0, 0.623);
   border-radius  : 25px;
+  font-style: italic#dfdfdf;
   /* margin         : 0 0 30px 0; */
   /* border        : 5px solid var(--ascent-col); */
 }
 #About {
-  padding                : 50px;
-  border-radius          : 10px;
-  padding-bottom         : 50px;
+  padding                : 100px 50px 50px 50px;
+  border-radius          : 70px 70px 10px 10px;
   /* background-image       : url(../media/Portrait.svg); */
-  background-color       : var(--ascent-col);
+  background-color       : #ffa5b1;
+  color                  : #000000;
   background-position    : center;
   background-repeat      : no-repeat;
   background-size        : contain;
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin                 : 0 425px;
-  backdrop-filter        : blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  margin                 : 20vh;
+}
+
+#aboutContent { 
+  display : flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 @media screen and (max-width: 1500px) {
@@ -341,7 +350,7 @@ body {
     text-indent   : 1em;
     text-transform: uppercase;
   }
-  #Project p, #About p {
+  #Project p {
     font-size : 1.5em;
     margin    : 15px 5px;
   }
@@ -354,9 +363,14 @@ body {
   }
 
   #About {
-    margin-left : 1em;
-    margin-right: 1em;
-    padding     : 10px;
+    margin-left  : 1em;
+    margin-right : 1em;
+    border-radius: 70px 70px 10px 10px;
+    padding: 50px 0 15px 0;
+  }
+  #aboutContent { 
+    flex-direction: column;
+    align-items: center;
   }
 }
 

@@ -71,6 +71,8 @@ function GANVAE({isPhone, width, ImageFade})
 		textAlign: 'left',
 	}
 
+	var aStyle = {color: 'white', backgroundColor: '#4f4f4f' };
+
 	var vidStyle = { width: !isPhone ? '33%' : '80%', float: !isPhone ? 'right': 'center' };
 
 	if( isPhone )
@@ -79,7 +81,7 @@ function GANVAE({isPhone, width, ImageFade})
 			fontSize     : isClicked ? '4.5vw'      : '5vw',
 			padding      : isClicked ? '2vw 0 5vw 0': '4vw 0 25vw 0',
 			letterSpacing: '0.1em',
-			transition   : isClicked ? '0.25s'      : '0.5s',
+			transition   : isClicked ? '0.25s' : '0.5s',
 			color        : isClicked ? '#dfdfdf' : 'white',
 		};
 		p1Style = {
@@ -110,7 +112,7 @@ function GANVAE({isPhone, width, ImageFade})
 				with an image from the dataset and outputs how close the generated image was to the image from the dataset.
 			</p>
 			<p style={ p2Style }>
-				See the code at my <a style={ {color: '#dfdfdf'} } href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository.</a>
+				See the code at my <b><a style={ aStyle } className='ImpLink' href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository</a></b>
 			</p>
 		</div>
 	);

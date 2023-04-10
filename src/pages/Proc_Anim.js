@@ -53,7 +53,7 @@ function ProceduralAnimation({isPhone, width})
 	};	 
 
 	var p2Style = {
-		padding: '15vw 0 2vw 0vw',
+		padding: width >= 1500 ? '15vw 0 2vw 0vw' : '11vw 0 2vw 0vw',
 		textAlign: 'left',
 	}
 
@@ -79,9 +79,9 @@ function ProceduralAnimation({isPhone, width})
 		h1Style = {
 			fontSize     : isClicked ? '4.5vw'      : '4.9vw',
 			padding      : isClicked ? '2vw 0 5vw 0': '6vw 0 25vw 0',
-         letterSpacing: '0.2em',
-			transition: isClicked ? '0.25s' : '0.5s',
-			color        : isClicked ? '#383c66' : 'black',
+			letterSpacing: '0.2em',
+			transition   : isClicked ? '0.25s'      : '0.5s',
+			color        : isClicked ? '#383c66'    : 'black',
 		};
 		p1Style = {
 			paddingLeft: '0',
