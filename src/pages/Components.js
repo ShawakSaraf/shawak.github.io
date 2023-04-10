@@ -32,7 +32,7 @@ function ImageFade({images, isMouseOver, ...props})
 		}, 4000);
 		
 		return () => clearInterval(interval);
-	}, [index, isMouseOver]);
+	}, [index, isMouseOver, images.length]);
 	
 	return (
 		<img

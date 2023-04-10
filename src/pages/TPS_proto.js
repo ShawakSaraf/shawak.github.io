@@ -23,10 +23,10 @@ function TPSPrototype({isPhone, width, ImageFade})
 		images: [ level2, TPS1, TPS2, run1, run4, TPS3, TPS4, TPS6 ],
 		isMouseOver: isMouseOver,
 		style: { 
-			width      : !isPhone ? '45%'  : '75%',
+			width      : !isPhone ? '40%'  : '75%',
 			float      : !isPhone ? 'left' : 'none',
 			marginTop  : !isPhone ? '6em'  : '2vw',
-			marginRight: !isPhone ? '1.5em': '0em',
+			marginRight: !isPhone ? '7em': '0em',
 		},
 	}
 
@@ -48,14 +48,12 @@ function TPSPrototype({isPhone, width, ImageFade})
 		
 	};
 	
-	const mouseEnter = ()=>
-	{
+	const mouseEnter = ()=> {
 		setDropOpacity('1');
 		setIsMouseOver(true);
 
 	}
-	const mouseLeave = ()=>
-	{
+	const mouseLeave = ()=> {
 		setDropOpacity('0');
 		setIsMouseOver(false);
 	}
@@ -63,27 +61,6 @@ function TPSPrototype({isPhone, width, ImageFade})
 	var divStyle = {
 		backgroundColor: '#9a82c2',
 		maxHeight : isClicked ? '1440px': !isPhone ? '27vw': '87vw',
-		transition: isClicked ? '0.25s' : '0.5s',
-	};
-	var parentDivStyle = {
-		backgroundColor: '#9a82c2',
-		maxHeight : !isPhone ? '27vw': '87vw',
-		// transform: isClicked ? 'scale(1.13)' : 'scale(1)',
-		transition: isClicked ? '0.25s'  : '0.5s',
-		overflow  : isClicked ? 'visible': 'hidden',
-		display   : "flex",
-		flexDirection: 'row',
-	};
-	var childDivStyle = {
-		backgroundColor: '#9a82c2',
-		// transform: 'translateZ(0.0001px)',
-		position    : 'absolute',
-		transform   : isClicked ? 'translate3d(-5vw, 0vh, 0) scale(1)': 'scale(0)',
-		opacity : isClicked ? '1': '0',
-		overflow    : 'visible',
-		borderRadius: '25px',
-		padding     : '3vw',
-		// transform: isClicked ? 'scale(1.13)' : 'scale(1)',
 		transition: isClicked ? '0.25s' : '0.5s',
 	};
 	var h1Style = !isPhone ? {
@@ -105,14 +82,14 @@ function TPSPrototype({isPhone, width, ImageFade})
 	};	
 
 	var p2Style = {
-		paddingLeft: !isPhone ? width >= 1500 ? '7vw': '2vw': '0',
-		paddingTop  : !isPhone ? width >= 1500 ? '14vw' : '7vw' : '0',
-		textAlign : 'left',
-		width : !isPhone ? '55%' : '100%',
+		paddingLeft: !isPhone ? width >= 1500 ? '7vw' : '2vw' : '0',
+		paddingTop : !isPhone ? width >= 1500 ? '12.5vw': '7vw' : '0',
+		textAlign  : 'left',
+		width      : !isPhone ? '55%' : '100%',
 	};	 
 
 	var p3Style = {
-		paddingTop: !isPhone ? '13vw' : '0',
+		paddingTop: !isPhone ? '10vw' : '0',
 		textAlign: 'left',
 	}; 
 	var vidStyle = { 
@@ -129,8 +106,6 @@ function TPSPrototype({isPhone, width, ImageFade})
 
 	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d', display: !isPhone ? 'block' : 'none' };
 	
-	// const poster = level2;
-	// const mainVidProps = { ProtoVid, vidStyle, isClicked, isMouseOver, level2 }
 	return (
 		<div style={divStyle} onClick={expand} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
 			{/* <span className={`material-symbols-rounded expansion-arrow ${isClicked ? 'active' : ''}`} style={ dropDownStyle}>
@@ -147,7 +122,6 @@ function TPSPrototype({isPhone, width, ImageFade})
 					I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
 					and my goal with this rough prototype was to study its level design.<br />
 				</p>
-			{/* <div style={childDivStyle}> */}
 				<video style={ vid2Style } ref={vidRef2} muted loop>
 					<source src={FirstProtoVid} type='video/mp4' />
 				</video>
@@ -159,7 +133,6 @@ function TPSPrototype({isPhone, width, ImageFade})
 				<p style={ p3Style }>
 					I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
 				</p>
-			{/* </div> */}
 		</div>
 	);
 }

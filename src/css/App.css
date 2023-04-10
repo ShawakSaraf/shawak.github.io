@@ -3,6 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Mulish:300,400,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Space+Grotesk:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:300,400,500,600,700);
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
 
 :root {
@@ -49,8 +51,7 @@ body {
 .container {
   /* display        : flex; */
   /* flex-direction : row; */
-  overflow-y     : scroll;
-  scroll-behavior: smooth;
+  overflow-x     : hidden;
   margin         : auto;
   padding-bottom : 10vh;
   min-height     : 100vh;
@@ -78,12 +79,12 @@ body {
   position     : absolute;
   right        : 0;
   top          : 0;
-  transform    : translate3d( -15px, 15px, 0 );
+  transform    : translate3d( -90px, 25px, 0 );
   border-radius: 50%;
   transition   : 0.5s ease-out;
 }
 .expansion-arrow.active {
-  transform: rotate(180deg) scale(0.8) translate3d( 15px, -15px, 0 );
+  transform: rotate(180deg) scale(0.8) translate3d( 110px, -30px, 0 );
   transition: 0.25s ease-out;
 }
 #Home {
@@ -253,11 +254,11 @@ body {
 }
 
 #About p{
-  font-size: 3em;
-  font-weight: 500;
-  font-family: 'Raleway';
-  margin-top: 1em;
-  text-align: left;
+  font-size  : 3em;
+  font-weight: 400;
+  font-family: 'Maven Pro';
+  margin-top : 1em;
+  text-align : left;
   /* word-spacing: 0.15em; */
 }
 
@@ -315,7 +316,7 @@ body {
   /* border        : 5px solid var(--ascent-col); */
 }
 #About {
-  padding                : 100px 50px 50px 50px;
+  padding                : 70px 50px;
   border-radius          : 70px 70px 10px 10px;
   /* background-image       : url(../media/Portrait.svg); */
   background-color       : #ffa5b1;
@@ -324,7 +325,7 @@ body {
   background-repeat      : no-repeat;
   background-size        : contain;
   box-shadow             : 0 0 25px rgba(0, 0, 0, 0.226);
-  margin                 : 20vh;
+  margin                 : 10vh 20vh;
 }
 
 #aboutContent { 
@@ -335,8 +336,9 @@ body {
 
 @media screen and (max-width: 1500px) {
   #About {
-    margin: 5em 10em;
-  }
+    margin : 5em 10em;
+    padding: 50px;
+  } 
 }
 @media screen and (max-width: 769px) {
   #Project>div, #About>div {
@@ -365,7 +367,7 @@ body {
   #About {
     margin-left  : 1em;
     margin-right : 1em;
-    border-radius: 70px 70px 10px 10px;
+    border-radius: 50px 50px 10px 10px;
     padding: 50px 0 15px 0;
   }
   #aboutContent { 

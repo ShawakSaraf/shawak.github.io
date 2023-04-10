@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { CopyBlock, solarizedLight } from "react-code-blocks";
 
 import DigitClass_Vid from '../media/NN/Handwritten_digit_classification.webm'
 import NN4 from '../media/NN/NN4.png'
@@ -85,6 +86,16 @@ function NeuralNetwork({isPhone, width})
          textAlign: 'center',
 		};
 	}
+
+	const modelCode = `model = MLP( 
+		layers        = [ 784, 30, 10 ],
+		optimizer     = SGD,
+		loss          = CrossEntropyLoss,
+		activation    = Sigmoid,
+		learning_rate = 0.1,
+		lmbda         = 5.0,
+	)
+	`;
 	return (
 		<div style={divStyle} onClick={expand}  onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
 			<video style={vidStyle} ref={vidRef} autoPlay muted loop>
@@ -99,6 +110,16 @@ function NeuralNetwork({isPhone, width})
 				By implementing a neural network without ML libraries, I was able to understand the core principles and mathematics of how a neural network works 
 				without the complexities of modern machine learning frameworks.<br />
 			</p>
+			{/* <div>
+				<CopyBlock
+				language        = {"python"}
+				text            = {modelCode}
+				showLineNumbers = {false}
+				theme           = {solarizedLight}
+				wrapLines       = {true}
+				codeBlock
+			/>
+			</div> */}
 			<p style={p3Style}>
 				I've also written a blog, <a style={{color: '#413400'}} href='https://lookingisnotenough.com/UnderstandingNeuralNetworks' target={'_blank'} rel="noreferrer">"Understanding Neural Networks"</a>.<br />
 				And made this model in a <a style={{color: '#413400'}} href='https://colab.research.google.com/drive/1B9Uu9A-O6efN8_oqYGYmU8iiD-JK80dt' target={'_blank'} rel="noreferrer">Jupyter notebook</a> with annotations for the code in google colab.
