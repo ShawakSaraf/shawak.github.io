@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d1166ca.css",
+    "main.css": "/static/css/main.c7b3b970.css",
     "main.js": "/static/js/main.a62aa807.js",
     "react-syntax-highlighter/refractor-core-import.js": "/static/js/react-syntax-highlighter/refractor-core-import.e7c5d78b.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/static/js/react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js",
@@ -179,7 +179,7 @@
     "index.html": "/index.html",
     "static/media/twitter-svgrepo-com.svg": "/static/media/twitter-svgrepo-com.f7a10892e5d4774eaa14.svg",
     "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.ae478ac947c3c4b8110d.svg",
-    "main.3d1166ca.css.map": "/static/css/main.3d1166ca.css.map",
+    "main.c7b3b970.css.map": "/static/css/main.c7b3b970.css.map",
     "main.a62aa807.js.map": "/static/js/main.a62aa807.js.map",
     "refractor-core-import.e7c5d78b.chunk.js.map": "/static/js/react-syntax-highlighter/refractor-core-import.e7c5d78b.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js.map": "/static/js/react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js.map",
@@ -336,7 +336,7 @@
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d1166ca.css",
+    "static/css/main.c7b3b970.css",
     "static/js/main.a62aa807.js"
   ]
 }
