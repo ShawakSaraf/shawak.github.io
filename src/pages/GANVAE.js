@@ -112,7 +112,7 @@ function GANVAE({isPhone, width, ImageFade})
 				with an image from the dataset and outputs how close the generated image was to the image from the dataset.
 			</p>
 			<p style={ p2Style }>
-				See the code at my <b><a style={ aStyle } className='ImpLink' href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository</a></b>
+				The code is available at my <a style={ aStyle } className='ImpLink' href='https://github.com/ShawakSaraf/GAN-VAE-Model-with-Tensorflow-and-Keras' target={'_blank'} rel="noreferrer">Github Repository</a>
 			</p>
 		</div>
 	);

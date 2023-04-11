@@ -12,13 +12,11 @@ function ProceduralAnimation({isPhone, width})
 	const vidRef2 = useRef(null);
 
 	useEffect( ()=> {
-		if ( isMouseOver )
-		{
+		if ( isMouseOver ) {
 			vidRef1.current.play();
 			vidRef2.current.play();
 		}
-		else
-		{
+		else {
 			vidRef1.current.pause();
 			vidRef2.current.pause();
 		}
@@ -30,7 +28,6 @@ function ProceduralAnimation({isPhone, width})
 	
 	const mouseEnter = ()=> {
 		setIsMouseOver(true);
-
 	}
 	const mouseLeave = ()=> {
 		setIsMouseOver(false);

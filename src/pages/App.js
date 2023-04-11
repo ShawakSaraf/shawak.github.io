@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import '../css/App.css';
 import '../css/style.css';
 import '../css/bootstrap.css';
-// import '../css/icomoon.css';
 
 function App() 
 {
@@ -14,7 +13,7 @@ function App()
   const refs       = { homeRef, projetsRef, aboutRef, home2Ref };
   return (
     <div className="App">
-      {/* <NavBar {...refs}/> */}
+      <NavBar {...refs}/>
       <Content />
     </div>
   );

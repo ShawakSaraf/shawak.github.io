@@ -10,7 +10,7 @@ import FirstProtoVid from '../media/TPS_proto/First_Prototype.webm'
 import run1 from '../media/TPS_proto/Run1.png'
 import run4 from '../media/TPS_proto/Run4.png'
 
-function TPSPrototype({isPhone, width, ImageFade})
+function TPSPrototype({isPhone, width, ImageFade, DropDownArrow})
 {
 	const [isClicked, setIsClicked]     = useState(false);
 	const [dropOpacity, setDropOpacity] = useState('0');
@@ -65,7 +65,7 @@ function TPSPrototype({isPhone, width, ImageFade})
 	};
 	var h1Style = !isPhone ? {
 		fontSize     : isClicked ? '2vw'        : '2.2vw',
-		padding      : isClicked ? '0em 0 1em 0': '8vw 0 15vw 0',
+		padding      : isClicked ? '0em 0 1em 0': '9vw 0 15vw 0',
 		transition   : isClicked ? '0.25s'      : '0.5s',
 		letterSpacing: '0.2em',
 		color        : isClicked ? '#e6d7ff' : 'white',
@@ -104,35 +104,33 @@ function TPSPrototype({isPhone, width, ImageFade})
 		margin: !isPhone ? width >= 1500 ? '5vw 5vw 0 1vw' : '2vw 2vw 0 1vw' : '2vw 0 0 0',
 	};
 
-	var dropDownStyle = { opacity: dropOpacity, color: '#3d344d', display: !isPhone ? 'block' : 'none' };
+	var dropDownStyle = { opacity: dropOpacity, display: !isPhone ? 'block' : 'none' };
 	
 	return (
 		<div style={divStyle} onClick={expand} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-			{/* <span className={`material-symbols-rounded expansion-arrow ${isClicked ? 'active' : ''}`} style={ dropDownStyle}>
-				arrow_downward
-			</span> */}
+			{/* <DropDownArrow dropDownStyle={dropDownStyle} isClicked={isClicked}/> */}
 			<video style={ vidStyle } poster={level2} ref={vidRef} muted loop>
 				<source src={ProtoVid} type='video/mp4' />
 			</video>
 			<h1 style={h1Style}>Third-Person Shooter<br/>Prototype</h1>
-				<p style={ p1Style }>
-					A simple Third-Person Shooter prototype I made some years ago in Unity.<br />
-				</p>
-				<p style={ p1Style }>
-					I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
-					and my goal with this rough prototype was to study its level design.<br />
-				</p>
-				<video style={ vid2Style } ref={vidRef2} muted loop>
-					<source src={FirstProtoVid} type='video/mp4' />
-				</video>
-				<p style={ p2Style }>
-					This small project germinated when I was learning the basics of game development and made this prototype 
-					with a gun hovering in front of the camera shooting a capsule with red oblate sphere as eyes.<br />
-				</p>
-				<ImageFade {...fadeProps} />
-				<p style={ p3Style }>
-					I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
-				</p>
+			<p style={ p1Style }>
+				A simple Third-Person Shooter prototype I made some years ago in Unity.<br />
+			</p>
+			<p style={ p1Style }>
+				I'm a huge fan of The Last of Us universe, it is what inspired me to get into game development 
+				and my goal with this rough prototype was to study its level design.<br />
+			</p>
+			<video style={ vid2Style } ref={vidRef2} muted loop>
+				<source src={FirstProtoVid} type='video/mp4' />
+			</video>
+			<p style={ p2Style }>
+				This small project germinated when I was learning the basics of game development and made this prototype 
+				with a gun hovering in front of the camera shooting a capsule with red oblate sphere as eyes.<br />
+			</p>
+			<ImageFade {...fadeProps} />
+			<p style={ p3Style }>
+				I also used unity's IK rigging tool to properly position upper body of the character rig while aimming and rotate the head in the direction on the view.
+			</p>
 		</div>
 	);
 }
