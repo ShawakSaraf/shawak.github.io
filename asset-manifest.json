@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e5d2ba6.css",
-    "main.js": "/static/js/main.65acd4c8.js",
+    "main.css": "/static/css/main.98f4ba42.css",
+    "main.js": "/static/js/main.be11429f.js",
     "react-syntax-highlighter/refractor-core-import.js": "/static/js/react-syntax-highlighter/refractor-core-import.e7c5d78b.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/static/js/react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/static/js/react-syntax-highlighter_languages_refractor_actionscript.436787e1.chunk.js",
@@ -176,11 +176,12 @@
     "static/media/15x15_GeneratedDigits.png": "/static/media/15x15_GeneratedDigits.1b97d4e37e9e0e8164eb.png",
     "static/media/Portrait.svg": "/static/media/Portrait.c8dd063364572a620aa94d002925012e.svg",
     "static/media/thumbnail.webp": "/static/media/thumbnail.dea19f3f15c08ae3743d.webp",
+    "static/media/instagram.svg": "/static/media/instagram.193a3b56691a299356c9.svg",
+    "static/media/github.svg": "/static/media/github.7bd9729679aa9a7d4874.svg",
+    "static/media/twitter.svg": "/static/media/twitter.33e351dd19dc478ab129.svg",
     "index.html": "/index.html",
-    "static/media/twitter-svgrepo-com.svg": "/static/media/twitter-svgrepo-com.f7a10892e5d4774eaa14.svg",
-    "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.ae478ac947c3c4b8110d.svg",
-    "main.5e5d2ba6.css.map": "/static/css/main.5e5d2ba6.css.map",
-    "main.65acd4c8.js.map": "/static/js/main.65acd4c8.js.map",
+    "main.98f4ba42.css.map": "/static/css/main.98f4ba42.css.map",
+    "main.be11429f.js.map": "/static/js/main.be11429f.js.map",
     "refractor-core-import.e7c5d78b.chunk.js.map": "/static/js/react-syntax-highlighter/refractor-core-import.e7c5d78b.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js.map": "/static/js/react-syntax-highlighter_languages_refractor_abap.45e232ee.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.436787e1.chunk.js.map": "/static/js/react-syntax-highlighter_languages_refractor_actionscript.436787e1.chunk.js.map",
@@ -336,7 +337,7 @@
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e5d2ba6.css",
-    "static/js/main.65acd4c8.js"
+    "static/css/main.98f4ba42.css",
+    "static/js/main.be11429f.js"
   ]
 }
