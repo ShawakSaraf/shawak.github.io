@@ -74,7 +74,7 @@ function ProceduralAnimation({isPhone, width})
          width: '90%',
       }
 		h1Style = {
-			fontSize     : isClicked ? '4.5vw'      : '4.9vw',
+			fontSize     : isClicked ? '4.5vw'      : '4.7vw',
 			padding      : isClicked ? '2vw 0 5vw 0': '6vw 0 25vw 0',
 			letterSpacing: '0.2em',
 			transition   : isClicked ? '0.25s'      : '0.5s',

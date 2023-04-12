@@ -22,13 +22,14 @@ function ImageFade({images, isMouseOver, ...props})
 				return;
 
 			setOpacity(0);
-			setTimeout(() => 
-			{
-				setIndex((index + 1) % images.length);
-			}, 500);
 			setTimeout(() => {
-				setOpacity(1);
-			}, 1000);
+					setIndex((index + 1) % images.length);
+				}, 500 
+			);
+			setTimeout(() => {
+					setOpacity(1);
+				}, 1000 
+			);
 		}, 4000);
 		
 		return () => clearInterval(interval);
@@ -36,45 +37,12 @@ function ImageFade({images, isMouseOver, ...props})
 	
 	return (
 		<img
-		src={images[index]}
-		alt=""
-		style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
+			src={images[index]} alt=""
+			style={{ opacity, transition: 'opacity 0.5s ease-in-out', ...props.style}}
 		/>
 	);
 }
 
-// function Sphere()
-// {
-// 	const mesh = useRef();
-// 	let time = 0;
-
-// 	const sphereGeometry = new THREE.SphereGeometry( 3, 1, 1 );
-// 	const update = () => 
-// 	{
-// 	const PI = 3.141592;
-// 	time += performance.now() * 0.001;
-// 	// console.log( 'delta: ', time );
-
-// 	mesh.current.rotation.x = window.innerHeight*PI;
-// 	mesh.current.rotation.y = window.innerWidth*PI;
-
-// 	mesh.current.geometry.normalsNeedUpdate  = true;
-// 	mesh.current.geometry.verticesNeedUpdate = true;
-// 	mesh.current.geometry.computeVertexNormals();
-// 	};
-
-// 	useEffect( () => { 
-// 	update();
-// 	console.log( 'updating' );
-// 	})
-
-// 	return (
-// 	<mesh ref={mesh}>
-// 		<primitive object={sphereGeometry} attach={'geometry'} />
-// 		<meshNormalMaterial />
-// 	</mesh>
-// 	);
-// }
 export function DropDownArrow({dropDownStyle, isClicked})
 {
 	return (
@@ -85,7 +53,6 @@ export function DropDownArrow({dropDownStyle, isClicked})
 		</div>
 	);
 }
-
 
 export function MainVid({video, isClicked, isPlaying, vidStyle, poster })
 {
@@ -103,7 +70,6 @@ export function MainVid({video, isClicked, isPlaying, vidStyle, poster })
 		</video>
 	);
 }
-
 
 function NavBar( { projetsRef, homeRef, aboutRef, ...props } )
 {
@@ -254,6 +220,7 @@ function Socials()
 			<a href="https://twitter.com/shawaksaraf" target="_blank" rel="noreferrer"><i className="icon-twitter"></i></a>
 			<a href="https://www.github.com/shawaksaraf" target="_blank" rel="noreferrer"><i className="icon-github"></i></a>
 			<a href="https://www.instagram.com/shawaksaraf" target="_blank" rel="noreferrer"><i className="icon-instagram"></i></a>
+			<a href="https://www.lookingisnotenough.com/" target="_blank" rel="noreferrer"><i className="icon-blog"></i></a>
 			<a href="mailto:shawaksaraf456@gmail.com?subject=Portfolio" target="_blank" rel="noreferrer"><i className="icon-gmail"></i></a>
 		</div>
 	);
