@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0ba0ea12.css",
-    "main.js": "/static/js/main.d8f7b110.js",
+    "main.css": "/static/css/main.74aa1350.css",
+    "main.js": "/static/js/main.0e578750.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Prototype.webm": "/static/media/Prototype.e55372d61b77edd215e3.webm",
     "static/media/First_Prototype.webm": "/static/media/First_Prototype.ac58f41fa4556e131505.webm",
@@ -26,15 +26,15 @@
     "static/media/LINE_Logo.svg": "/static/media/LINE_Logo.ab436c2230b17c244b26.svg",
     "static/media/instagram.svg": "/static/media/instagram.792cc38aa1b549b01886.svg",
     "static/media/github.svg": "/static/media/github.20a74f40b4449ea580f0.svg",
-    "static/media/twitter.svg": "/static/media/twitter.591c46c00badb1bb5f03.svg",
     "index.html": "/index.html",
     "static/media/gmail.svg": "/static/media/gmail.3066262a73c23e854faa.svg",
-    "main.0ba0ea12.css.map": "/static/css/main.0ba0ea12.css.map",
-    "main.d8f7b110.js.map": "/static/js/main.d8f7b110.js.map",
+    "static/media/twitter.svg": "/static/media/twitter.4e90278837a08d093388.svg",
+    "main.74aa1350.css.map": "/static/css/main.74aa1350.css.map",
+    "main.0e578750.js.map": "/static/js/main.0e578750.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ba0ea12.css",
-    "static/js/main.d8f7b110.js"
+    "static/css/main.74aa1350.css",
+    "static/js/main.0e578750.js"
   ]
 }
